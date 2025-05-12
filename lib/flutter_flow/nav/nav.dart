@@ -35,12 +35,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => HomePageWidget(),
+      errorBuilder: (context, state) => appStateNotifier.showSplashImage
+          ? Builder(
+              builder: (context) => Container(
+                color: Colors.white,
+                child: Image.asset(
+                  'assets/images/Logo_Kreis_grn_grau.png',
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            )
+          : HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => HomePageWidget(),
+          builder: (context, _) => appStateNotifier.showSplashImage
+              ? Builder(
+                  builder: (context) => Container(
+                    color: Colors.white,
+                    child: Image.asset(
+                      'assets/images/Logo_Kreis_grn_grau.png',
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
+                )
+              : HomePageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -51,6 +71,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DeviceInfoPageWidget.routeName,
           path: DeviceInfoPageWidget.routePath,
           builder: (context, params) => DeviceInfoPageWidget(),
+        ),
+        FFRoute(
+          name: DataViewPageWidget.routeName,
+          path: DataViewPageWidget.routePath,
+          builder: (context, params) => DataViewPageWidget(),
+        ),
+        FFRoute(
+          name: DeviceMainWidget.routeName,
+          path: DeviceMainWidget.routePath,
+          builder: (context, params) => DeviceMainWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -37,6 +37,13 @@ class DeviceInfoStruct extends BaseStruct {
     String? readOutNextAddress,
     String? readOutRaw,
     List<DeviceLineStruct>? lines,
+
+    /// found devices for i.e.
+    ///
+    /// Start page
+    int? countDevicesFound,
+    String? appBrand,
+    String? appStatusLine,
   })  : _type = type,
         _typeLetter = typeLetter,
         _alias = alias,
@@ -57,7 +64,10 @@ class DeviceInfoStruct extends BaseStruct {
         _readOutNextLine = readOutNextLine,
         _readOutNextAddress = readOutNextAddress,
         _readOutRaw = readOutRaw,
-        _lines = lines;
+        _lines = lines,
+        _countDevicesFound = countDevicesFound,
+        _appBrand = appBrand,
+        _appStatusLine = appStatusLine;
 
   // "Type" field.
   String? _type;
@@ -235,6 +245,30 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasLines() => _lines != null;
 
+  // "CountDevicesFound" field.
+  int? _countDevicesFound;
+  int get countDevicesFound => _countDevicesFound ?? 0;
+  set countDevicesFound(int? val) => _countDevicesFound = val;
+
+  void incrementCountDevicesFound(int amount) =>
+      countDevicesFound = countDevicesFound + amount;
+
+  bool hasCountDevicesFound() => _countDevicesFound != null;
+
+  // "AppBrand" field.
+  String? _appBrand;
+  String get appBrand => _appBrand ?? '';
+  set appBrand(String? val) => _appBrand = val;
+
+  bool hasAppBrand() => _appBrand != null;
+
+  // "AppStatusLine" field.
+  String? _appStatusLine;
+  String get appStatusLine => _appStatusLine ?? '';
+  set appStatusLine(String? val) => _appStatusLine = val;
+
+  bool hasAppStatusLine() => _appStatusLine != null;
+
   static DeviceInfoStruct fromMap(Map<String, dynamic> data) =>
       DeviceInfoStruct(
         type: data['Type'] as String?,
@@ -271,6 +305,9 @@ class DeviceInfoStruct extends BaseStruct {
           data['Lines'],
           DeviceLineStruct.fromMap,
         ),
+        countDevicesFound: castToType<int>(data['CountDevicesFound']),
+        appBrand: data['AppBrand'] as String?,
+        appStatusLine: data['AppStatusLine'] as String?,
       );
 
   static DeviceInfoStruct? maybeFromMap(dynamic data) => data is Map
@@ -299,6 +336,9 @@ class DeviceInfoStruct extends BaseStruct {
         'ReadOutNextAddress': _readOutNextAddress,
         'ReadOutRaw': _readOutRaw,
         'Lines': _lines?.map((e) => e.toMap()).toList(),
+        'CountDevicesFound': _countDevicesFound,
+        'AppBrand': _appBrand,
+        'AppStatusLine': _appStatusLine,
       }.withoutNulls;
 
   @override
@@ -387,6 +427,18 @@ class DeviceInfoStruct extends BaseStruct {
           _lines,
           ParamType.DataStruct,
           isList: true,
+        ),
+        'CountDevicesFound': serializeParam(
+          _countDevicesFound,
+          ParamType.int,
+        ),
+        'AppBrand': serializeParam(
+          _appBrand,
+          ParamType.String,
+        ),
+        'AppStatusLine': serializeParam(
+          _appStatusLine,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -503,6 +555,21 @@ class DeviceInfoStruct extends BaseStruct {
           true,
           structBuilder: DeviceLineStruct.fromSerializableMap,
         ),
+        countDevicesFound: deserializeParam(
+          data['CountDevicesFound'],
+          ParamType.int,
+          false,
+        ),
+        appBrand: deserializeParam(
+          data['AppBrand'],
+          ParamType.String,
+          false,
+        ),
+        appStatusLine: deserializeParam(
+          data['AppStatusLine'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -532,7 +599,10 @@ class DeviceInfoStruct extends BaseStruct {
         readOutNextLine == other.readOutNextLine &&
         readOutNextAddress == other.readOutNextAddress &&
         readOutRaw == other.readOutRaw &&
-        listEquality.equals(lines, other.lines);
+        listEquality.equals(lines, other.lines) &&
+        countDevicesFound == other.countDevicesFound &&
+        appBrand == other.appBrand &&
+        appStatusLine == other.appStatusLine;
   }
 
   @override
@@ -557,7 +627,10 @@ class DeviceInfoStruct extends BaseStruct {
         readOutNextLine,
         readOutNextAddress,
         readOutRaw,
-        lines
+        lines,
+        countDevicesFound,
+        appBrand,
+        appStatusLine
       ]);
 }
 
@@ -582,6 +655,9 @@ DeviceInfoStruct createDeviceInfoStruct({
   int? readOutNextLine,
   String? readOutNextAddress,
   String? readOutRaw,
+  int? countDevicesFound,
+  String? appBrand,
+  String? appStatusLine,
 }) =>
     DeviceInfoStruct(
       type: type,
@@ -604,4 +680,7 @@ DeviceInfoStruct createDeviceInfoStruct({
       readOutNextLine: readOutNextLine,
       readOutNextAddress: readOutNextAddress,
       readOutRaw: readOutRaw,
+      countDevicesFound: countDevicesFound,
+      appBrand: appBrand,
+      appStatusLine: appStatusLine,
     );

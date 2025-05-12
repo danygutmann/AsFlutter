@@ -147,68 +147,129 @@ bool _isSupportedLocale(Locale locale) {
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // HomePage
   {
-    '6qy2yxp8': {
-      'en': 'Airscent',
-      'de': '',
-      'nl': '',
+    'lh0kljs4': {
+      'en': 'Button',
+      'de': 'Taste',
+      'nl': 'Knop',
     },
-    'o6v2crnj': {
-      'en': 'Device Read out',
-      'de': '',
-      'nl': '',
+    'np31qlp2': {
+      'en': 'Search again for Devices',
+      'de': 'Erneut nach Geräten suchen',
+      'nl': 'Zoek opnieuw naar apparaten',
     },
-    'z4xsj9r6': {
-      'en': '-----',
-      'de': '',
-      'nl': '',
+    'd6l4o38b': {
+      'en': 'WiFi Settings',
+      'de': 'Erneut nach Geräten suchen',
+      'nl': 'Zoek opnieuw naar apparaten',
     },
-    'sy2b145b': {
-      'en': 'Hello World',
-      'de': '',
-      'nl': '',
+    'wfbz81sc': {
+      'en': 'Search again for Devices',
+      'de': 'Erneut nach Geräten suchen',
+      'nl': 'Zoek opnieuw naar apparaten',
+    },
+    'fez4o11h': {
+      'en': 'Development',
+      'de': 'Entwicklung',
+      'nl': 'Ontwikkeling',
     },
     '7b6nibxg': {
       'en': 'Home',
-      'de': '',
-      'nl': '',
+      'de': 'Heim',
+      'nl': 'Thuis',
     },
   },
   // DeviceInfoPage
   {
     'yjn1zdkl': {
       'en': 'Airscent',
-      'de': '',
-      'nl': '',
+      'de': 'Luftduft',
+      'nl': 'Luchtgeur',
     },
     'p8j23lac': {
       'en': 'Device Info',
-      'de': '',
-      'nl': '',
+      'de': 'Geräteinformationen',
+      'nl': 'Apparaatinfo',
     },
     't8ecxc0c': {
       'en': 'Button',
-      'de': '',
-      'nl': '',
+      'de': 'Taste',
+      'nl': 'Knop',
     },
     '41ukqtvn': {
       'en': 'Button',
-      'de': '',
-      'nl': '',
+      'de': 'Taste',
+      'nl': 'Knop',
     },
     'xoga70hj': {
       'en': 'Button',
-      'de': '',
-      'nl': '',
+      'de': 'Taste',
+      'nl': 'Knop',
     },
     'vq7gtufv': {
       'en': 'Button',
-      'de': '',
-      'nl': '',
+      'de': 'Taste',
+      'nl': 'Knop',
     },
     '1kt47jk7': {
       'en': 'Home',
-      'de': '',
-      'nl': '',
+      'de': 'Heim',
+      'nl': 'Thuis',
+    },
+  },
+  // DataViewPage
+  {
+    'xa0x8nza': {
+      'en': 'Button',
+      'de': 'Taste',
+      'nl': 'Knop',
+    },
+    'or7e6748': {
+      'en': 'Refresh',
+      'de': 'Erneut nach Geräten suchen',
+      'nl': 'Zoek opnieuw naar apparaten',
+    },
+    'xc0a0cgz': {
+      'en': 'Device Read out',
+      'de': 'Gerät auslesen',
+      'nl': 'Apparaat uitlezen',
+    },
+    '2evech9l': {
+      'en': '-----',
+      'de': '-----',
+      'nl': '-----',
+    },
+    'uhod56og': {
+      'en': 'Home',
+      'de': 'Heim',
+      'nl': 'Thuis',
+    },
+  },
+  // DeviceMain
+  {
+    '28kgxv65': {
+      'en': 'Button',
+      'de': 'Taste',
+      'nl': 'Knop',
+    },
+    '6fkawboc': {
+      'en': 'Add new Line',
+      'de': 'Erneut nach Geräten suchen',
+      'nl': 'Zoek opnieuw naar apparaten',
+    },
+    'blb0tbn9': {
+      'en': 'Read all Lines',
+      'de': 'Erneut nach Geräten suchen',
+      'nl': 'Zoek opnieuw naar apparaten',
+    },
+    '75u35y99': {
+      'en': 'Device Options',
+      'de': 'Erneut nach Geräten suchen',
+      'nl': 'Zoek opnieuw naar apparaten',
+    },
+    '7hfwmk0f': {
+      'en': 'Home',
+      'de': 'Heim',
+      'nl': 'Thuis',
     },
   },
   // Miscellaneous

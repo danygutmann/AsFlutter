@@ -10,169 +10,134 @@ import 'place.dart';
 import 'uploaded_file.dart';
 import '/backend/schema/structs/index.dart';
 
-String? getTypeLetter(String fromApi) {
-  if (fromApi.toLowerCase().contains("aromare")) return "A";
-  if (fromApi.toLowerCase().contains("venturi")) return "V";
-  if (fromApi.toLowerCase().contains("quad")) return "Q";
-  return "E";
+String prepareData(
+  String address,
+  int startHour,
+  int startMinute,
+  int stopHour,
+  int stopMinute,
+  int fan,
+  int venturiInterval,
+  int venturiDuration,
+  int power,
+  String interval,
+  bool montag,
+  bool dienstag,
+) {
+  String ArgToSend = "";
+  int day = 0;
+  if (montag) day = day + 1;
+  if (dienstag) day = day + 2;
+
+  ArgToSend += day.toString().padLeft(3, '0');
+  ArgToSend += startHour.toString().padLeft(3, '0');
+  ArgToSend += startMinute.toString().padLeft(3, '0');
+  ArgToSend += stopHour.toString().padLeft(3, '0');
+  ArgToSend += stopMinute.toString().padLeft(3, '0');
+  ArgToSend += fan.toString().padLeft(3, '0');
+  ArgToSend += venturiInterval.toString().padLeft(3, '0');
+  ArgToSend += venturiDuration.toString().padLeft(3, '0');
+  ArgToSend += power.toString().padLeft(3, '0');
+  ArgToSend += interval.toString().padLeft(3, '0');
+
+  return ArgToSend;
 }
 
-String addLineFromApi(String input) {
-  DeviceLineStruct line = new DeviceLineStruct();
-  line.log = "";
-  line.raw = input;
-  line.raw.trim();
-  int length = line.raw.length;
-  line.log += "length = " + length.toString() + "\n";
-
-  int parts = length ~/ 3;
-  int start = 0;
-  int stop = 3;
-
-  int dayAsInt = 0;
-
-  for (int i = 1; i <= parts; i++) {
-    String result = line.raw.substring(start, stop);
-    start = start + 3;
-    stop = stop + 3;
-
-    //
-
-    if (i == 1) {
-      line.log += "LineAddress: " + int.parse(result).toString();
-    }
-    if (i == 2) {
-      dayAsInt = int.parse(result);
-      line.log += "Day: " + dayAsInt.toString();
-    }
-    if (i == 3) {
-      line.log += "StartHour: " + int.parse(result).toString();
-    }
-    if (i == 4) {
-      line.log += "StartMinute: " + int.parse(result).toString();
-    }
-    if (i == 5) {
-      line.log += "StopHour: " + int.parse(result).toString();
-    }
-    if (i == 6) {
-      line.log += "StopMinute: " + int.parse(result).toString();
-    }
-    if (i == 7) {
-      line.log += "Fan: " + int.parse(result).toString();
-    }
-    if (i == 8) {
-      line.log += "VenturiIntervall: " + int.parse(result).toString();
-    }
-    if (i == 9) {
-      line.log += "VenturiDuration: " + int.parse(result).toString();
-    }
-    if (i == 0) {
-      line.log += "Interval: " + int.parse(result).toString();
-    }
-    // more debug
-    line.log += "  (part " + i.toString() + "=" + result + ")\n";
+bool showThisLineItsNotEmpty(String lineAsString) {
+  final splitted = lineAsString.split(';');
+  if (splitted.first != "255") {
+    return true;
   }
-
-  // analyse days
-  var dayAsByte = dayAsInt & 0xff;
-  line.log += "day as byte: " + dayAsByte.toString() + "\n";
-  String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
-  line.log += "day as bin: " + dayAsBin + "\n";
-
-  bool day_mo = false;
-  bool day_di = false;
-  bool day_mi = false;
-  bool day_do = false;
-  bool day_fr = false;
-  bool day_sa = false;
-  bool day_so = false;
-  String dayAsString = "";
-
-  if (dayAsInt == 0) {
-    dayAsString = "never";
-  } else if (dayAsInt == 254) {
-    day_mo = true;
-    day_di = true;
-    day_mi = true;
-    day_do = true;
-    day_fr = true;
-    day_sa = true;
-    day_so = true;
-    dayAsString = "daily";
-  } else if (dayAsInt == 192) {
-    day_sa = true;
-    day_so = true;
-    dayAsString = "at the weekend";
-  } else if (dayAsInt == 62) {
-    day_mo = true;
-    day_di = true;
-    day_mi = true;
-    day_do = true;
-    day_fr = true;
-    dayAsString = "on workdays";
-  } else {
-    start = 7;
-    stop = 8;
-    for (int i = 8; i > 0; i--) {
-      String curDay = dayAsBin.substring(start, stop);
-      start = start - 1;
-      stop = stop - 1;
-      line.log += "  (day " + i.toString() + "=" + curDay + ")\n";
-      if (curDay == "1") {
-        if (i == 7) {
-          day_mo = true;
-          dayAsString += "mo, ";
-        }
-        if (i == 6) {
-          day_di = true;
-          dayAsString += "di, ";
-        }
-        if (i == 5) {
-          day_mi = true;
-          dayAsString += "mi, ";
-        }
-        if (i == 4) {
-          day_do = true;
-          dayAsString += "do, ";
-        }
-        if (i == 3) {
-          day_fr = true;
-          dayAsString += "fr, ";
-        }
-        if (i == 2) {
-          day_sa = true;
-          dayAsString += "sa, ";
-        }
-        if (i == 1) {
-          day_so = true;
-          dayAsString += "so, ";
-        }
-      }
-    }
-    dayAsString = dayAsString.substring(0, dayAsString.length - 2);
-  }
-
-  line.log += "day as string: " + dayAsString + "\n";
-
-  return line.log;
-}
-
-String convertLineToAddress(int line) {
-  int address = (line * 10) - 10;
-  return address.toString().padLeft(3, '0');
-}
-
-bool checkLineIsEmpty(String input) {
-  final splitted = input.split(';');
-  if (splitted.first == "255") return true;
   return false;
 }
 
-DeviceLineStruct newDeviceLineFromString(String input) {
-  //import 'package:dartpad_sample/main.dart';
+String getLineDescription(String lineRaw) {
+  String outp = "";
+  final splitted = lineRaw.split(';');
+  for (int i = 0; i <= splitted.length - 1; i++) {
+    String result = splitted[i];
+    int resInt = int.parse(result);
 
-  DeviceLineStruct line = new DeviceLineStruct();
-  line.raw = input;
+    if (i == 0) {
+      if (resInt == 0) {
+        outp += "never";
+      } else if (resInt == 254) {
+        outp += "daily";
+      } else if (resInt == 192) {
+        outp += "at the weekend";
+      } else if (resInt == 62) {
+        outp += "on workdays";
+      } else {
+        int start = 7;
+        int stop = 8;
+        var dayAsByte = resInt & 0xff;
+        String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
+        for (int i = 8; i > 0; i--) {
+          String curDay = dayAsBin.substring(start, stop);
+          start = start - 1;
+          stop = stop - 1;
+          if (curDay == "1") {
+            if (i == 7) {
+              outp += "mo, ";
+            }
+            if (i == 6) {
+              outp += "di, ";
+            }
+            if (i == 5) {
+              outp += "mi, ";
+            }
+            if (i == 4) {
+              outp += "do, ";
+            }
+            if (i == 3) {
+              outp += "fr, ";
+            }
+            if (i == 2) {
+              outp += "sa, ";
+            }
+            if (i == 1) {
+              outp += "so, ";
+            }
+          }
+        }
+        outp = outp.substring(0, outp.length - 2);
+      }
+    }
+    if (i == 1) {
+      outp += "from " + resInt.toString() + ":";
+    }
+    if (i == 2) {
+      outp += resInt.toString().padLeft(2, '0') + " to ";
+    }
+    if (i == 3) {
+      outp += resInt.toString() + ":";
+    }
+    if (i == 4) {
+      outp += resInt.toString().padLeft(2, '0') + ". ";
+    }
+    if (i == 5) {
+      if (resInt == 1) outp += "Fan 1";
+      if (resInt == 2) outp += "Fan 2";
+      if (resInt == 3) outp += "Fan 3";
+      if (resInt == 4) outp += "Fan 4";
+      if (resInt > 100) outp += "Venturi";
+    }
+    if (i == 6) {
+      // currentLineVenturiInterval
+    }
+    if (i == 7) {
+      // currentLineVenturiDuration
+    }
+    if (i == 8) {
+      if (resInt == 0) outp += " is off.";
+      if (resInt == 11) outp += " with 50% Power";
+      if (resInt == 16) outp += " with 60% Power";
+      if (resInt == 22) outp += " with 70% Power";
+      if (resInt == 33) outp += " with 80% Power";
+      if (resInt == 49) outp += " with 90% Power";
+      if (resInt == 100) outp += "with 100% Power.";
+    }
+  }
 
-  return line;
+  return outp;
 }

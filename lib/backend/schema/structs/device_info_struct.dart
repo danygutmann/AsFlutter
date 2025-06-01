@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_getters_setters
 
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -23,20 +24,9 @@ class DeviceInfoStruct extends BaseStruct {
 
     /// the current pwm value
     String? pwm,
-    int? fanCount,
     bool? showFanSelector,
     bool? showPowerSelector,
     bool? showVenturiSelector,
-    DeviceLineStruct? line01,
-    DeviceLineStruct? line02,
-    DeviceLineStruct? line03,
-    DeviceLineStruct? line04,
-    DeviceLineStruct? line05,
-    bool? readOutLineWasEmpty,
-    int? readOutNextLine,
-    String? readOutNextAddress,
-    String? readOutRaw,
-    List<DeviceLineStruct>? lines,
 
     /// found devices for i.e.
     ///
@@ -44,6 +34,40 @@ class DeviceInfoStruct extends BaseStruct {
     int? countDevicesFound,
     String? appBrand,
     String? appStatusLine,
+    bool? deviceButtonVissible,
+    String? line01Raw,
+    String? line01Description,
+    String? line02Raw,
+    String? line02Description,
+    String? line03Raw,
+    String? line03Description,
+    String? line04Raw,
+    String? line04Description,
+    String? line05Raw,
+    String? line05Description,
+    int? currentLineDayInt,
+    bool? currentLineDayBoolMo,
+    bool? currentLineDayBoolDi,
+    bool? currentLineDayBoolMi,
+    bool? currentLineDayBoolDo,
+    bool? currentLineDayBoolFr,
+    bool? currentLineDayBoolSa,
+    bool? currentLineDayBoolSo,
+    int? currentLineStartHour,
+    int? currentLineStartMinute,
+    int? currentLineStopHour,
+    int? currentLineStopMinute,
+    int? currentLineFan,
+    int? currentLineNumber,
+    int? currentLineVenturiInterval,
+    int? currentLineVenturiDuration,
+    int? currentLineSpeed,
+    int? currentLineInterval,
+    String? currentLineAddress,
+    String? currentLineDayString,
+    String? currentLineDayBin,
+    String? currentLineDayByte,
+    String? currentLineLog,
   })  : _type = type,
         _typeLetter = typeLetter,
         _alias = alias,
@@ -51,23 +75,46 @@ class DeviceInfoStruct extends BaseStruct {
         _deviceName = deviceName,
         _info = info,
         _pwm = pwm,
-        _fanCount = fanCount,
         _showFanSelector = showFanSelector,
         _showPowerSelector = showPowerSelector,
         _showVenturiSelector = showVenturiSelector,
-        _line01 = line01,
-        _line02 = line02,
-        _line03 = line03,
-        _line04 = line04,
-        _line05 = line05,
-        _readOutLineWasEmpty = readOutLineWasEmpty,
-        _readOutNextLine = readOutNextLine,
-        _readOutNextAddress = readOutNextAddress,
-        _readOutRaw = readOutRaw,
-        _lines = lines,
         _countDevicesFound = countDevicesFound,
         _appBrand = appBrand,
-        _appStatusLine = appStatusLine;
+        _appStatusLine = appStatusLine,
+        _deviceButtonVissible = deviceButtonVissible,
+        _line01Raw = line01Raw,
+        _line01Description = line01Description,
+        _line02Raw = line02Raw,
+        _line02Description = line02Description,
+        _line03Raw = line03Raw,
+        _line03Description = line03Description,
+        _line04Raw = line04Raw,
+        _line04Description = line04Description,
+        _line05Raw = line05Raw,
+        _line05Description = line05Description,
+        _currentLineDayInt = currentLineDayInt,
+        _currentLineDayBoolMo = currentLineDayBoolMo,
+        _currentLineDayBoolDi = currentLineDayBoolDi,
+        _currentLineDayBoolMi = currentLineDayBoolMi,
+        _currentLineDayBoolDo = currentLineDayBoolDo,
+        _currentLineDayBoolFr = currentLineDayBoolFr,
+        _currentLineDayBoolSa = currentLineDayBoolSa,
+        _currentLineDayBoolSo = currentLineDayBoolSo,
+        _currentLineStartHour = currentLineStartHour,
+        _currentLineStartMinute = currentLineStartMinute,
+        _currentLineStopHour = currentLineStopHour,
+        _currentLineStopMinute = currentLineStopMinute,
+        _currentLineFan = currentLineFan,
+        _currentLineNumber = currentLineNumber,
+        _currentLineVenturiInterval = currentLineVenturiInterval,
+        _currentLineVenturiDuration = currentLineVenturiDuration,
+        _currentLineSpeed = currentLineSpeed,
+        _currentLineInterval = currentLineInterval,
+        _currentLineAddress = currentLineAddress,
+        _currentLineDayString = currentLineDayString,
+        _currentLineDayBin = currentLineDayBin,
+        _currentLineDayByte = currentLineDayByte,
+        _currentLineLog = currentLineLog;
 
   // "Type" field.
   String? _type;
@@ -99,7 +146,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "DeviceName" field.
   String? _deviceName;
-  String get deviceName => _deviceName ?? '';
+  String get deviceName => _deviceName ?? 'no device';
   set deviceName(String? val) => _deviceName = val;
 
   bool hasDeviceName() => _deviceName != null;
@@ -117,15 +164,6 @@ class DeviceInfoStruct extends BaseStruct {
   set pwm(String? val) => _pwm = val;
 
   bool hasPwm() => _pwm != null;
-
-  // "FanCount" field.
-  int? _fanCount;
-  int get fanCount => _fanCount ?? 0;
-  set fanCount(int? val) => _fanCount = val;
-
-  void incrementFanCount(int amount) => fanCount = fanCount + amount;
-
-  bool hasFanCount() => _fanCount != null;
 
   // "ShowFanSelector" field.
   bool? _showFanSelector;
@@ -148,103 +186,6 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasShowVenturiSelector() => _showVenturiSelector != null;
 
-  // "Line01" field.
-  DeviceLineStruct? _line01;
-  DeviceLineStruct get line01 => _line01 ?? DeviceLineStruct();
-  set line01(DeviceLineStruct? val) => _line01 = val;
-
-  void updateLine01(Function(DeviceLineStruct) updateFn) {
-    updateFn(_line01 ??= DeviceLineStruct());
-  }
-
-  bool hasLine01() => _line01 != null;
-
-  // "Line02" field.
-  DeviceLineStruct? _line02;
-  DeviceLineStruct get line02 => _line02 ?? DeviceLineStruct();
-  set line02(DeviceLineStruct? val) => _line02 = val;
-
-  void updateLine02(Function(DeviceLineStruct) updateFn) {
-    updateFn(_line02 ??= DeviceLineStruct());
-  }
-
-  bool hasLine02() => _line02 != null;
-
-  // "Line03" field.
-  DeviceLineStruct? _line03;
-  DeviceLineStruct get line03 => _line03 ?? DeviceLineStruct();
-  set line03(DeviceLineStruct? val) => _line03 = val;
-
-  void updateLine03(Function(DeviceLineStruct) updateFn) {
-    updateFn(_line03 ??= DeviceLineStruct());
-  }
-
-  bool hasLine03() => _line03 != null;
-
-  // "Line04" field.
-  DeviceLineStruct? _line04;
-  DeviceLineStruct get line04 => _line04 ?? DeviceLineStruct();
-  set line04(DeviceLineStruct? val) => _line04 = val;
-
-  void updateLine04(Function(DeviceLineStruct) updateFn) {
-    updateFn(_line04 ??= DeviceLineStruct());
-  }
-
-  bool hasLine04() => _line04 != null;
-
-  // "Line05" field.
-  DeviceLineStruct? _line05;
-  DeviceLineStruct get line05 => _line05 ?? DeviceLineStruct();
-  set line05(DeviceLineStruct? val) => _line05 = val;
-
-  void updateLine05(Function(DeviceLineStruct) updateFn) {
-    updateFn(_line05 ??= DeviceLineStruct());
-  }
-
-  bool hasLine05() => _line05 != null;
-
-  // "ReadOutLineWasEmpty" field.
-  bool? _readOutLineWasEmpty;
-  bool get readOutLineWasEmpty => _readOutLineWasEmpty ?? false;
-  set readOutLineWasEmpty(bool? val) => _readOutLineWasEmpty = val;
-
-  bool hasReadOutLineWasEmpty() => _readOutLineWasEmpty != null;
-
-  // "ReadOutNextLine" field.
-  int? _readOutNextLine;
-  int get readOutNextLine => _readOutNextLine ?? 0;
-  set readOutNextLine(int? val) => _readOutNextLine = val;
-
-  void incrementReadOutNextLine(int amount) =>
-      readOutNextLine = readOutNextLine + amount;
-
-  bool hasReadOutNextLine() => _readOutNextLine != null;
-
-  // "ReadOutNextAddress" field.
-  String? _readOutNextAddress;
-  String get readOutNextAddress => _readOutNextAddress ?? '';
-  set readOutNextAddress(String? val) => _readOutNextAddress = val;
-
-  bool hasReadOutNextAddress() => _readOutNextAddress != null;
-
-  // "ReadOutRaw" field.
-  String? _readOutRaw;
-  String get readOutRaw => _readOutRaw ?? '';
-  set readOutRaw(String? val) => _readOutRaw = val;
-
-  bool hasReadOutRaw() => _readOutRaw != null;
-
-  // "Lines" field.
-  List<DeviceLineStruct>? _lines;
-  List<DeviceLineStruct> get lines => _lines ?? const [];
-  set lines(List<DeviceLineStruct>? val) => _lines = val;
-
-  void updateLines(Function(List<DeviceLineStruct>) updateFn) {
-    updateFn(_lines ??= []);
-  }
-
-  bool hasLines() => _lines != null;
-
   // "CountDevicesFound" field.
   int? _countDevicesFound;
   int get countDevicesFound => _countDevicesFound ?? 0;
@@ -257,17 +198,288 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "AppBrand" field.
   String? _appBrand;
-  String get appBrand => _appBrand ?? '';
+  String get appBrand => _appBrand ?? 'Airscent';
   set appBrand(String? val) => _appBrand = val;
 
   bool hasAppBrand() => _appBrand != null;
 
   // "AppStatusLine" field.
   String? _appStatusLine;
-  String get appStatusLine => _appStatusLine ?? '';
+  String get appStatusLine => _appStatusLine ?? 'Hello World';
   set appStatusLine(String? val) => _appStatusLine = val;
 
   bool hasAppStatusLine() => _appStatusLine != null;
+
+  // "DeviceButtonVissible" field.
+  bool? _deviceButtonVissible;
+  bool get deviceButtonVissible => _deviceButtonVissible ?? false;
+  set deviceButtonVissible(bool? val) => _deviceButtonVissible = val;
+
+  bool hasDeviceButtonVissible() => _deviceButtonVissible != null;
+
+  // "Line01Raw" field.
+  String? _line01Raw;
+  String get line01Raw => _line01Raw ?? '';
+  set line01Raw(String? val) => _line01Raw = val;
+
+  bool hasLine01Raw() => _line01Raw != null;
+
+  // "Line01Description" field.
+  String? _line01Description;
+  String get line01Description => _line01Description ?? '--';
+  set line01Description(String? val) => _line01Description = val;
+
+  bool hasLine01Description() => _line01Description != null;
+
+  // "Line02Raw" field.
+  String? _line02Raw;
+  String get line02Raw => _line02Raw ?? '';
+  set line02Raw(String? val) => _line02Raw = val;
+
+  bool hasLine02Raw() => _line02Raw != null;
+
+  // "Line02Description" field.
+  String? _line02Description;
+  String get line02Description => _line02Description ?? '--';
+  set line02Description(String? val) => _line02Description = val;
+
+  bool hasLine02Description() => _line02Description != null;
+
+  // "Line03Raw" field.
+  String? _line03Raw;
+  String get line03Raw => _line03Raw ?? '';
+  set line03Raw(String? val) => _line03Raw = val;
+
+  bool hasLine03Raw() => _line03Raw != null;
+
+  // "Line03Description" field.
+  String? _line03Description;
+  String get line03Description => _line03Description ?? '--';
+  set line03Description(String? val) => _line03Description = val;
+
+  bool hasLine03Description() => _line03Description != null;
+
+  // "Line04Raw" field.
+  String? _line04Raw;
+  String get line04Raw => _line04Raw ?? '';
+  set line04Raw(String? val) => _line04Raw = val;
+
+  bool hasLine04Raw() => _line04Raw != null;
+
+  // "Line04Description" field.
+  String? _line04Description;
+  String get line04Description => _line04Description ?? '--';
+  set line04Description(String? val) => _line04Description = val;
+
+  bool hasLine04Description() => _line04Description != null;
+
+  // "Line05Raw" field.
+  String? _line05Raw;
+  String get line05Raw => _line05Raw ?? '';
+  set line05Raw(String? val) => _line05Raw = val;
+
+  bool hasLine05Raw() => _line05Raw != null;
+
+  // "Line05Description" field.
+  String? _line05Description;
+  String get line05Description => _line05Description ?? '--';
+  set line05Description(String? val) => _line05Description = val;
+
+  bool hasLine05Description() => _line05Description != null;
+
+  // "CurrentLineDayInt" field.
+  int? _currentLineDayInt;
+  int get currentLineDayInt => _currentLineDayInt ?? 0;
+  set currentLineDayInt(int? val) => _currentLineDayInt = val;
+
+  void incrementCurrentLineDayInt(int amount) =>
+      currentLineDayInt = currentLineDayInt + amount;
+
+  bool hasCurrentLineDayInt() => _currentLineDayInt != null;
+
+  // "CurrentLineDayBoolMo" field.
+  bool? _currentLineDayBoolMo;
+  bool get currentLineDayBoolMo => _currentLineDayBoolMo ?? false;
+  set currentLineDayBoolMo(bool? val) => _currentLineDayBoolMo = val;
+
+  bool hasCurrentLineDayBoolMo() => _currentLineDayBoolMo != null;
+
+  // "CurrentLineDayBoolDi" field.
+  bool? _currentLineDayBoolDi;
+  bool get currentLineDayBoolDi => _currentLineDayBoolDi ?? false;
+  set currentLineDayBoolDi(bool? val) => _currentLineDayBoolDi = val;
+
+  bool hasCurrentLineDayBoolDi() => _currentLineDayBoolDi != null;
+
+  // "CurrentLineDayBoolMi" field.
+  bool? _currentLineDayBoolMi;
+  bool get currentLineDayBoolMi => _currentLineDayBoolMi ?? false;
+  set currentLineDayBoolMi(bool? val) => _currentLineDayBoolMi = val;
+
+  bool hasCurrentLineDayBoolMi() => _currentLineDayBoolMi != null;
+
+  // "CurrentLineDayBoolDo" field.
+  bool? _currentLineDayBoolDo;
+  bool get currentLineDayBoolDo => _currentLineDayBoolDo ?? false;
+  set currentLineDayBoolDo(bool? val) => _currentLineDayBoolDo = val;
+
+  bool hasCurrentLineDayBoolDo() => _currentLineDayBoolDo != null;
+
+  // "CurrentLineDayBoolFr" field.
+  bool? _currentLineDayBoolFr;
+  bool get currentLineDayBoolFr => _currentLineDayBoolFr ?? false;
+  set currentLineDayBoolFr(bool? val) => _currentLineDayBoolFr = val;
+
+  bool hasCurrentLineDayBoolFr() => _currentLineDayBoolFr != null;
+
+  // "CurrentLineDayBoolSa" field.
+  bool? _currentLineDayBoolSa;
+  bool get currentLineDayBoolSa => _currentLineDayBoolSa ?? false;
+  set currentLineDayBoolSa(bool? val) => _currentLineDayBoolSa = val;
+
+  bool hasCurrentLineDayBoolSa() => _currentLineDayBoolSa != null;
+
+  // "CurrentLineDayBoolSo" field.
+  bool? _currentLineDayBoolSo;
+  bool get currentLineDayBoolSo => _currentLineDayBoolSo ?? false;
+  set currentLineDayBoolSo(bool? val) => _currentLineDayBoolSo = val;
+
+  bool hasCurrentLineDayBoolSo() => _currentLineDayBoolSo != null;
+
+  // "CurrentLineStartHour" field.
+  int? _currentLineStartHour;
+  int get currentLineStartHour => _currentLineStartHour ?? 8;
+  set currentLineStartHour(int? val) => _currentLineStartHour = val;
+
+  void incrementCurrentLineStartHour(int amount) =>
+      currentLineStartHour = currentLineStartHour + amount;
+
+  bool hasCurrentLineStartHour() => _currentLineStartHour != null;
+
+  // "CurrentLineStartMinute" field.
+  int? _currentLineStartMinute;
+  int get currentLineStartMinute => _currentLineStartMinute ?? 0;
+  set currentLineStartMinute(int? val) => _currentLineStartMinute = val;
+
+  void incrementCurrentLineStartMinute(int amount) =>
+      currentLineStartMinute = currentLineStartMinute + amount;
+
+  bool hasCurrentLineStartMinute() => _currentLineStartMinute != null;
+
+  // "CurrentLineStopHour" field.
+  int? _currentLineStopHour;
+  int get currentLineStopHour => _currentLineStopHour ?? 17;
+  set currentLineStopHour(int? val) => _currentLineStopHour = val;
+
+  void incrementCurrentLineStopHour(int amount) =>
+      currentLineStopHour = currentLineStopHour + amount;
+
+  bool hasCurrentLineStopHour() => _currentLineStopHour != null;
+
+  // "CurrentLineStopMinute" field.
+  int? _currentLineStopMinute;
+  int get currentLineStopMinute => _currentLineStopMinute ?? 0;
+  set currentLineStopMinute(int? val) => _currentLineStopMinute = val;
+
+  void incrementCurrentLineStopMinute(int amount) =>
+      currentLineStopMinute = currentLineStopMinute + amount;
+
+  bool hasCurrentLineStopMinute() => _currentLineStopMinute != null;
+
+  // "CurrentLineFan" field.
+  int? _currentLineFan;
+  int get currentLineFan => _currentLineFan ?? 1;
+  set currentLineFan(int? val) => _currentLineFan = val;
+
+  void incrementCurrentLineFan(int amount) =>
+      currentLineFan = currentLineFan + amount;
+
+  bool hasCurrentLineFan() => _currentLineFan != null;
+
+  // "CurrentLineNumber" field.
+  int? _currentLineNumber;
+  int get currentLineNumber => _currentLineNumber ?? 1;
+  set currentLineNumber(int? val) => _currentLineNumber = val;
+
+  void incrementCurrentLineNumber(int amount) =>
+      currentLineNumber = currentLineNumber + amount;
+
+  bool hasCurrentLineNumber() => _currentLineNumber != null;
+
+  // "CurrentLineVenturiInterval" field.
+  int? _currentLineVenturiInterval;
+  int get currentLineVenturiInterval => _currentLineVenturiInterval ?? 0;
+  set currentLineVenturiInterval(int? val) => _currentLineVenturiInterval = val;
+
+  void incrementCurrentLineVenturiInterval(int amount) =>
+      currentLineVenturiInterval = currentLineVenturiInterval + amount;
+
+  bool hasCurrentLineVenturiInterval() => _currentLineVenturiInterval != null;
+
+  // "CurrentLineVenturiDuration" field.
+  int? _currentLineVenturiDuration;
+  int get currentLineVenturiDuration => _currentLineVenturiDuration ?? 0;
+  set currentLineVenturiDuration(int? val) => _currentLineVenturiDuration = val;
+
+  void incrementCurrentLineVenturiDuration(int amount) =>
+      currentLineVenturiDuration = currentLineVenturiDuration + amount;
+
+  bool hasCurrentLineVenturiDuration() => _currentLineVenturiDuration != null;
+
+  // "CurrentLineSpeed" field.
+  int? _currentLineSpeed;
+  int get currentLineSpeed => _currentLineSpeed ?? 100;
+  set currentLineSpeed(int? val) => _currentLineSpeed = val;
+
+  void incrementCurrentLineSpeed(int amount) =>
+      currentLineSpeed = currentLineSpeed + amount;
+
+  bool hasCurrentLineSpeed() => _currentLineSpeed != null;
+
+  // "CurrentLineInterval" field.
+  int? _currentLineInterval;
+  int get currentLineInterval => _currentLineInterval ?? 0;
+  set currentLineInterval(int? val) => _currentLineInterval = val;
+
+  void incrementCurrentLineInterval(int amount) =>
+      currentLineInterval = currentLineInterval + amount;
+
+  bool hasCurrentLineInterval() => _currentLineInterval != null;
+
+  // "CurrentLineAddress" field.
+  String? _currentLineAddress;
+  String get currentLineAddress => _currentLineAddress ?? '0';
+  set currentLineAddress(String? val) => _currentLineAddress = val;
+
+  bool hasCurrentLineAddress() => _currentLineAddress != null;
+
+  // "CurrentLineDayString" field.
+  String? _currentLineDayString;
+  String get currentLineDayString => _currentLineDayString ?? '-';
+  set currentLineDayString(String? val) => _currentLineDayString = val;
+
+  bool hasCurrentLineDayString() => _currentLineDayString != null;
+
+  // "CurrentLineDayBin" field.
+  String? _currentLineDayBin;
+  String get currentLineDayBin => _currentLineDayBin ?? '-';
+  set currentLineDayBin(String? val) => _currentLineDayBin = val;
+
+  bool hasCurrentLineDayBin() => _currentLineDayBin != null;
+
+  // "CurrentLineDayByte" field.
+  String? _currentLineDayByte;
+  String get currentLineDayByte => _currentLineDayByte ?? '-';
+  set currentLineDayByte(String? val) => _currentLineDayByte = val;
+
+  bool hasCurrentLineDayByte() => _currentLineDayByte != null;
+
+  // "CurrentLineLog" field.
+  String? _currentLineLog;
+  String get currentLineLog => _currentLineLog ?? '-';
+  set currentLineLog(String? val) => _currentLineLog = val;
+
+  bool hasCurrentLineLog() => _currentLineLog != null;
 
   static DeviceInfoStruct fromMap(Map<String, dynamic> data) =>
       DeviceInfoStruct(
@@ -278,36 +490,48 @@ class DeviceInfoStruct extends BaseStruct {
         deviceName: data['DeviceName'] as String?,
         info: data['Info'] as String?,
         pwm: data['PWM'] as String?,
-        fanCount: castToType<int>(data['FanCount']),
         showFanSelector: data['ShowFanSelector'] as bool?,
         showPowerSelector: data['ShowPowerSelector'] as bool?,
         showVenturiSelector: data['ShowVenturiSelector'] as bool?,
-        line01: data['Line01'] is DeviceLineStruct
-            ? data['Line01']
-            : DeviceLineStruct.maybeFromMap(data['Line01']),
-        line02: data['Line02'] is DeviceLineStruct
-            ? data['Line02']
-            : DeviceLineStruct.maybeFromMap(data['Line02']),
-        line03: data['Line03'] is DeviceLineStruct
-            ? data['Line03']
-            : DeviceLineStruct.maybeFromMap(data['Line03']),
-        line04: data['Line04'] is DeviceLineStruct
-            ? data['Line04']
-            : DeviceLineStruct.maybeFromMap(data['Line04']),
-        line05: data['Line05'] is DeviceLineStruct
-            ? data['Line05']
-            : DeviceLineStruct.maybeFromMap(data['Line05']),
-        readOutLineWasEmpty: data['ReadOutLineWasEmpty'] as bool?,
-        readOutNextLine: castToType<int>(data['ReadOutNextLine']),
-        readOutNextAddress: data['ReadOutNextAddress'] as String?,
-        readOutRaw: data['ReadOutRaw'] as String?,
-        lines: getStructList(
-          data['Lines'],
-          DeviceLineStruct.fromMap,
-        ),
         countDevicesFound: castToType<int>(data['CountDevicesFound']),
         appBrand: data['AppBrand'] as String?,
         appStatusLine: data['AppStatusLine'] as String?,
+        deviceButtonVissible: data['DeviceButtonVissible'] as bool?,
+        line01Raw: data['Line01Raw'] as String?,
+        line01Description: data['Line01Description'] as String?,
+        line02Raw: data['Line02Raw'] as String?,
+        line02Description: data['Line02Description'] as String?,
+        line03Raw: data['Line03Raw'] as String?,
+        line03Description: data['Line03Description'] as String?,
+        line04Raw: data['Line04Raw'] as String?,
+        line04Description: data['Line04Description'] as String?,
+        line05Raw: data['Line05Raw'] as String?,
+        line05Description: data['Line05Description'] as String?,
+        currentLineDayInt: castToType<int>(data['CurrentLineDayInt']),
+        currentLineDayBoolMo: data['CurrentLineDayBoolMo'] as bool?,
+        currentLineDayBoolDi: data['CurrentLineDayBoolDi'] as bool?,
+        currentLineDayBoolMi: data['CurrentLineDayBoolMi'] as bool?,
+        currentLineDayBoolDo: data['CurrentLineDayBoolDo'] as bool?,
+        currentLineDayBoolFr: data['CurrentLineDayBoolFr'] as bool?,
+        currentLineDayBoolSa: data['CurrentLineDayBoolSa'] as bool?,
+        currentLineDayBoolSo: data['CurrentLineDayBoolSo'] as bool?,
+        currentLineStartHour: castToType<int>(data['CurrentLineStartHour']),
+        currentLineStartMinute: castToType<int>(data['CurrentLineStartMinute']),
+        currentLineStopHour: castToType<int>(data['CurrentLineStopHour']),
+        currentLineStopMinute: castToType<int>(data['CurrentLineStopMinute']),
+        currentLineFan: castToType<int>(data['CurrentLineFan']),
+        currentLineNumber: castToType<int>(data['CurrentLineNumber']),
+        currentLineVenturiInterval:
+            castToType<int>(data['CurrentLineVenturiInterval']),
+        currentLineVenturiDuration:
+            castToType<int>(data['CurrentLineVenturiDuration']),
+        currentLineSpeed: castToType<int>(data['CurrentLineSpeed']),
+        currentLineInterval: castToType<int>(data['CurrentLineInterval']),
+        currentLineAddress: data['CurrentLineAddress'] as String?,
+        currentLineDayString: data['CurrentLineDayString'] as String?,
+        currentLineDayBin: data['CurrentLineDayBin'] as String?,
+        currentLineDayByte: data['CurrentLineDayByte'] as String?,
+        currentLineLog: data['CurrentLineLog'] as String?,
       );
 
   static DeviceInfoStruct? maybeFromMap(dynamic data) => data is Map
@@ -322,23 +546,46 @@ class DeviceInfoStruct extends BaseStruct {
         'DeviceName': _deviceName,
         'Info': _info,
         'PWM': _pwm,
-        'FanCount': _fanCount,
         'ShowFanSelector': _showFanSelector,
         'ShowPowerSelector': _showPowerSelector,
         'ShowVenturiSelector': _showVenturiSelector,
-        'Line01': _line01?.toMap(),
-        'Line02': _line02?.toMap(),
-        'Line03': _line03?.toMap(),
-        'Line04': _line04?.toMap(),
-        'Line05': _line05?.toMap(),
-        'ReadOutLineWasEmpty': _readOutLineWasEmpty,
-        'ReadOutNextLine': _readOutNextLine,
-        'ReadOutNextAddress': _readOutNextAddress,
-        'ReadOutRaw': _readOutRaw,
-        'Lines': _lines?.map((e) => e.toMap()).toList(),
         'CountDevicesFound': _countDevicesFound,
         'AppBrand': _appBrand,
         'AppStatusLine': _appStatusLine,
+        'DeviceButtonVissible': _deviceButtonVissible,
+        'Line01Raw': _line01Raw,
+        'Line01Description': _line01Description,
+        'Line02Raw': _line02Raw,
+        'Line02Description': _line02Description,
+        'Line03Raw': _line03Raw,
+        'Line03Description': _line03Description,
+        'Line04Raw': _line04Raw,
+        'Line04Description': _line04Description,
+        'Line05Raw': _line05Raw,
+        'Line05Description': _line05Description,
+        'CurrentLineDayInt': _currentLineDayInt,
+        'CurrentLineDayBoolMo': _currentLineDayBoolMo,
+        'CurrentLineDayBoolDi': _currentLineDayBoolDi,
+        'CurrentLineDayBoolMi': _currentLineDayBoolMi,
+        'CurrentLineDayBoolDo': _currentLineDayBoolDo,
+        'CurrentLineDayBoolFr': _currentLineDayBoolFr,
+        'CurrentLineDayBoolSa': _currentLineDayBoolSa,
+        'CurrentLineDayBoolSo': _currentLineDayBoolSo,
+        'CurrentLineStartHour': _currentLineStartHour,
+        'CurrentLineStartMinute': _currentLineStartMinute,
+        'CurrentLineStopHour': _currentLineStopHour,
+        'CurrentLineStopMinute': _currentLineStopMinute,
+        'CurrentLineFan': _currentLineFan,
+        'CurrentLineNumber': _currentLineNumber,
+        'CurrentLineVenturiInterval': _currentLineVenturiInterval,
+        'CurrentLineVenturiDuration': _currentLineVenturiDuration,
+        'CurrentLineSpeed': _currentLineSpeed,
+        'CurrentLineInterval': _currentLineInterval,
+        'CurrentLineAddress': _currentLineAddress,
+        'CurrentLineDayString': _currentLineDayString,
+        'CurrentLineDayBin': _currentLineDayBin,
+        'CurrentLineDayByte': _currentLineDayByte,
+        'CurrentLineLog': _currentLineLog,
       }.withoutNulls;
 
   @override
@@ -371,10 +618,6 @@ class DeviceInfoStruct extends BaseStruct {
           _pwm,
           ParamType.String,
         ),
-        'FanCount': serializeParam(
-          _fanCount,
-          ParamType.int,
-        ),
         'ShowFanSelector': serializeParam(
           _showFanSelector,
           ParamType.bool,
@@ -387,47 +630,6 @@ class DeviceInfoStruct extends BaseStruct {
           _showVenturiSelector,
           ParamType.bool,
         ),
-        'Line01': serializeParam(
-          _line01,
-          ParamType.DataStruct,
-        ),
-        'Line02': serializeParam(
-          _line02,
-          ParamType.DataStruct,
-        ),
-        'Line03': serializeParam(
-          _line03,
-          ParamType.DataStruct,
-        ),
-        'Line04': serializeParam(
-          _line04,
-          ParamType.DataStruct,
-        ),
-        'Line05': serializeParam(
-          _line05,
-          ParamType.DataStruct,
-        ),
-        'ReadOutLineWasEmpty': serializeParam(
-          _readOutLineWasEmpty,
-          ParamType.bool,
-        ),
-        'ReadOutNextLine': serializeParam(
-          _readOutNextLine,
-          ParamType.int,
-        ),
-        'ReadOutNextAddress': serializeParam(
-          _readOutNextAddress,
-          ParamType.String,
-        ),
-        'ReadOutRaw': serializeParam(
-          _readOutRaw,
-          ParamType.String,
-        ),
-        'Lines': serializeParam(
-          _lines,
-          ParamType.DataStruct,
-          isList: true,
-        ),
         'CountDevicesFound': serializeParam(
           _countDevicesFound,
           ParamType.int,
@@ -438,6 +640,142 @@ class DeviceInfoStruct extends BaseStruct {
         ),
         'AppStatusLine': serializeParam(
           _appStatusLine,
+          ParamType.String,
+        ),
+        'DeviceButtonVissible': serializeParam(
+          _deviceButtonVissible,
+          ParamType.bool,
+        ),
+        'Line01Raw': serializeParam(
+          _line01Raw,
+          ParamType.String,
+        ),
+        'Line01Description': serializeParam(
+          _line01Description,
+          ParamType.String,
+        ),
+        'Line02Raw': serializeParam(
+          _line02Raw,
+          ParamType.String,
+        ),
+        'Line02Description': serializeParam(
+          _line02Description,
+          ParamType.String,
+        ),
+        'Line03Raw': serializeParam(
+          _line03Raw,
+          ParamType.String,
+        ),
+        'Line03Description': serializeParam(
+          _line03Description,
+          ParamType.String,
+        ),
+        'Line04Raw': serializeParam(
+          _line04Raw,
+          ParamType.String,
+        ),
+        'Line04Description': serializeParam(
+          _line04Description,
+          ParamType.String,
+        ),
+        'Line05Raw': serializeParam(
+          _line05Raw,
+          ParamType.String,
+        ),
+        'Line05Description': serializeParam(
+          _line05Description,
+          ParamType.String,
+        ),
+        'CurrentLineDayInt': serializeParam(
+          _currentLineDayInt,
+          ParamType.int,
+        ),
+        'CurrentLineDayBoolMo': serializeParam(
+          _currentLineDayBoolMo,
+          ParamType.bool,
+        ),
+        'CurrentLineDayBoolDi': serializeParam(
+          _currentLineDayBoolDi,
+          ParamType.bool,
+        ),
+        'CurrentLineDayBoolMi': serializeParam(
+          _currentLineDayBoolMi,
+          ParamType.bool,
+        ),
+        'CurrentLineDayBoolDo': serializeParam(
+          _currentLineDayBoolDo,
+          ParamType.bool,
+        ),
+        'CurrentLineDayBoolFr': serializeParam(
+          _currentLineDayBoolFr,
+          ParamType.bool,
+        ),
+        'CurrentLineDayBoolSa': serializeParam(
+          _currentLineDayBoolSa,
+          ParamType.bool,
+        ),
+        'CurrentLineDayBoolSo': serializeParam(
+          _currentLineDayBoolSo,
+          ParamType.bool,
+        ),
+        'CurrentLineStartHour': serializeParam(
+          _currentLineStartHour,
+          ParamType.int,
+        ),
+        'CurrentLineStartMinute': serializeParam(
+          _currentLineStartMinute,
+          ParamType.int,
+        ),
+        'CurrentLineStopHour': serializeParam(
+          _currentLineStopHour,
+          ParamType.int,
+        ),
+        'CurrentLineStopMinute': serializeParam(
+          _currentLineStopMinute,
+          ParamType.int,
+        ),
+        'CurrentLineFan': serializeParam(
+          _currentLineFan,
+          ParamType.int,
+        ),
+        'CurrentLineNumber': serializeParam(
+          _currentLineNumber,
+          ParamType.int,
+        ),
+        'CurrentLineVenturiInterval': serializeParam(
+          _currentLineVenturiInterval,
+          ParamType.int,
+        ),
+        'CurrentLineVenturiDuration': serializeParam(
+          _currentLineVenturiDuration,
+          ParamType.int,
+        ),
+        'CurrentLineSpeed': serializeParam(
+          _currentLineSpeed,
+          ParamType.int,
+        ),
+        'CurrentLineInterval': serializeParam(
+          _currentLineInterval,
+          ParamType.int,
+        ),
+        'CurrentLineAddress': serializeParam(
+          _currentLineAddress,
+          ParamType.String,
+        ),
+        'CurrentLineDayString': serializeParam(
+          _currentLineDayString,
+          ParamType.String,
+        ),
+        'CurrentLineDayBin': serializeParam(
+          _currentLineDayBin,
+          ParamType.String,
+        ),
+        'CurrentLineDayByte': serializeParam(
+          _currentLineDayByte,
+          ParamType.String,
+        ),
+        'CurrentLineLog': serializeParam(
+          _currentLineLog,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -479,11 +817,6 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        fanCount: deserializeParam(
-          data['FanCount'],
-          ParamType.int,
-          false,
-        ),
         showFanSelector: deserializeParam(
           data['ShowFanSelector'],
           ParamType.bool,
@@ -498,62 +831,6 @@ class DeviceInfoStruct extends BaseStruct {
           data['ShowVenturiSelector'],
           ParamType.bool,
           false,
-        ),
-        line01: deserializeStructParam(
-          data['Line01'],
-          ParamType.DataStruct,
-          false,
-          structBuilder: DeviceLineStruct.fromSerializableMap,
-        ),
-        line02: deserializeStructParam(
-          data['Line02'],
-          ParamType.DataStruct,
-          false,
-          structBuilder: DeviceLineStruct.fromSerializableMap,
-        ),
-        line03: deserializeStructParam(
-          data['Line03'],
-          ParamType.DataStruct,
-          false,
-          structBuilder: DeviceLineStruct.fromSerializableMap,
-        ),
-        line04: deserializeStructParam(
-          data['Line04'],
-          ParamType.DataStruct,
-          false,
-          structBuilder: DeviceLineStruct.fromSerializableMap,
-        ),
-        line05: deserializeStructParam(
-          data['Line05'],
-          ParamType.DataStruct,
-          false,
-          structBuilder: DeviceLineStruct.fromSerializableMap,
-        ),
-        readOutLineWasEmpty: deserializeParam(
-          data['ReadOutLineWasEmpty'],
-          ParamType.bool,
-          false,
-        ),
-        readOutNextLine: deserializeParam(
-          data['ReadOutNextLine'],
-          ParamType.int,
-          false,
-        ),
-        readOutNextAddress: deserializeParam(
-          data['ReadOutNextAddress'],
-          ParamType.String,
-          false,
-        ),
-        readOutRaw: deserializeParam(
-          data['ReadOutRaw'],
-          ParamType.String,
-          false,
-        ),
-        lines: deserializeStructParam<DeviceLineStruct>(
-          data['Lines'],
-          ParamType.DataStruct,
-          true,
-          structBuilder: DeviceLineStruct.fromSerializableMap,
         ),
         countDevicesFound: deserializeParam(
           data['CountDevicesFound'],
@@ -570,6 +847,176 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        deviceButtonVissible: deserializeParam(
+          data['DeviceButtonVissible'],
+          ParamType.bool,
+          false,
+        ),
+        line01Raw: deserializeParam(
+          data['Line01Raw'],
+          ParamType.String,
+          false,
+        ),
+        line01Description: deserializeParam(
+          data['Line01Description'],
+          ParamType.String,
+          false,
+        ),
+        line02Raw: deserializeParam(
+          data['Line02Raw'],
+          ParamType.String,
+          false,
+        ),
+        line02Description: deserializeParam(
+          data['Line02Description'],
+          ParamType.String,
+          false,
+        ),
+        line03Raw: deserializeParam(
+          data['Line03Raw'],
+          ParamType.String,
+          false,
+        ),
+        line03Description: deserializeParam(
+          data['Line03Description'],
+          ParamType.String,
+          false,
+        ),
+        line04Raw: deserializeParam(
+          data['Line04Raw'],
+          ParamType.String,
+          false,
+        ),
+        line04Description: deserializeParam(
+          data['Line04Description'],
+          ParamType.String,
+          false,
+        ),
+        line05Raw: deserializeParam(
+          data['Line05Raw'],
+          ParamType.String,
+          false,
+        ),
+        line05Description: deserializeParam(
+          data['Line05Description'],
+          ParamType.String,
+          false,
+        ),
+        currentLineDayInt: deserializeParam(
+          data['CurrentLineDayInt'],
+          ParamType.int,
+          false,
+        ),
+        currentLineDayBoolMo: deserializeParam(
+          data['CurrentLineDayBoolMo'],
+          ParamType.bool,
+          false,
+        ),
+        currentLineDayBoolDi: deserializeParam(
+          data['CurrentLineDayBoolDi'],
+          ParamType.bool,
+          false,
+        ),
+        currentLineDayBoolMi: deserializeParam(
+          data['CurrentLineDayBoolMi'],
+          ParamType.bool,
+          false,
+        ),
+        currentLineDayBoolDo: deserializeParam(
+          data['CurrentLineDayBoolDo'],
+          ParamType.bool,
+          false,
+        ),
+        currentLineDayBoolFr: deserializeParam(
+          data['CurrentLineDayBoolFr'],
+          ParamType.bool,
+          false,
+        ),
+        currentLineDayBoolSa: deserializeParam(
+          data['CurrentLineDayBoolSa'],
+          ParamType.bool,
+          false,
+        ),
+        currentLineDayBoolSo: deserializeParam(
+          data['CurrentLineDayBoolSo'],
+          ParamType.bool,
+          false,
+        ),
+        currentLineStartHour: deserializeParam(
+          data['CurrentLineStartHour'],
+          ParamType.int,
+          false,
+        ),
+        currentLineStartMinute: deserializeParam(
+          data['CurrentLineStartMinute'],
+          ParamType.int,
+          false,
+        ),
+        currentLineStopHour: deserializeParam(
+          data['CurrentLineStopHour'],
+          ParamType.int,
+          false,
+        ),
+        currentLineStopMinute: deserializeParam(
+          data['CurrentLineStopMinute'],
+          ParamType.int,
+          false,
+        ),
+        currentLineFan: deserializeParam(
+          data['CurrentLineFan'],
+          ParamType.int,
+          false,
+        ),
+        currentLineNumber: deserializeParam(
+          data['CurrentLineNumber'],
+          ParamType.int,
+          false,
+        ),
+        currentLineVenturiInterval: deserializeParam(
+          data['CurrentLineVenturiInterval'],
+          ParamType.int,
+          false,
+        ),
+        currentLineVenturiDuration: deserializeParam(
+          data['CurrentLineVenturiDuration'],
+          ParamType.int,
+          false,
+        ),
+        currentLineSpeed: deserializeParam(
+          data['CurrentLineSpeed'],
+          ParamType.int,
+          false,
+        ),
+        currentLineInterval: deserializeParam(
+          data['CurrentLineInterval'],
+          ParamType.int,
+          false,
+        ),
+        currentLineAddress: deserializeParam(
+          data['CurrentLineAddress'],
+          ParamType.String,
+          false,
+        ),
+        currentLineDayString: deserializeParam(
+          data['CurrentLineDayString'],
+          ParamType.String,
+          false,
+        ),
+        currentLineDayBin: deserializeParam(
+          data['CurrentLineDayBin'],
+          ParamType.String,
+          false,
+        ),
+        currentLineDayByte: deserializeParam(
+          data['CurrentLineDayByte'],
+          ParamType.String,
+          false,
+        ),
+        currentLineLog: deserializeParam(
+          data['CurrentLineLog'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -577,7 +1024,6 @@ class DeviceInfoStruct extends BaseStruct {
 
   @override
   bool operator ==(Object other) {
-    const listEquality = ListEquality();
     return other is DeviceInfoStruct &&
         type == other.type &&
         typeLetter == other.typeLetter &&
@@ -586,23 +1032,46 @@ class DeviceInfoStruct extends BaseStruct {
         deviceName == other.deviceName &&
         info == other.info &&
         pwm == other.pwm &&
-        fanCount == other.fanCount &&
         showFanSelector == other.showFanSelector &&
         showPowerSelector == other.showPowerSelector &&
         showVenturiSelector == other.showVenturiSelector &&
-        line01 == other.line01 &&
-        line02 == other.line02 &&
-        line03 == other.line03 &&
-        line04 == other.line04 &&
-        line05 == other.line05 &&
-        readOutLineWasEmpty == other.readOutLineWasEmpty &&
-        readOutNextLine == other.readOutNextLine &&
-        readOutNextAddress == other.readOutNextAddress &&
-        readOutRaw == other.readOutRaw &&
-        listEquality.equals(lines, other.lines) &&
         countDevicesFound == other.countDevicesFound &&
         appBrand == other.appBrand &&
-        appStatusLine == other.appStatusLine;
+        appStatusLine == other.appStatusLine &&
+        deviceButtonVissible == other.deviceButtonVissible &&
+        line01Raw == other.line01Raw &&
+        line01Description == other.line01Description &&
+        line02Raw == other.line02Raw &&
+        line02Description == other.line02Description &&
+        line03Raw == other.line03Raw &&
+        line03Description == other.line03Description &&
+        line04Raw == other.line04Raw &&
+        line04Description == other.line04Description &&
+        line05Raw == other.line05Raw &&
+        line05Description == other.line05Description &&
+        currentLineDayInt == other.currentLineDayInt &&
+        currentLineDayBoolMo == other.currentLineDayBoolMo &&
+        currentLineDayBoolDi == other.currentLineDayBoolDi &&
+        currentLineDayBoolMi == other.currentLineDayBoolMi &&
+        currentLineDayBoolDo == other.currentLineDayBoolDo &&
+        currentLineDayBoolFr == other.currentLineDayBoolFr &&
+        currentLineDayBoolSa == other.currentLineDayBoolSa &&
+        currentLineDayBoolSo == other.currentLineDayBoolSo &&
+        currentLineStartHour == other.currentLineStartHour &&
+        currentLineStartMinute == other.currentLineStartMinute &&
+        currentLineStopHour == other.currentLineStopHour &&
+        currentLineStopMinute == other.currentLineStopMinute &&
+        currentLineFan == other.currentLineFan &&
+        currentLineNumber == other.currentLineNumber &&
+        currentLineVenturiInterval == other.currentLineVenturiInterval &&
+        currentLineVenturiDuration == other.currentLineVenturiDuration &&
+        currentLineSpeed == other.currentLineSpeed &&
+        currentLineInterval == other.currentLineInterval &&
+        currentLineAddress == other.currentLineAddress &&
+        currentLineDayString == other.currentLineDayString &&
+        currentLineDayBin == other.currentLineDayBin &&
+        currentLineDayByte == other.currentLineDayByte &&
+        currentLineLog == other.currentLineLog;
   }
 
   @override
@@ -614,23 +1083,46 @@ class DeviceInfoStruct extends BaseStruct {
         deviceName,
         info,
         pwm,
-        fanCount,
         showFanSelector,
         showPowerSelector,
         showVenturiSelector,
-        line01,
-        line02,
-        line03,
-        line04,
-        line05,
-        readOutLineWasEmpty,
-        readOutNextLine,
-        readOutNextAddress,
-        readOutRaw,
-        lines,
         countDevicesFound,
         appBrand,
-        appStatusLine
+        appStatusLine,
+        deviceButtonVissible,
+        line01Raw,
+        line01Description,
+        line02Raw,
+        line02Description,
+        line03Raw,
+        line03Description,
+        line04Raw,
+        line04Description,
+        line05Raw,
+        line05Description,
+        currentLineDayInt,
+        currentLineDayBoolMo,
+        currentLineDayBoolDi,
+        currentLineDayBoolMi,
+        currentLineDayBoolDo,
+        currentLineDayBoolFr,
+        currentLineDayBoolSa,
+        currentLineDayBoolSo,
+        currentLineStartHour,
+        currentLineStartMinute,
+        currentLineStopHour,
+        currentLineStopMinute,
+        currentLineFan,
+        currentLineNumber,
+        currentLineVenturiInterval,
+        currentLineVenturiDuration,
+        currentLineSpeed,
+        currentLineInterval,
+        currentLineAddress,
+        currentLineDayString,
+        currentLineDayBin,
+        currentLineDayByte,
+        currentLineLog
       ]);
 }
 
@@ -642,22 +1134,46 @@ DeviceInfoStruct createDeviceInfoStruct({
   String? deviceName,
   String? info,
   String? pwm,
-  int? fanCount,
   bool? showFanSelector,
   bool? showPowerSelector,
   bool? showVenturiSelector,
-  DeviceLineStruct? line01,
-  DeviceLineStruct? line02,
-  DeviceLineStruct? line03,
-  DeviceLineStruct? line04,
-  DeviceLineStruct? line05,
-  bool? readOutLineWasEmpty,
-  int? readOutNextLine,
-  String? readOutNextAddress,
-  String? readOutRaw,
   int? countDevicesFound,
   String? appBrand,
   String? appStatusLine,
+  bool? deviceButtonVissible,
+  String? line01Raw,
+  String? line01Description,
+  String? line02Raw,
+  String? line02Description,
+  String? line03Raw,
+  String? line03Description,
+  String? line04Raw,
+  String? line04Description,
+  String? line05Raw,
+  String? line05Description,
+  int? currentLineDayInt,
+  bool? currentLineDayBoolMo,
+  bool? currentLineDayBoolDi,
+  bool? currentLineDayBoolMi,
+  bool? currentLineDayBoolDo,
+  bool? currentLineDayBoolFr,
+  bool? currentLineDayBoolSa,
+  bool? currentLineDayBoolSo,
+  int? currentLineStartHour,
+  int? currentLineStartMinute,
+  int? currentLineStopHour,
+  int? currentLineStopMinute,
+  int? currentLineFan,
+  int? currentLineNumber,
+  int? currentLineVenturiInterval,
+  int? currentLineVenturiDuration,
+  int? currentLineSpeed,
+  int? currentLineInterval,
+  String? currentLineAddress,
+  String? currentLineDayString,
+  String? currentLineDayBin,
+  String? currentLineDayByte,
+  String? currentLineLog,
 }) =>
     DeviceInfoStruct(
       type: type,
@@ -667,20 +1183,44 @@ DeviceInfoStruct createDeviceInfoStruct({
       deviceName: deviceName,
       info: info,
       pwm: pwm,
-      fanCount: fanCount,
       showFanSelector: showFanSelector,
       showPowerSelector: showPowerSelector,
       showVenturiSelector: showVenturiSelector,
-      line01: line01 ?? DeviceLineStruct(),
-      line02: line02 ?? DeviceLineStruct(),
-      line03: line03 ?? DeviceLineStruct(),
-      line04: line04 ?? DeviceLineStruct(),
-      line05: line05 ?? DeviceLineStruct(),
-      readOutLineWasEmpty: readOutLineWasEmpty,
-      readOutNextLine: readOutNextLine,
-      readOutNextAddress: readOutNextAddress,
-      readOutRaw: readOutRaw,
       countDevicesFound: countDevicesFound,
       appBrand: appBrand,
       appStatusLine: appStatusLine,
+      deviceButtonVissible: deviceButtonVissible,
+      line01Raw: line01Raw,
+      line01Description: line01Description,
+      line02Raw: line02Raw,
+      line02Description: line02Description,
+      line03Raw: line03Raw,
+      line03Description: line03Description,
+      line04Raw: line04Raw,
+      line04Description: line04Description,
+      line05Raw: line05Raw,
+      line05Description: line05Description,
+      currentLineDayInt: currentLineDayInt,
+      currentLineDayBoolMo: currentLineDayBoolMo,
+      currentLineDayBoolDi: currentLineDayBoolDi,
+      currentLineDayBoolMi: currentLineDayBoolMi,
+      currentLineDayBoolDo: currentLineDayBoolDo,
+      currentLineDayBoolFr: currentLineDayBoolFr,
+      currentLineDayBoolSa: currentLineDayBoolSa,
+      currentLineDayBoolSo: currentLineDayBoolSo,
+      currentLineStartHour: currentLineStartHour,
+      currentLineStartMinute: currentLineStartMinute,
+      currentLineStopHour: currentLineStopHour,
+      currentLineStopMinute: currentLineStopMinute,
+      currentLineFan: currentLineFan,
+      currentLineNumber: currentLineNumber,
+      currentLineVenturiInterval: currentLineVenturiInterval,
+      currentLineVenturiDuration: currentLineVenturiDuration,
+      currentLineSpeed: currentLineSpeed,
+      currentLineInterval: currentLineInterval,
+      currentLineAddress: currentLineAddress,
+      currentLineDayString: currentLineDayString,
+      currentLineDayBin: currentLineDayBin,
+      currentLineDayByte: currentLineDayByte,
+      currentLineLog: currentLineLog,
     );

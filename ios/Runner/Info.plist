@@ -49,7 +49,8 @@
 	<true/>
 
 
-
+	<key>PermissionGroupNotification</key>
+    <string>i need this</string>
 
 
 

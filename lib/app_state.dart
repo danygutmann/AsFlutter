@@ -34,4 +34,10 @@ class FFAppState extends ChangeNotifier {
   void updateCurrentDeviceInfoStruct(Function(DeviceInfoStruct) updateFn) {
     updateFn(_CurrentDeviceInfo);
   }
+
+  String _currentStatus = 'startup';
+  String get currentStatus => _currentStatus;
+  set currentStatus(String value) {
+    _currentStatus = value;
+  }
 }

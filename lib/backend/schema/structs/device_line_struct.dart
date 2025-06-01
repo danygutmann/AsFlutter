@@ -37,6 +37,8 @@ class DeviceLineStruct extends BaseStruct {
     bool? daySamstag,
     bool? daySonntag,
     String? daysString,
+    bool? lineIsVissible,
+    String? lineDescription,
   })  : _raw = raw,
         _lineNumber = lineNumber,
         _lineaddress = lineaddress,
@@ -58,7 +60,9 @@ class DeviceLineStruct extends BaseStruct {
         _dayFreitag = dayFreitag,
         _daySamstag = daySamstag,
         _daySonntag = daySonntag,
-        _daysString = daysString;
+        _daysString = daysString,
+        _lineIsVissible = lineIsVissible,
+        _lineDescription = lineDescription;
 
   // "raw" field.
   String? _raw;
@@ -235,10 +239,24 @@ class DeviceLineStruct extends BaseStruct {
 
   // "DaysString" field.
   String? _daysString;
-  String get daysString => _daysString ?? '';
+  String get daysString => _daysString ?? 'never';
   set daysString(String? val) => _daysString = val;
 
   bool hasDaysString() => _daysString != null;
+
+  // "LineIsVissible" field.
+  bool? _lineIsVissible;
+  bool get lineIsVissible => _lineIsVissible ?? false;
+  set lineIsVissible(bool? val) => _lineIsVissible = val;
+
+  bool hasLineIsVissible() => _lineIsVissible != null;
+
+  // "LineDescription" field.
+  String? _lineDescription;
+  String get lineDescription => _lineDescription ?? '---';
+  set lineDescription(String? val) => _lineDescription = val;
+
+  bool hasLineDescription() => _lineDescription != null;
 
   static DeviceLineStruct fromMap(Map<String, dynamic> data) =>
       DeviceLineStruct(
@@ -264,6 +282,8 @@ class DeviceLineStruct extends BaseStruct {
         daySamstag: data['daySamstag'] as bool?,
         daySonntag: data['daySonntag'] as bool?,
         daysString: data['DaysString'] as String?,
+        lineIsVissible: data['LineIsVissible'] as bool?,
+        lineDescription: data['LineDescription'] as String?,
       );
 
   static DeviceLineStruct? maybeFromMap(dynamic data) => data is Map
@@ -293,6 +313,8 @@ class DeviceLineStruct extends BaseStruct {
         'daySamstag': _daySamstag,
         'daySonntag': _daySonntag,
         'DaysString': _daysString,
+        'LineIsVissible': _lineIsVissible,
+        'LineDescription': _lineDescription,
       }.withoutNulls;
 
   @override
@@ -383,6 +405,14 @@ class DeviceLineStruct extends BaseStruct {
         ),
         'DaysString': serializeParam(
           _daysString,
+          ParamType.String,
+        ),
+        'LineIsVissible': serializeParam(
+          _lineIsVissible,
+          ParamType.bool,
+        ),
+        'LineDescription': serializeParam(
+          _lineDescription,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -499,6 +529,16 @@ class DeviceLineStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        lineIsVissible: deserializeParam(
+          data['LineIsVissible'],
+          ParamType.bool,
+          false,
+        ),
+        lineDescription: deserializeParam(
+          data['LineDescription'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -528,7 +568,9 @@ class DeviceLineStruct extends BaseStruct {
         dayFreitag == other.dayFreitag &&
         daySamstag == other.daySamstag &&
         daySonntag == other.daySonntag &&
-        daysString == other.daysString;
+        daysString == other.daysString &&
+        lineIsVissible == other.lineIsVissible &&
+        lineDescription == other.lineDescription;
   }
 
   @override
@@ -554,7 +596,9 @@ class DeviceLineStruct extends BaseStruct {
         dayFreitag,
         daySamstag,
         daySonntag,
-        daysString
+        daysString,
+        lineIsVissible,
+        lineDescription
       ]);
 }
 
@@ -581,6 +625,8 @@ DeviceLineStruct createDeviceLineStruct({
   bool? daySamstag,
   bool? daySonntag,
   String? daysString,
+  bool? lineIsVissible,
+  String? lineDescription,
 }) =>
     DeviceLineStruct(
       raw: raw,
@@ -605,4 +651,6 @@ DeviceLineStruct createDeviceLineStruct({
       daySamstag: daySamstag,
       daySonntag: daySonntag,
       daysString: daysString,
+      lineIsVissible: lineIsVissible,
+      lineDescription: lineDescription,
     );

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'data_view_page_widget.dart' show DataViewPageWidget;
+import 'app_settings_widget.dart' show AppSettingsWidget;
 import 'package:flutter/material.dart';
 
-class DataViewPageModel extends FlutterFlowModel<DataViewPageWidget> {
+class AppSettingsModel extends FlutterFlowModel<AppSettingsWidget> {
   @override
   void initState(BuildContext context) {}
 

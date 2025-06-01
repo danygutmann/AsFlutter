@@ -39,9 +39,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ? Builder(
               builder: (context) => Container(
                 color: Colors.white,
-                child: Image.asset(
-                  'assets/images/Logo_Kreis_grn_grau.png',
-                  fit: BoxFit.fitWidth,
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/Logo_Kreis_grn_grau.png',
+                    width: MediaQuery.sizeOf(context).width * 0.9,
+                    height: 90.0,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             )
@@ -54,9 +58,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ? Builder(
                   builder: (context) => Container(
                     color: Colors.white,
-                    child: Image.asset(
-                      'assets/images/Logo_Kreis_grn_grau.png',
-                      fit: BoxFit.fitWidth,
+                    child: Center(
+                      child: Image.asset(
+                        'assets/images/Logo_Kreis_grn_grau.png',
+                        width: MediaQuery.sizeOf(context).width * 0.9,
+                        height: 90.0,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 )
@@ -68,19 +76,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: DeviceInfoPageWidget.routeName,
-          path: DeviceInfoPageWidget.routePath,
-          builder: (context, params) => DeviceInfoPageWidget(),
-        ),
-        FFRoute(
-          name: DataViewPageWidget.routeName,
-          path: DataViewPageWidget.routePath,
-          builder: (context, params) => DataViewPageWidget(),
-        ),
-        FFRoute(
           name: DeviceMainWidget.routeName,
           path: DeviceMainWidget.routePath,
           builder: (context, params) => DeviceMainWidget(),
+        ),
+        FFRoute(
+          name: DebugPageWidget.routeName,
+          path: DebugPageWidget.routePath,
+          builder: (context, params) => DebugPageWidget(),
+        ),
+        FFRoute(
+          name: AppSettingsWidget.routeName,
+          path: AppSettingsWidget.routePath,
+          builder: (context, params) => AppSettingsWidget(),
+        ),
+        FFRoute(
+          name: DeviceOptionsWidget.routeName,
+          path: DeviceOptionsWidget.routePath,
+          builder: (context, params) => DeviceOptionsWidget(),
+        ),
+        FFRoute(
+          name: DeviceLineWidget.routeName,
+          path: DeviceLineWidget.routePath,
+          builder: (context, params) => DeviceLineWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

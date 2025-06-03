@@ -32,36 +32,38 @@ Future<void> sendData(
   int interval,
 ) async {
   // output Variable
-  String ArgToSend = "";
-
-  // prepare Day
-  int day = 0;
-  if (montag) day = day + 1;
-  if (dienstag) day = day + 2;
-  if (mittwoch) day = day + 2;
-  if (donnerstag) day = day + 2;
-  if (freitag) day = day + 2;
-  if (samstag) day = day + 2;
-  if (sonntag) day = day + 2;
-
-  // prepare other args
-  ArgToSend += day.toString().padLeft(3, '0');
-  ArgToSend += startHour.toString().padLeft(3, '0');
-  ArgToSend += startMinute.toString().padLeft(3, '0');
-  ArgToSend += stopHour.toString().padLeft(3, '0');
-  ArgToSend += stopMinute.toString().padLeft(3, '0');
-  ArgToSend += fan.toString().padLeft(3, '0');
-  ArgToSend += venturiInterval.toString().padLeft(3, '0');
-  ArgToSend += venturiDuration.toString().padLeft(3, '0');
-  ArgToSend += power.toString().padLeft(3, '0');
-  ArgToSend += interval.toString().padLeft(3, '0');
-
-  // send to device
-  String url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=" +
-      address +
-      ArgToSend;
 
   try {
+    String ArgToSend = "";
+
+    // prepare Day
+    int day = 0;
+    if (montag) day = day + 1;
+    if (dienstag) day = day + 2;
+    if (mittwoch) day = day + 4;
+    if (donnerstag) day = day + 8;
+    if (freitag) day = day + 16;
+    if (samstag) day = day + 32;
+    if (sonntag) day = day + 64;
+
+    // prepare other args
+    ArgToSend += day.toString().padLeft(3, '0');
+    ArgToSend += startHour.toString().padLeft(3, '0');
+    ArgToSend += startMinute.toString().padLeft(3, '0');
+    ArgToSend += stopHour.toString().padLeft(3, '0');
+    ArgToSend += stopMinute.toString().padLeft(3, '0');
+    ArgToSend += fan.toString().padLeft(3, '0');
+    ArgToSend += venturiInterval.toString().padLeft(3, '0');
+    ArgToSend += venturiDuration.toString().padLeft(3, '0');
+    ArgToSend += power.toString().padLeft(3, '0');
+    ArgToSend += interval.toString().padLeft(3, '0');
+
+    // send to device
+    String url =
+        "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=" +
+            address +
+            ArgToSend;
+
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -70,7 +72,7 @@ Future<void> sendData(
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('NOK')),
+        SnackBar(content: Text('NOK ')),
       );
     }
   } catch (e) {

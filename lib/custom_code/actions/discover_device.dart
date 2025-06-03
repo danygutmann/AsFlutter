@@ -26,6 +26,13 @@ Future<void> discoverDevice(BuildContext context) async {
       FFAppState().update(() {
         String type = responseType.body.trim();
         FFAppState().CurrentDeviceInfo.type = type;
+
+        FFAppState().CurrentDeviceInfo.line01Vissible = false;
+        FFAppState().CurrentDeviceInfo.line02Vissible = false;
+        FFAppState().CurrentDeviceInfo.line03Vissible = false;
+        FFAppState().CurrentDeviceInfo.line04Vissible = false;
+        FFAppState().CurrentDeviceInfo.line05Vissible = false;
+
         // get letter
         if (type.toLowerCase().contains("aromare")) {
           typeLetter = "A";

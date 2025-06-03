@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -114,16 +113,25 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
-                        Container(
-                          width: 200.0,
-                          height: 200.0,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.asset(
-                            'assets/images/LogoKreisgrngrauOhneText.png',
-                            fit: BoxFit.cover,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.goNamed(HomePageWidget.routeName);
+                          },
+                          child: Container(
+                            width: 200.0,
+                            height: 200.0,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/LogoKreisgrngrauOhneText.png',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ],
@@ -215,11 +223,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                       ),
                 ),
               ),
-              if (valueOrDefault<bool>(
-                functions.showThisLineItsNotEmpty(
-                    FFAppState().CurrentDeviceInfo.line01Raw),
-                false,
-              ))
+              if (FFAppState().CurrentDeviceInfo.line01Vissible)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -265,11 +269,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (valueOrDefault<bool>(
-                functions.showThisLineItsNotEmpty(
-                    FFAppState().CurrentDeviceInfo.line02Raw),
-                false,
-              ))
+              if (FFAppState().CurrentDeviceInfo.line02Vissible)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -315,11 +315,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (valueOrDefault<bool>(
-                functions.showThisLineItsNotEmpty(
-                    FFAppState().CurrentDeviceInfo.line03Raw),
-                false,
-              ))
+              if (FFAppState().CurrentDeviceInfo.line03Vissible)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -365,11 +361,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (valueOrDefault<bool>(
-                functions.showThisLineItsNotEmpty(
-                    FFAppState().CurrentDeviceInfo.line04Raw),
-                false,
-              ))
+              if (FFAppState().CurrentDeviceInfo.line04Vissible)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -415,11 +407,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (valueOrDefault<bool>(
-                functions.showThisLineItsNotEmpty(
-                    FFAppState().CurrentDeviceInfo.line05Raw),
-                false,
-              ))
+              if (FFAppState().CurrentDeviceInfo.line05Vissible)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(

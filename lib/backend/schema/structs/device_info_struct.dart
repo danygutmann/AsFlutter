@@ -37,14 +37,19 @@ class DeviceInfoStruct extends BaseStruct {
     bool? deviceButtonVissible,
     String? line01Raw,
     String? line01Description,
+    bool? line01Vissible,
     String? line02Raw,
     String? line02Description,
+    bool? line02Vissible,
     String? line03Raw,
     String? line03Description,
+    bool? line03Vissible,
     String? line04Raw,
     String? line04Description,
+    bool? line04Vissible,
     String? line05Raw,
     String? line05Description,
+    bool? line05Vissible,
     int? currentLineDayInt,
     bool? currentLineDayBoolMo,
     bool? currentLineDayBoolDi,
@@ -84,14 +89,19 @@ class DeviceInfoStruct extends BaseStruct {
         _deviceButtonVissible = deviceButtonVissible,
         _line01Raw = line01Raw,
         _line01Description = line01Description,
+        _line01Vissible = line01Vissible,
         _line02Raw = line02Raw,
         _line02Description = line02Description,
+        _line02Vissible = line02Vissible,
         _line03Raw = line03Raw,
         _line03Description = line03Description,
+        _line03Vissible = line03Vissible,
         _line04Raw = line04Raw,
         _line04Description = line04Description,
+        _line04Vissible = line04Vissible,
         _line05Raw = line05Raw,
         _line05Description = line05Description,
+        _line05Vissible = line05Vissible,
         _currentLineDayInt = currentLineDayInt,
         _currentLineDayBoolMo = currentLineDayBoolMo,
         _currentLineDayBoolDi = currentLineDayBoolDi,
@@ -219,7 +229,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "Line01Raw" field.
   String? _line01Raw;
-  String get line01Raw => _line01Raw ?? '9';
+  String get line01Raw => _line01Raw ?? '-';
   set line01Raw(String? val) => _line01Raw = val;
 
   bool hasLine01Raw() => _line01Raw != null;
@@ -231,9 +241,16 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasLine01Description() => _line01Description != null;
 
+  // "Line01Vissible" field.
+  bool? _line01Vissible;
+  bool get line01Vissible => _line01Vissible ?? false;
+  set line01Vissible(bool? val) => _line01Vissible = val;
+
+  bool hasLine01Vissible() => _line01Vissible != null;
+
   // "Line02Raw" field.
   String? _line02Raw;
-  String get line02Raw => _line02Raw ?? '9';
+  String get line02Raw => _line02Raw ?? '-';
   set line02Raw(String? val) => _line02Raw = val;
 
   bool hasLine02Raw() => _line02Raw != null;
@@ -245,9 +262,16 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasLine02Description() => _line02Description != null;
 
+  // "Line02Vissible" field.
+  bool? _line02Vissible;
+  bool get line02Vissible => _line02Vissible ?? false;
+  set line02Vissible(bool? val) => _line02Vissible = val;
+
+  bool hasLine02Vissible() => _line02Vissible != null;
+
   // "Line03Raw" field.
   String? _line03Raw;
-  String get line03Raw => _line03Raw ?? '9';
+  String get line03Raw => _line03Raw ?? '-';
   set line03Raw(String? val) => _line03Raw = val;
 
   bool hasLine03Raw() => _line03Raw != null;
@@ -259,9 +283,16 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasLine03Description() => _line03Description != null;
 
+  // "Line03Vissible" field.
+  bool? _line03Vissible;
+  bool get line03Vissible => _line03Vissible ?? false;
+  set line03Vissible(bool? val) => _line03Vissible = val;
+
+  bool hasLine03Vissible() => _line03Vissible != null;
+
   // "Line04Raw" field.
   String? _line04Raw;
-  String get line04Raw => _line04Raw ?? '9';
+  String get line04Raw => _line04Raw ?? '-';
   set line04Raw(String? val) => _line04Raw = val;
 
   bool hasLine04Raw() => _line04Raw != null;
@@ -273,9 +304,16 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasLine04Description() => _line04Description != null;
 
+  // "Line04Vissible" field.
+  bool? _line04Vissible;
+  bool get line04Vissible => _line04Vissible ?? false;
+  set line04Vissible(bool? val) => _line04Vissible = val;
+
+  bool hasLine04Vissible() => _line04Vissible != null;
+
   // "Line05Raw" field.
   String? _line05Raw;
-  String get line05Raw => _line05Raw ?? '9';
+  String get line05Raw => _line05Raw ?? '-';
   set line05Raw(String? val) => _line05Raw = val;
 
   bool hasLine05Raw() => _line05Raw != null;
@@ -286,6 +324,13 @@ class DeviceInfoStruct extends BaseStruct {
   set line05Description(String? val) => _line05Description = val;
 
   bool hasLine05Description() => _line05Description != null;
+
+  // "Line05Vissible" field.
+  bool? _line05Vissible;
+  bool get line05Vissible => _line05Vissible ?? false;
+  set line05Vissible(bool? val) => _line05Vissible = val;
+
+  bool hasLine05Vissible() => _line05Vissible != null;
 
   // "CurrentLineDayInt" field.
   int? _currentLineDayInt;
@@ -499,14 +544,19 @@ class DeviceInfoStruct extends BaseStruct {
         deviceButtonVissible: data['DeviceButtonVissible'] as bool?,
         line01Raw: data['Line01Raw'] as String?,
         line01Description: data['Line01Description'] as String?,
+        line01Vissible: data['Line01Vissible'] as bool?,
         line02Raw: data['Line02Raw'] as String?,
         line02Description: data['Line02Description'] as String?,
+        line02Vissible: data['Line02Vissible'] as bool?,
         line03Raw: data['Line03Raw'] as String?,
         line03Description: data['Line03Description'] as String?,
+        line03Vissible: data['Line03Vissible'] as bool?,
         line04Raw: data['Line04Raw'] as String?,
         line04Description: data['Line04Description'] as String?,
+        line04Vissible: data['Line04Vissible'] as bool?,
         line05Raw: data['Line05Raw'] as String?,
         line05Description: data['Line05Description'] as String?,
+        line05Vissible: data['Line05Vissible'] as bool?,
         currentLineDayInt: castToType<int>(data['CurrentLineDayInt']),
         currentLineDayBoolMo: data['CurrentLineDayBoolMo'] as bool?,
         currentLineDayBoolDi: data['CurrentLineDayBoolDi'] as bool?,
@@ -555,14 +605,19 @@ class DeviceInfoStruct extends BaseStruct {
         'DeviceButtonVissible': _deviceButtonVissible,
         'Line01Raw': _line01Raw,
         'Line01Description': _line01Description,
+        'Line01Vissible': _line01Vissible,
         'Line02Raw': _line02Raw,
         'Line02Description': _line02Description,
+        'Line02Vissible': _line02Vissible,
         'Line03Raw': _line03Raw,
         'Line03Description': _line03Description,
+        'Line03Vissible': _line03Vissible,
         'Line04Raw': _line04Raw,
         'Line04Description': _line04Description,
+        'Line04Vissible': _line04Vissible,
         'Line05Raw': _line05Raw,
         'Line05Description': _line05Description,
+        'Line05Vissible': _line05Vissible,
         'CurrentLineDayInt': _currentLineDayInt,
         'CurrentLineDayBoolMo': _currentLineDayBoolMo,
         'CurrentLineDayBoolDi': _currentLineDayBoolDi,
@@ -654,6 +709,10 @@ class DeviceInfoStruct extends BaseStruct {
           _line01Description,
           ParamType.String,
         ),
+        'Line01Vissible': serializeParam(
+          _line01Vissible,
+          ParamType.bool,
+        ),
         'Line02Raw': serializeParam(
           _line02Raw,
           ParamType.String,
@@ -661,6 +720,10 @@ class DeviceInfoStruct extends BaseStruct {
         'Line02Description': serializeParam(
           _line02Description,
           ParamType.String,
+        ),
+        'Line02Vissible': serializeParam(
+          _line02Vissible,
+          ParamType.bool,
         ),
         'Line03Raw': serializeParam(
           _line03Raw,
@@ -670,6 +733,10 @@ class DeviceInfoStruct extends BaseStruct {
           _line03Description,
           ParamType.String,
         ),
+        'Line03Vissible': serializeParam(
+          _line03Vissible,
+          ParamType.bool,
+        ),
         'Line04Raw': serializeParam(
           _line04Raw,
           ParamType.String,
@@ -678,6 +745,10 @@ class DeviceInfoStruct extends BaseStruct {
           _line04Description,
           ParamType.String,
         ),
+        'Line04Vissible': serializeParam(
+          _line04Vissible,
+          ParamType.bool,
+        ),
         'Line05Raw': serializeParam(
           _line05Raw,
           ParamType.String,
@@ -685,6 +756,10 @@ class DeviceInfoStruct extends BaseStruct {
         'Line05Description': serializeParam(
           _line05Description,
           ParamType.String,
+        ),
+        'Line05Vissible': serializeParam(
+          _line05Vissible,
+          ParamType.bool,
         ),
         'CurrentLineDayInt': serializeParam(
           _currentLineDayInt,
@@ -862,6 +937,11 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        line01Vissible: deserializeParam(
+          data['Line01Vissible'],
+          ParamType.bool,
+          false,
+        ),
         line02Raw: deserializeParam(
           data['Line02Raw'],
           ParamType.String,
@@ -870,6 +950,11 @@ class DeviceInfoStruct extends BaseStruct {
         line02Description: deserializeParam(
           data['Line02Description'],
           ParamType.String,
+          false,
+        ),
+        line02Vissible: deserializeParam(
+          data['Line02Vissible'],
+          ParamType.bool,
           false,
         ),
         line03Raw: deserializeParam(
@@ -882,6 +967,11 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        line03Vissible: deserializeParam(
+          data['Line03Vissible'],
+          ParamType.bool,
+          false,
+        ),
         line04Raw: deserializeParam(
           data['Line04Raw'],
           ParamType.String,
@@ -892,6 +982,11 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        line04Vissible: deserializeParam(
+          data['Line04Vissible'],
+          ParamType.bool,
+          false,
+        ),
         line05Raw: deserializeParam(
           data['Line05Raw'],
           ParamType.String,
@@ -900,6 +995,11 @@ class DeviceInfoStruct extends BaseStruct {
         line05Description: deserializeParam(
           data['Line05Description'],
           ParamType.String,
+          false,
+        ),
+        line05Vissible: deserializeParam(
+          data['Line05Vissible'],
+          ParamType.bool,
           false,
         ),
         currentLineDayInt: deserializeParam(
@@ -1041,14 +1141,19 @@ class DeviceInfoStruct extends BaseStruct {
         deviceButtonVissible == other.deviceButtonVissible &&
         line01Raw == other.line01Raw &&
         line01Description == other.line01Description &&
+        line01Vissible == other.line01Vissible &&
         line02Raw == other.line02Raw &&
         line02Description == other.line02Description &&
+        line02Vissible == other.line02Vissible &&
         line03Raw == other.line03Raw &&
         line03Description == other.line03Description &&
+        line03Vissible == other.line03Vissible &&
         line04Raw == other.line04Raw &&
         line04Description == other.line04Description &&
+        line04Vissible == other.line04Vissible &&
         line05Raw == other.line05Raw &&
         line05Description == other.line05Description &&
+        line05Vissible == other.line05Vissible &&
         currentLineDayInt == other.currentLineDayInt &&
         currentLineDayBoolMo == other.currentLineDayBoolMo &&
         currentLineDayBoolDi == other.currentLineDayBoolDi &&
@@ -1092,14 +1197,19 @@ class DeviceInfoStruct extends BaseStruct {
         deviceButtonVissible,
         line01Raw,
         line01Description,
+        line01Vissible,
         line02Raw,
         line02Description,
+        line02Vissible,
         line03Raw,
         line03Description,
+        line03Vissible,
         line04Raw,
         line04Description,
+        line04Vissible,
         line05Raw,
         line05Description,
+        line05Vissible,
         currentLineDayInt,
         currentLineDayBoolMo,
         currentLineDayBoolDi,
@@ -1143,14 +1253,19 @@ DeviceInfoStruct createDeviceInfoStruct({
   bool? deviceButtonVissible,
   String? line01Raw,
   String? line01Description,
+  bool? line01Vissible,
   String? line02Raw,
   String? line02Description,
+  bool? line02Vissible,
   String? line03Raw,
   String? line03Description,
+  bool? line03Vissible,
   String? line04Raw,
   String? line04Description,
+  bool? line04Vissible,
   String? line05Raw,
   String? line05Description,
+  bool? line05Vissible,
   int? currentLineDayInt,
   bool? currentLineDayBoolMo,
   bool? currentLineDayBoolDi,
@@ -1192,14 +1307,19 @@ DeviceInfoStruct createDeviceInfoStruct({
       deviceButtonVissible: deviceButtonVissible,
       line01Raw: line01Raw,
       line01Description: line01Description,
+      line01Vissible: line01Vissible,
       line02Raw: line02Raw,
       line02Description: line02Description,
+      line02Vissible: line02Vissible,
       line03Raw: line03Raw,
       line03Description: line03Description,
+      line03Vissible: line03Vissible,
       line04Raw: line04Raw,
       line04Description: line04Description,
+      line04Vissible: line04Vissible,
       line05Raw: line05Raw,
       line05Description: line05Description,
+      line05Vissible: line05Vissible,
       currentLineDayInt: currentLineDayInt,
       currentLineDayBoolMo: currentLineDayBoolMo,
       currentLineDayBoolDi: currentLineDayBoolDi,

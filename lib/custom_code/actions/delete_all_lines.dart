@@ -17,7 +17,11 @@ Future<void> deleteAllLines(BuildContext context) async {
   String url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=E";
   try {
     final response = await http.get(Uri.parse(url));
-    if (response.statusCode == 200) {}
+    if (response.statusCode == 200) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('OK')),
+      );
+    }
   } catch (e) {
     return;
   }

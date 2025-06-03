@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -108,16 +109,25 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
-                        Container(
-                          width: 200.0,
-                          height: 200.0,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.asset(
-                            'assets/images/LogoKreisgrngrauOhneText.png',
-                            fit: BoxFit.cover,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(DeviceMainWidget.routeName);
+                          },
+                          child: Container(
+                            width: 200.0,
+                            height: 200.0,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/LogoKreisgrngrauOhneText.png',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ],

@@ -14,6 +14,14 @@ import 'dart:convert';
 
 Future<void> readOutDevice(BuildContext context) async {
   int Address = 0;
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.line01Vissible = false;
+    FFAppState().CurrentDeviceInfo.line02Vissible = false;
+    FFAppState().CurrentDeviceInfo.line03Vissible = false;
+    FFAppState().CurrentDeviceInfo.line04Vissible = false;
+    FFAppState().CurrentDeviceInfo.line05Vissible = false;
+  });
+
   // loop over lines
   for (int line = 1; line < 6; line++) {
     String adr = Address.toString().padLeft(3, '0');
@@ -24,6 +32,13 @@ Future<void> readOutDevice(BuildContext context) async {
       if (req.statusCode == 200) {
         String resp = req.body.trim();
         String desc = "";
+        bool LineVissible = false;
+
+        try {
+          if (!resp.startsWith("255")) LineVissible = true;
+        } catch (e) {
+          LineVissible = false;
+        }
 
         try {
           desc = func.getLineDescription(resp);
@@ -35,22 +50,27 @@ Future<void> readOutDevice(BuildContext context) async {
           if (line == 1) {
             FFAppState().CurrentDeviceInfo.line01Raw = resp;
             FFAppState().CurrentDeviceInfo.line01Description = desc;
+            FFAppState().CurrentDeviceInfo.line01Vissible = LineVissible;
           }
           if (line == 2) {
             FFAppState().CurrentDeviceInfo.line02Raw = resp;
             FFAppState().CurrentDeviceInfo.line02Description = desc;
+            FFAppState().CurrentDeviceInfo.line02Vissible = LineVissible;
           }
           if (line == 3) {
             FFAppState().CurrentDeviceInfo.line03Raw = resp;
             FFAppState().CurrentDeviceInfo.line03Description = desc;
+            FFAppState().CurrentDeviceInfo.line03Vissible = LineVissible;
           }
           if (line == 4) {
             FFAppState().CurrentDeviceInfo.line04Raw = resp;
             FFAppState().CurrentDeviceInfo.line04Description = desc;
+            FFAppState().CurrentDeviceInfo.line04Vissible = LineVissible;
           }
           if (line == 5) {
             FFAppState().CurrentDeviceInfo.line05Raw = resp;
             FFAppState().CurrentDeviceInfo.line05Description = desc;
+            FFAppState().CurrentDeviceInfo.line05Vissible = LineVissible;
           }
         });
       }

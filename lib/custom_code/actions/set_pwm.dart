@@ -22,6 +22,9 @@ Future<void> setPwm(BuildContext context) async {
       FFAppState().update(() {
         FFAppState().CurrentDeviceInfo.pwm = "5100";
       });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('OK')),
+      );
     }
   } catch (e) {
     return;

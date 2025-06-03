@@ -70,8 +70,9 @@ Future<void> setDateTime(BuildContext context) async {
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
-      // do nothing
-      // final erg = response.body;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('OK')),
+      );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('set time failed')),

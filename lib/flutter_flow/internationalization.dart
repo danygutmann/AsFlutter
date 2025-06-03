@@ -215,7 +215,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fyt1c1jp': {
       'en': 'Read Out Again',
-      'de': 'Noch einmal auslesen',
+      'de': 'Noch einmal vorlesen',
       'nl': 'Lees het nog eens',
     },
     'pzljkcs5': {
@@ -277,9 +277,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'nl': 'Flaams Taal',
     },
     'syq1nb55': {
-      'en': 'App Info',
-      'de': 'WLAN-Einstellungen',
-      'nl': 'WiFi-instellingen',
+      'en': 'App Information',
+      'de': 'App-Informationen',
+      'nl': 'App-info',
     },
     'vrnjifmc': {
       'en': 'Home',
@@ -1001,11 +1001,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Delete Line',
       'de': 'Zeile löschen',
       'nl': 'Regel verwijderen',
-    },
-    'ugl1y9af': {
-      'en': 'Development',
-      'de': 'Entwicklung',
-      'nl': 'Ontwikkeling',
     },
     'vbrxo51q': {
       'en': 'Home',

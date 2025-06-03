@@ -333,7 +333,7 @@ class _AppSettingsWidgetState extends State<AppSettingsWidget> {
                             );
                           },
                           text: FFLocalizations.of(context).getText(
-                            'syq1nb55' /* App Info */,
+                            'syq1nb55' /* App Information */,
                           ),
                           options: FFButtonOptions(
                             width: double.infinity,

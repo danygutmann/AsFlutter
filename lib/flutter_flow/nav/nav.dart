@@ -98,7 +98,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: DeviceLineWidget.routeName,
           path: DeviceLineWidget.routePath,
-          builder: (context, params) => DeviceLineWidget(),
+          builder: (context, params) => DeviceLineWidget(
+            address: params.getParam(
+              'address',
+              ParamType.String,
+            ),
+            lineRaw: params.getParam(
+              'lineRaw',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

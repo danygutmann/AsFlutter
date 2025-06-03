@@ -219,7 +219,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "Line01Raw" field.
   String? _line01Raw;
-  String get line01Raw => _line01Raw ?? '';
+  String get line01Raw => _line01Raw ?? '9';
   set line01Raw(String? val) => _line01Raw = val;
 
   bool hasLine01Raw() => _line01Raw != null;
@@ -233,7 +233,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "Line02Raw" field.
   String? _line02Raw;
-  String get line02Raw => _line02Raw ?? '';
+  String get line02Raw => _line02Raw ?? '9';
   set line02Raw(String? val) => _line02Raw = val;
 
   bool hasLine02Raw() => _line02Raw != null;
@@ -247,7 +247,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "Line03Raw" field.
   String? _line03Raw;
-  String get line03Raw => _line03Raw ?? '';
+  String get line03Raw => _line03Raw ?? '9';
   set line03Raw(String? val) => _line03Raw = val;
 
   bool hasLine03Raw() => _line03Raw != null;
@@ -261,7 +261,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "Line04Raw" field.
   String? _line04Raw;
-  String get line04Raw => _line04Raw ?? '';
+  String get line04Raw => _line04Raw ?? '9';
   set line04Raw(String? val) => _line04Raw = val;
 
   bool hasLine04Raw() => _line04Raw != null;
@@ -275,7 +275,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "Line05Raw" field.
   String? _line05Raw;
-  String get line05Raw => _line05Raw ?? '';
+  String get line05Raw => _line05Raw ?? '9';
   set line05Raw(String? val) => _line05Raw = val;
 
   bool hasLine05Raw() => _line05Raw != null;

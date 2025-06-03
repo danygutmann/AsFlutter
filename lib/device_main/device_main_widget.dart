@@ -5,6 +5,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'device_main_model.dart';
@@ -29,6 +30,13 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DeviceMainModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await actions.readOutDevice(
+        context,
+      );
+    });
   }
 
   @override
@@ -207,8 +215,11 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                       ),
                 ),
               ),
-              if (functions.showThisLineItsNotEmpty(
-                  FFAppState().CurrentDeviceInfo.line01Raw))
+              if (valueOrDefault<bool>(
+                functions.showThisLineItsNotEmpty(
+                    FFAppState().CurrentDeviceInfo.line01Raw),
+                false,
+              ))
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -254,8 +265,11 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (functions.showThisLineItsNotEmpty(
-                  FFAppState().CurrentDeviceInfo.line02Raw))
+              if (valueOrDefault<bool>(
+                functions.showThisLineItsNotEmpty(
+                    FFAppState().CurrentDeviceInfo.line02Raw),
+                false,
+              ))
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -301,8 +315,11 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (functions.showThisLineItsNotEmpty(
-                  FFAppState().CurrentDeviceInfo.line03Raw))
+              if (valueOrDefault<bool>(
+                functions.showThisLineItsNotEmpty(
+                    FFAppState().CurrentDeviceInfo.line03Raw),
+                false,
+              ))
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -348,8 +365,11 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (functions.showThisLineItsNotEmpty(
-                  FFAppState().CurrentDeviceInfo.line04Raw))
+              if (valueOrDefault<bool>(
+                functions.showThisLineItsNotEmpty(
+                    FFAppState().CurrentDeviceInfo.line04Raw),
+                false,
+              ))
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -395,8 +415,11 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     ),
                   ),
                 ),
-              if (functions.showThisLineItsNotEmpty(
-                  FFAppState().CurrentDeviceInfo.line01Raw))
+              if (valueOrDefault<bool>(
+                functions.showThisLineItsNotEmpty(
+                    FFAppState().CurrentDeviceInfo.line05Raw),
+                false,
+              ))
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
@@ -445,17 +468,8 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
-                  onPressed: () async {
-                    context.pushNamed(
-                      DeviceLineWidget.routeName,
-                      extra: <String, dynamic>{
-                        kTransitionInfoKey: TransitionInfo(
-                          hasTransition: true,
-                          transitionType: PageTransitionType.rightToLeft,
-                          duration: Duration(milliseconds: 200),
-                        ),
-                      },
-                    );
+                  onPressed: () {
+                    print('DeviceMainButtonLineAdd pressed ...');
                   },
                   text: FFLocalizations.of(context).getText(
                     'udo2uk8w' /* Add new Line */,
@@ -494,7 +508,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await actions.discoverDevice(
+                    await actions.readOutDevice(
                       context,
                     );
                   },

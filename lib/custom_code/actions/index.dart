@@ -1,8 +1,6 @@
 export 'open_wifi.dart' show openWifi;
-export 'get_data.dart' show getData;
 export 'discover_device.dart' show discoverDevice;
 export 'set_date_time.dart' show setDateTime;
-export 'get_request.dart' show getRequest;
 export 'get_info.dart' show getInfo;
 export 'delete_all_lines.dart' show deleteAllLines;
 export 'open_wif_v2.dart' show openWifV2;
@@ -12,3 +10,4 @@ export 'set_pwm.dart' show setPwm;
 export 'restart_device.dart' show restartDevice;
 export 'edit_line.dart' show editLine;
 export 'send_data.dart' show sendData;
+export 'read_out_device.dart' show readOutDevice;

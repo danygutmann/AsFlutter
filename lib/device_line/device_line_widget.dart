@@ -3,15 +3,24 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'device_line_model.dart';
 export 'device_line_model.dart';
 
 class DeviceLineWidget extends StatefulWidget {
-  const DeviceLineWidget({super.key});
+  const DeviceLineWidget({
+    super.key,
+    String? address,
+    required this.lineRaw,
+  }) : this.address = address ?? '';
+
+  final String address;
+  final String? lineRaw;
 
   static String routeName = 'DeviceLine';
   static String routePath = '/deviceLine';
@@ -29,6 +38,15 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DeviceLineModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await actions.editLine(
+        context,
+        widget.lineRaw!,
+        widget.address,
+      );
+    });
   }
 
   @override
@@ -106,16 +124,25 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
-                        Container(
-                          width: 200.0,
-                          height: 200.0,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.asset(
-                            'assets/images/LogoKreisgrngrauOhneText.png',
-                            fit: BoxFit.cover,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(DeviceMainWidget.routeName);
+                          },
+                          child: Container(
+                            width: 200.0,
+                            height: 200.0,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/LogoKreisgrngrauOhneText.png',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ],
@@ -239,7 +266,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                         .fontStyle,
                                   ),
                               elevation: 0.0,
-                              borderRadius: BorderRadius.circular(3.0),
+                              borderRadius: BorderRadius.circular(4.0),
                             ),
                           ),
                         ),
@@ -694,7 +721,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 5.0, 10.0, 5.0),
+                              10.0, 0.0, 10.0, 5.0),
                           child: FFButtonWidget(
                             onPressed: true
                                 ? null
@@ -733,7 +760,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                         .fontStyle,
                                   ),
                               elevation: 0.0,
-                              borderRadius: BorderRadius.circular(3.0),
+                              borderRadius: BorderRadius.circular(4.0),
                             ),
                           ),
                         ),
@@ -1299,7 +1326,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 5.0, 10.0, 5.0),
+                                10.0, 0.0, 10.0, 5.0),
                             child: FFButtonWidget(
                               onPressed: true
                                   ? null
@@ -1338,7 +1365,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                           .fontStyle,
                                     ),
                                 elevation: 0.0,
-                                borderRadius: BorderRadius.circular(3.0),
+                                borderRadius: BorderRadius.circular(4.0),
                               ),
                             ),
                           ),
@@ -1478,7 +1505,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 5.0, 10.0, 5.0),
+                                10.0, 0.0, 10.0, 5.0),
                             child: FFButtonWidget(
                               onPressed: true
                                   ? null
@@ -1517,7 +1544,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                           .fontStyle,
                                     ),
                                 elevation: 0.0,
-                                borderRadius: BorderRadius.circular(3.0),
+                                borderRadius: BorderRadius.circular(4.0),
                               ),
                             ),
                           ),
@@ -1669,7 +1696,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 5.0, 10.0, 5.0),
+                                10.0, 0.0, 10.0, 5.0),
                             child: FFButtonWidget(
                               onPressed: true
                                   ? null
@@ -1708,7 +1735,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                           .fontStyle,
                                     ),
                                 elevation: 0.0,
-                                borderRadius: BorderRadius.circular(3.0),
+                                borderRadius: BorderRadius.circular(4.0),
                               ),
                             ),
                           ),
@@ -1794,7 +1821,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 5.0, 10.0, 5.0),
+                              10.0, 0.0, 10.0, 5.0),
                           child: FFButtonWidget(
                             onPressed: true
                                 ? null
@@ -1833,7 +1860,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                         .fontStyle,
                                   ),
                               elevation: 0.0,
-                              borderRadius: BorderRadius.circular(3.0),
+                              borderRadius: BorderRadius.circular(4.0),
                             ),
                           ),
                         ),
@@ -1931,7 +1958,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 5.0, 10.0, 5.0),
+                            10.0, 5.0, 10.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await _model.save(context);
@@ -1975,7 +2002,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 5.0, 10.0, 5.0),
+                            10.0, 5.0, 10.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             context.safePop();
@@ -2025,49 +2052,6 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                           },
                           text: FFLocalizations.of(context).getText(
                             '4x10ufan' /* Delete Line */,
-                          ),
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 5.0, 10.0, 5.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(DebugPageWidget.routeName);
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            'ugl1y9af' /* Development */,
                           ),
                           options: FFButtonOptions(
                             width: double.infinity,

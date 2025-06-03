@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 
@@ -16,16 +15,21 @@ class DeviceMainModel extends FlutterFlowModel<DeviceMainWidget> {
     required String? address,
     required String? lineAsString,
   }) async {
-    await actions.editLine(
-      context,
-      lineAsString!,
-      address!,
-    );
     if (Navigator.of(context).canPop()) {
       context.pop();
     }
     context.pushNamed(
       DeviceLineWidget.routeName,
+      queryParameters: {
+        'address': serializeParam(
+          address,
+          ParamType.String,
+        ),
+        'lineRaw': serializeParam(
+          lineAsString,
+          ParamType.String,
+        ),
+      }.withoutNulls,
       extra: <String, dynamic>{
         kTransitionInfoKey: TransitionInfo(
           hasTransition: true,

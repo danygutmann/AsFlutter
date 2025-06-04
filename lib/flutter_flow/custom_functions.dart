@@ -91,17 +91,8 @@ String getLineDescription(String lineRaw) {
   } catch (e) {}
 
   try {
-    value = int.parse(splitted[3]);
-    outp += value.toString().padLeft(2, '0') + ". ";
-  } catch (e) {}
-
-  try {
     value = int.parse(splitted[4]);
-    if (value == 1) outp += "Fan 1";
-    if (value == 2) outp += "Fan 2";
-    if (value == 3) outp += "Fan 3";
-    if (value == 4) outp += "Fan 4";
-    if (value > 100) outp += "Venturi";
+    outp += value.toString().padLeft(2, '0') + ". ";
   } catch (e) {}
 
   try {
@@ -129,7 +120,17 @@ String getLineDescription(String lineRaw) {
 
   try {
     value = int.parse(splitted[9]);
-    //outp += value.toString().padLeft(2, '0') + ". ";
+    if (value == 1) outp += " 1 min on, 9 off";
+    if (value == 2) outp += " 2 min on, 8 off";
+    if (value == 3) outp += " 3 min on, 7 off";
+    if (value == 4) outp += " 4 min on, 6 off";
+    if (value == 5) outp += " 5 min on, 5 off";
+    if (value == 6) outp += " 6 min on, 4 off";
+    if (value == 7) outp += " 7 min on, 3 off";
+    if (value == 8) outp += " 8 min on, 2 off";
+    if (value == 9) outp += " 9 min on, 1 off";
+    if (value == 11) outp += " 1 min on, 1 off";
+    if (value == 22) outp += " 2 min on, 2 off";
   } catch (e) {}
 
   return outp;

@@ -51,6 +51,7 @@ class _AppSettingsWidgetState extends State<AppSettingsWidget> {
         appBar: responsiveVisibility(
           context: context,
           tabletLandscape: false,
+          desktop: false,
         )
             ? AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).alternate,

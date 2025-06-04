@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 //import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 
 import 'package:http/http.dart' as http;
+import '/custom_code/actions/index.dart' as act;
 import 'dart:convert';
 
 Future<void> setDateTime(BuildContext context) async {
@@ -71,7 +72,7 @@ Future<void> setDateTime(BuildContext context) async {
 
     if (response.statusCode == 200) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('OK')),
+        SnackBar(content: Text('OK' + response.body.trim())),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -83,4 +84,5 @@ Future<void> setDateTime(BuildContext context) async {
       SnackBar(content: Text('Error: $e')),
     );
   }
+  await act.getInfo(context);
 }

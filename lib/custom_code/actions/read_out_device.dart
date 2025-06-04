@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
 import '/flutter_flow/custom_functions.dart' as func;
+import '/custom_code/actions/index.dart' as act;
 import 'dart:convert';
 
 Future<void> readOutDevice(BuildContext context) async {
@@ -80,4 +81,5 @@ Future<void> readOutDevice(BuildContext context) async {
     // for the next loop
     Address = Address + 10;
   }
+  await act.getInfo(context);
 }

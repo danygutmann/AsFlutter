@@ -38,6 +38,10 @@ Future<void> setDefaultLines(BuildContext context) async {
           "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=030254000000023045004001100022008"));
     }
 
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('OK')),
+    );
+
     // Day = .ToByte(Convert.ToInt32(parts[0]))
     // TimeStartHour = Convert.ToInt32(parts[1]);
     // TimeStartMinute = Convert.ToInt32(parts[2]);

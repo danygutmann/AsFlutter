@@ -82,13 +82,7 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
       dropDownPowerValue!,
       dropDownIntervalValue!,
     );
-    if (Navigator.of(context).canPop()) {
-      context.pop();
-    }
-    context.pushNamed(DeviceMainWidget.routeName);
 
-    await actions.discoverDevice(
-      context,
-    );
+    context.goNamed(DeviceMainWidget.routeName);
   }
 }

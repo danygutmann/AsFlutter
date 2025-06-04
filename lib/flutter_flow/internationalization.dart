@@ -167,11 +167,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'App-Einstellungen',
       'nl': 'App-instellingen',
     },
-    'fez4o11h': {
-      'en': 'Development',
-      'de': 'Entwicklung',
-      'nl': 'Ontwikkeling',
-    },
     '7b6nibxg': {
       'en': 'Home',
       'de': 'Heim',
@@ -201,54 +196,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'nl': 'Apparaatopties',
     },
     '7hfwmk0f': {
-      'en': 'Home',
-      'de': 'Heim',
-      'nl': 'Thuis',
-    },
-  },
-  // DebugPage
-  {
-    'c6ruf9a3': {
-      'en': 'Button',
-      'de': 'Taste',
-      'nl': 'Knop',
-    },
-    'fyt1c1jp': {
-      'en': 'Read Out Again',
-      'de': 'Noch einmal vorlesen',
-      'nl': 'Lees het nog eens',
-    },
-    'pzljkcs5': {
-      'en': 'Get Device Status only',
-      'de': 'Nur Gerätestatus abrufen',
-      'nl': 'Alleen apparaatstatus ophalen',
-    },
-    '510ekkup': {
-      'en': 'Type Letter',
-      'de': 'Typ Buchstabe',
-      'nl': 'Typ een brief',
-    },
-    'rncp296f': {
-      'en': 'Search...',
-      'de': 'Suchen...',
-      'nl': 'Zoekopdracht...',
-    },
-    'f43ixo4z': {
-      'en': 'A',
-      'de': 'A',
-      'nl': 'A',
-    },
-    'zhhtoxrh': {
-      'en': 'Q',
-      'de': 'Q',
-      'nl': 'Q',
-    },
-    '2n2hg34v': {
-      'en': 'V',
-      'de': 'V',
-      'nl': 'V',
-    },
-    'tcmrrzb6': {
       'en': 'Home',
       'de': 'Heim',
       'nl': 'Thuis',

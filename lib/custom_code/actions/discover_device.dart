@@ -18,6 +18,11 @@ import 'dart:convert';
 
 Future<void> discoverDevice(BuildContext context) async {
   // get Type
+
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.deviceButtonVissible = false;
+  });
+
   String typeLetter = "X";
   try {
     final responseType = await http

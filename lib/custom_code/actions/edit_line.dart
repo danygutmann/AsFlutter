@@ -9,15 +9,12 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'package:flutter/scheduler.dart';
-
 //import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 
 Future<void> editLine(
     BuildContext context, String lineRaw, String lineAddress) async {
   int start = 0;
   int stop = 3;
-  int dayAsInt = 0;
-  String dayAsString = "";
   bool day_mo = false;
   bool day_di = false;
   bool day_mi = false;
@@ -26,147 +23,132 @@ Future<void> editLine(
   bool day_sa = false;
   bool day_so = false;
 
+  context.pushNamed('deviceLine');
+
   FFAppState().update(() {
     FFAppState().CurrentDeviceInfo.currentLineAddress = lineAddress;
   });
 
   final splitted = lineRaw.split(';');
+  int value = 0;
 
-  for (int i = 0; i <= splitted.length; i++) {
-    String result = splitted[i];
-    int resInt = int.parse(result);
+  // set Day
+  value = int.parse(splitted[0]);
+  if (value == 254) {
+    day_mo = true;
+    day_di = true;
+    day_mi = true;
+    day_do = true;
+    day_fr = true;
+    day_sa = true;
+    day_so = true;
+  } else if (value == 192) {
+    day_sa = true;
+    day_so = true;
+  } else if (value == 62) {
+    day_mo = true;
+    day_di = true;
+    day_mi = true;
+    day_do = true;
+    day_fr = true;
+  } else {
+    start = 7;
+    stop = 8;
+    var dayAsByte = value & 0xff;
+    String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
 
-    if (i == 0) {
-      if (resInt == 0) {
-        dayAsString = "never";
-      } else if (resInt == 254) {
-        day_mo = true;
-        day_di = true;
-        day_mi = true;
-        day_do = true;
-        day_fr = true;
-        day_sa = true;
-        day_so = true;
-        dayAsString = "daily";
-      } else if (resInt == 192) {
-        day_sa = true;
-        day_so = true;
-        dayAsString = "at the weekend";
-      } else if (resInt == 62) {
-        day_mo = true;
-        day_di = true;
-        day_mi = true;
-        day_do = true;
-        day_fr = true;
-        dayAsString = "on workdays";
-      } else {
-        start = 7;
-        stop = 8;
-        var dayAsByte = resInt & 0xff;
-        String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
-
-        for (int i = 8; i > 0; i--) {
-          String curDay = dayAsBin.substring(start, stop);
-          start = start - 1;
-          stop = stop - 1;
-          if (curDay == "1") {
-            if (i == 7) {
-              day_mo = true;
-              dayAsString += "mo, ";
-            }
-            if (i == 6) {
-              day_di = true;
-              dayAsString += "di, ";
-            }
-            if (i == 5) {
-              day_mi = true;
-              dayAsString += "mi, ";
-            }
-            if (i == 4) {
-              day_do = true;
-              dayAsString += "do, ";
-            }
-            if (i == 3) {
-              day_fr = true;
-              dayAsString += "fr, ";
-            }
-            if (i == 2) {
-              day_sa = true;
-              dayAsString += "sa, ";
-            }
-            if (i == 1) {
-              day_so = true;
-              dayAsString += "so, ";
-            }
-          }
+    for (int i = 8; i > 0; i--) {
+      String curDay = dayAsBin.substring(start, stop);
+      start = start - 1;
+      stop = stop - 1;
+      if (curDay == "1") {
+        if (i == 7) {
+          day_mo = true;
         }
-
-        dayAsString = dayAsString.substring(0, dayAsString.length - 2);
+        if (i == 6) {
+          day_di = true;
+        }
+        if (i == 5) {
+          day_mi = true;
+        }
+        if (i == 4) {
+          day_do = true;
+        }
+        if (i == 3) {
+          day_fr = true;
+        }
+        if (i == 2) {
+          day_sa = true;
+        }
+        if (i == 1) {
+          day_so = true;
+        }
       }
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineDayBoolMo = day_mo;
-        FFAppState().CurrentDeviceInfo.currentLineDayBoolDi = day_di;
-        FFAppState().CurrentDeviceInfo.currentLineDayBoolMi = day_mi;
-        FFAppState().CurrentDeviceInfo.currentLineDayBoolDo = day_do;
-        FFAppState().CurrentDeviceInfo.currentLineDayBoolFr = day_fr;
-        FFAppState().CurrentDeviceInfo.currentLineDayBoolSa = day_sa;
-        FFAppState().CurrentDeviceInfo.currentLineDayBoolSo = day_so;
-        FFAppState().CurrentDeviceInfo.currentLineDayString = dayAsString;
-      });
-    }
-    if (i == 1) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineStartHour = resInt;
-      });
-    }
-    if (i == 2) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineStartMinute = resInt;
-      });
-    }
-    if (i == 3) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineStopHour = resInt;
-      });
-    }
-    if (i == 4) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineStopMinute = resInt;
-      });
-    }
-    if (i == 5) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineFan = resInt;
-      });
-    }
-    if (i == 6) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = resInt;
-      });
-    }
-    if (i == 7) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineVenturiDuration = resInt;
-      });
-    }
-    if (i == 8) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineSpeed = resInt;
-      });
-    }
-    if (i == 9) {
-      FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.currentLineInterval = resInt;
-      });
-    } else {
-      // rebuild all pages
-      SchedulerBinding.instance.addPostFrameCallback((_) async {
-        FFAppState().update(() {});
-      });
-
-      // navigate
-      // https://api.flutter.dev/flutter/widgets/Navigator/pushNamed.html
-      Navigator.pushReplacementNamed(context, '/deviceLine');
     }
   }
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineDayBoolMo = day_mo;
+    FFAppState().CurrentDeviceInfo.currentLineDayBoolDi = day_di;
+    FFAppState().CurrentDeviceInfo.currentLineDayBoolMi = day_mi;
+    FFAppState().CurrentDeviceInfo.currentLineDayBoolDo = day_do;
+    FFAppState().CurrentDeviceInfo.currentLineDayBoolFr = day_fr;
+    FFAppState().CurrentDeviceInfo.currentLineDayBoolSa = day_sa;
+    FFAppState().CurrentDeviceInfo.currentLineDayBoolSo = day_so;
+  });
+
+  // set start Hour
+  value = int.parse(splitted[1]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineStartHour = value;
+  });
+
+  // set start minute
+  value = int.parse(splitted[2]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineStartMinute = value;
+  });
+
+  // set stop Hour
+  value = int.parse(splitted[3]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineStopHour = value;
+  });
+
+  // set stop Minute
+  value = int.parse(splitted[4]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineStopMinute = value;
+  });
+
+  // set fan
+  value = int.parse(splitted[5]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineFan = value;
+  });
+
+  // set venturi int
+  value = int.parse(splitted[6]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = value;
+  });
+
+  // set venturi dur
+  value = int.parse(splitted[7]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = value;
+  });
+
+  // set speed
+  value = int.parse(splitted[8]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineSpeed = value;
+  });
+
+  // set int
+  value = int.parse(splitted[9]);
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineInterval = value;
+  });
+
+  //context.goNamed('/deviceLine');
 }

@@ -20,15 +20,16 @@ Future<void> getInfo(BuildContext context) async {
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
+      final splitted = response.body.trim().split('|');
+      String Info = splitted[0] + " " + splitted[1];
+
       FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.info = response.body;
-        FFAppState().CurrentDeviceInfo.appStatusLine = response.body;
-        FFAppState().currentStatus = response.body;
+        FFAppState().CurrentDeviceInfo.appStatusLine = Info;
       });
       // final erg = response.body;
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('set time failed')),
+        SnackBar(content: Text('failed')),
       );
     }
   } catch (e) {

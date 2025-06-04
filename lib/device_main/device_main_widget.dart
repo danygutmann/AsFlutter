@@ -59,6 +59,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
         appBar: responsiveVisibility(
           context: context,
           tabletLandscape: false,
+          desktop: false,
         )
             ? AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).alternate,
@@ -231,11 +232,10 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(
+                        await actions.editLine(
                           context,
-                          address: '000',
-                          lineAsString:
-                              FFAppState().CurrentDeviceInfo.line01Raw,
+                          FFAppState().CurrentDeviceInfo.line01Raw,
+                          '000',
                         );
                       },
                       text: FFAppState().CurrentDeviceInfo.line01Description,
@@ -277,12 +277,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(
-                          context,
-                          address: '010',
-                          lineAsString:
-                              FFAppState().CurrentDeviceInfo.line02Raw,
-                        );
+                        await _model.showLine(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line02Description,
                       options: FFButtonOptions(
@@ -323,12 +318,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(
-                          context,
-                          address: '020',
-                          lineAsString:
-                              FFAppState().CurrentDeviceInfo.line03Raw,
-                        );
+                        await _model.showLine(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line03Description,
                       options: FFButtonOptions(
@@ -369,12 +359,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(
-                          context,
-                          address: '030',
-                          lineAsString:
-                              FFAppState().CurrentDeviceInfo.line04Raw,
-                        );
+                        await _model.showLine(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line04Description,
                       options: FFButtonOptions(
@@ -415,12 +400,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(
-                          context,
-                          address: '040',
-                          lineAsString:
-                              FFAppState().CurrentDeviceInfo.line05Raw,
-                        );
+                        await _model.showLine(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line05Description,
                       options: FFButtonOptions(
@@ -456,8 +436,10 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('DeviceMainButtonLineAdd pressed ...');
+                  onPressed: () async {
+                    await actions.getInfo(
+                      context,
+                    );
                   },
                   text: FFLocalizations.of(context).getText(
                     'udo2uk8w' /* Add new Line */,

@@ -51,6 +51,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         appBar: responsiveVisibility(
           context: context,
           tabletLandscape: false,
+          desktop: false,
         )
             ? AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).alternate,
@@ -181,7 +182,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               if (FFAppState().CurrentDeviceInfo.deviceButtonVissible)
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
+                      EdgeInsetsDirectional.fromSTEB(10.0, 25.0, 10.0, 5.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.pushNamed(DeviceMainWidget.routeName);
@@ -220,7 +221,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 5.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await actions.discoverDevice(
@@ -309,45 +310,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   },
                   text: FFLocalizations.of(context).getText(
                     'wlnkb0eb' /* App Settings */,
-                  ),
-                  options: FFButtonOptions(
-                    width: double.infinity,
-                    height: 40.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.interTight(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                        ),
-                    elevation: 0.0,
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    context.pushNamed(DebugPageWidget.routeName);
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'fez4o11h' /* Development */,
                   ),
                   options: FFButtonOptions(
                     width: double.infinity,

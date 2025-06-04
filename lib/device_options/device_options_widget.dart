@@ -55,6 +55,7 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
         appBar: responsiveVisibility(
           context: context,
           tabletLandscape: false,
+          desktop: false,
         )
             ? AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).alternate,

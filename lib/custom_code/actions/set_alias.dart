@@ -20,7 +20,7 @@ Future<void> setAlias(BuildContext context, String alias) async {
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       FFAppState().update(() {
-        FFAppState().CurrentDeviceInfo.pwm = "5100";
+        FFAppState().CurrentDeviceInfo.alias = alias;
       });
     }
   } catch (e) {

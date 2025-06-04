@@ -81,11 +81,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => DeviceMainWidget(),
         ),
         FFRoute(
-          name: DebugPageWidget.routeName,
-          path: DebugPageWidget.routePath,
-          builder: (context, params) => DebugPageWidget(),
-        ),
-        FFRoute(
           name: AppSettingsWidget.routeName,
           path: AppSettingsWidget.routePath,
           builder: (context, params) => AppSettingsWidget(),
@@ -98,16 +93,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: DeviceLineWidget.routeName,
           path: DeviceLineWidget.routePath,
-          builder: (context, params) => DeviceLineWidget(
-            address: params.getParam(
-              'address',
-              ParamType.String,
-            ),
-            lineRaw: params.getParam(
-              'lineRaw',
-              ParamType.String,
-            ),
-          ),
+          builder: (context, params) => DeviceLineWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

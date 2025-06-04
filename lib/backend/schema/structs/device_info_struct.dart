@@ -215,7 +215,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "AppStatusLine" field.
   String? _appStatusLine;
-  String get appStatusLine => _appStatusLine ?? 'Hello World';
+  String get appStatusLine => _appStatusLine ?? '  ';
   set appStatusLine(String? val) => _appStatusLine = val;
 
   bool hasAppStatusLine() => _appStatusLine != null;

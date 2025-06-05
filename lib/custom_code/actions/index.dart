@@ -8,6 +8,8 @@ export 'set_default_lines.dart' show setDefaultLines;
 export 'set_alias.dart' show setAlias;
 export 'set_pwm.dart' show setPwm;
 export 'restart_device.dart' show restartDevice;
+export 'send_data_quad.dart' show sendDataQuad;
 export 'edit_line.dart' show editLine;
 export 'send_data.dart' show sendData;
 export 'read_out_device.dart' show readOutDevice;
+export 'init_app.dart' show initApp;

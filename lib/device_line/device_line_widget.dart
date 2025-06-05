@@ -2225,7 +2225,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                 10.0, 5.0, 10.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await actions.sendData(
+                                await actions.sendDataQuad(
                                   context,
                                   _model.checkboxMoValue!,
                                   _model.checkboxDiValue!,
@@ -2242,11 +2242,8 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                   _model.dropDownStopHourValue!,
                                   _model.dropDownStopMinuteValue!,
                                   _model.dropDownChQuadValue!,
-                                  _model.dropDownVenturiIntValue!,
-                                  _model.dropDownVenturiDurValue!,
                                   _model.dropDownPowerValue!,
                                   _model.dropDownIntervalValue!,
-                                  _model.dropDownChVenturiValue!,
                                 );
                               },
                               text: FFLocalizations.of(context).getText(

@@ -74,6 +74,8 @@ class DeviceInfoStruct extends BaseStruct {
     String? currentLineDayBin,
     String? currentLineDayByte,
     String? currentLineLog,
+    String? buildDate,
+    String? buildVersion,
   })  : _type = type,
         _typeLetter = typeLetter,
         _alias = alias,
@@ -126,7 +128,9 @@ class DeviceInfoStruct extends BaseStruct {
         _currentLineDayString = currentLineDayString,
         _currentLineDayBin = currentLineDayBin,
         _currentLineDayByte = currentLineDayByte,
-        _currentLineLog = currentLineLog;
+        _currentLineLog = currentLineLog,
+        _buildDate = buildDate,
+        _buildVersion = buildVersion;
 
   // "Type" field.
   String? _type;
@@ -538,6 +542,20 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasCurrentLineLog() => _currentLineLog != null;
 
+  // "BuildDate" field.
+  String? _buildDate;
+  String get buildDate => _buildDate ?? '';
+  set buildDate(String? val) => _buildDate = val;
+
+  bool hasBuildDate() => _buildDate != null;
+
+  // "BuildVersion" field.
+  String? _buildVersion;
+  String get buildVersion => _buildVersion ?? '';
+  set buildVersion(String? val) => _buildVersion = val;
+
+  bool hasBuildVersion() => _buildVersion != null;
+
   static DeviceInfoStruct fromMap(Map<String, dynamic> data) =>
       DeviceInfoStruct(
         type: data['Type'] as String?,
@@ -595,6 +613,8 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineDayBin: data['CurrentLineDayBin'] as String?,
         currentLineDayByte: data['CurrentLineDayByte'] as String?,
         currentLineLog: data['CurrentLineLog'] as String?,
+        buildDate: data['BuildDate'] as String?,
+        buildVersion: data['BuildVersion'] as String?,
       );
 
   static DeviceInfoStruct? maybeFromMap(dynamic data) => data is Map
@@ -655,6 +675,8 @@ class DeviceInfoStruct extends BaseStruct {
         'CurrentLineDayBin': _currentLineDayBin,
         'CurrentLineDayByte': _currentLineDayByte,
         'CurrentLineLog': _currentLineLog,
+        'BuildDate': _buildDate,
+        'BuildVersion': _buildVersion,
       }.withoutNulls;
 
   @override
@@ -869,6 +891,14 @@ class DeviceInfoStruct extends BaseStruct {
         ),
         'CurrentLineLog': serializeParam(
           _currentLineLog,
+          ParamType.String,
+        ),
+        'BuildDate': serializeParam(
+          _buildDate,
+          ParamType.String,
+        ),
+        'BuildVersion': serializeParam(
+          _buildVersion,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -1140,6 +1170,16 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        buildDate: deserializeParam(
+          data['BuildDate'],
+          ParamType.String,
+          false,
+        ),
+        buildVersion: deserializeParam(
+          data['BuildVersion'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -1200,7 +1240,9 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineDayString == other.currentLineDayString &&
         currentLineDayBin == other.currentLineDayBin &&
         currentLineDayByte == other.currentLineDayByte &&
-        currentLineLog == other.currentLineLog;
+        currentLineLog == other.currentLineLog &&
+        buildDate == other.buildDate &&
+        buildVersion == other.buildVersion;
   }
 
   @override
@@ -1257,7 +1299,9 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineDayString,
         currentLineDayBin,
         currentLineDayByte,
-        currentLineLog
+        currentLineLog,
+        buildDate,
+        buildVersion
       ]);
 }
 
@@ -1315,6 +1359,8 @@ DeviceInfoStruct createDeviceInfoStruct({
   String? currentLineDayBin,
   String? currentLineDayByte,
   String? currentLineLog,
+  String? buildDate,
+  String? buildVersion,
 }) =>
     DeviceInfoStruct(
       type: type,
@@ -1370,4 +1416,6 @@ DeviceInfoStruct createDeviceInfoStruct({
       currentLineDayBin: currentLineDayBin,
       currentLineDayByte: currentLineDayByte,
       currentLineLog: currentLineLog,
+      buildDate: buildDate,
+      buildVersion: buildVersion,
     );

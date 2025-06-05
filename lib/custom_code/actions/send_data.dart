@@ -30,13 +30,14 @@ Future<void> sendData(
   int venturiDuration,
   int power,
   int interval,
+  int fanVenturi,
 ) async {
-  // output Variable
+  String ArgToSend = "";
+  String TypeLetter = "Q";
+  //TypeLetter = FFAppState().CurrentDeviceInfo.typeLetter;
 
+  // Day
   try {
-    String ArgToSend = "";
-
-    // prepare Day
     int day = 0;
     if (montag) day = day + 1;
     if (dienstag) day = day + 2;
@@ -45,25 +46,107 @@ Future<void> sendData(
     if (freitag) day = day + 16;
     if (samstag) day = day + 32;
     if (sonntag) day = day + 64;
-
-    // prepare other args
     ArgToSend += day.toString().padLeft(3, '0');
-    ArgToSend += startHour.toString().padLeft(3, '0');
-    ArgToSend += startMinute.toString().padLeft(3, '0');
-    ArgToSend += stopHour.toString().padLeft(3, '0');
-    ArgToSend += stopMinute.toString().padLeft(3, '0');
-    ArgToSend += fan.toString().padLeft(3, '0');
-    ArgToSend += venturiInterval.toString().padLeft(3, '0');
-    ArgToSend += venturiDuration.toString().padLeft(3, '0');
-    ArgToSend += power.toString().padLeft(3, '0');
-    ArgToSend += interval.toString().padLeft(3, '0');
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineDayInt = day;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error day: $e')),
+    );
+  }
 
-    // send to device
+  // start hour
+  try {
+    ArgToSend += startHour.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error startHour: $e')),
+    );
+  }
+
+  // startMinute
+  try {
+    ArgToSend += startMinute.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error startMinute: $e')),
+    );
+  }
+
+  // stopHour
+  try {
+    ArgToSend += stopHour.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error stopHour: $e')),
+    );
+  }
+
+  // stopMinute
+  try {
+    ArgToSend += stopMinute.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error stopMinute: $e')),
+    );
+  }
+
+  // fan
+  try {
+    if (TypeLetter == "V") {
+      ArgToSend += fanVenturi.toString().padLeft(3, '0');
+    } else {
+      ArgToSend += fan.toString().padLeft(3, '0');
+    }
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error fan: $e')),
+    );
+  }
+
+  // venturiInterval
+  try {
+    ArgToSend += venturiInterval.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error venturiInterval: $e')),
+    );
+  }
+
+  // venturiDuration
+  try {
+    ArgToSend += venturiDuration.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error venturiDuration: $e')),
+    );
+  }
+
+  // power
+  try {
+    ArgToSend += power.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error power: $e')),
+    );
+  }
+
+  // interval
+  try {
+    ArgToSend += interval.toString().padLeft(3, '0');
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error interval: $e')),
+    );
+  }
+
+  // send data
+  try {
     String url =
         "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=" +
             address +
             ArgToSend;
-
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -77,7 +160,7 @@ Future<void> sendData(
     }
   } catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Error: $e')),
+      SnackBar(content: Text('Error at sending: $e')),
     );
   }
 }

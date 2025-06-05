@@ -63,6 +63,7 @@ class DeviceInfoStruct extends BaseStruct {
     int? currentLineStopHour,
     int? currentLineStopMinute,
     int? currentLineFan,
+    int? currentLineFanVenturi,
     int? currentLineNumber,
     int? currentLineVenturiInterval,
     int? currentLineVenturiDuration,
@@ -115,6 +116,7 @@ class DeviceInfoStruct extends BaseStruct {
         _currentLineStopHour = currentLineStopHour,
         _currentLineStopMinute = currentLineStopMinute,
         _currentLineFan = currentLineFan,
+        _currentLineFanVenturi = currentLineFanVenturi,
         _currentLineNumber = currentLineNumber,
         _currentLineVenturiInterval = currentLineVenturiInterval,
         _currentLineVenturiDuration = currentLineVenturiDuration,
@@ -393,7 +395,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "CurrentLineStartHour" field.
   int? _currentLineStartHour;
-  int get currentLineStartHour => _currentLineStartHour ?? 8;
+  int get currentLineStartHour => _currentLineStartHour ?? 0;
   set currentLineStartHour(int? val) => _currentLineStartHour = val;
 
   void incrementCurrentLineStartHour(int amount) =>
@@ -413,7 +415,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "CurrentLineStopHour" field.
   int? _currentLineStopHour;
-  int get currentLineStopHour => _currentLineStopHour ?? 17;
+  int get currentLineStopHour => _currentLineStopHour ?? 0;
   set currentLineStopHour(int? val) => _currentLineStopHour = val;
 
   void incrementCurrentLineStopHour(int amount) =>
@@ -433,7 +435,7 @@ class DeviceInfoStruct extends BaseStruct {
 
   // "CurrentLineFan" field.
   int? _currentLineFan;
-  int get currentLineFan => _currentLineFan ?? 1;
+  int get currentLineFan => _currentLineFan ?? 0;
   set currentLineFan(int? val) => _currentLineFan = val;
 
   void incrementCurrentLineFan(int amount) =>
@@ -441,9 +443,19 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasCurrentLineFan() => _currentLineFan != null;
 
+  // "CurrentLineFanVenturi" field.
+  int? _currentLineFanVenturi;
+  int get currentLineFanVenturi => _currentLineFanVenturi ?? 0;
+  set currentLineFanVenturi(int? val) => _currentLineFanVenturi = val;
+
+  void incrementCurrentLineFanVenturi(int amount) =>
+      currentLineFanVenturi = currentLineFanVenturi + amount;
+
+  bool hasCurrentLineFanVenturi() => _currentLineFanVenturi != null;
+
   // "CurrentLineNumber" field.
   int? _currentLineNumber;
-  int get currentLineNumber => _currentLineNumber ?? 1;
+  int get currentLineNumber => _currentLineNumber ?? 0;
   set currentLineNumber(int? val) => _currentLineNumber = val;
 
   void incrementCurrentLineNumber(int amount) =>
@@ -570,6 +582,7 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineStopHour: castToType<int>(data['CurrentLineStopHour']),
         currentLineStopMinute: castToType<int>(data['CurrentLineStopMinute']),
         currentLineFan: castToType<int>(data['CurrentLineFan']),
+        currentLineFanVenturi: castToType<int>(data['CurrentLineFanVenturi']),
         currentLineNumber: castToType<int>(data['CurrentLineNumber']),
         currentLineVenturiInterval:
             castToType<int>(data['CurrentLineVenturiInterval']),
@@ -631,6 +644,7 @@ class DeviceInfoStruct extends BaseStruct {
         'CurrentLineStopHour': _currentLineStopHour,
         'CurrentLineStopMinute': _currentLineStopMinute,
         'CurrentLineFan': _currentLineFan,
+        'CurrentLineFanVenturi': _currentLineFanVenturi,
         'CurrentLineNumber': _currentLineNumber,
         'CurrentLineVenturiInterval': _currentLineVenturiInterval,
         'CurrentLineVenturiDuration': _currentLineVenturiDuration,
@@ -811,6 +825,10 @@ class DeviceInfoStruct extends BaseStruct {
         ),
         'CurrentLineFan': serializeParam(
           _currentLineFan,
+          ParamType.int,
+        ),
+        'CurrentLineFanVenturi': serializeParam(
+          _currentLineFanVenturi,
           ParamType.int,
         ),
         'CurrentLineNumber': serializeParam(
@@ -1067,6 +1085,11 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.int,
           false,
         ),
+        currentLineFanVenturi: deserializeParam(
+          data['CurrentLineFanVenturi'],
+          ParamType.int,
+          false,
+        ),
         currentLineNumber: deserializeParam(
           data['CurrentLineNumber'],
           ParamType.int,
@@ -1167,6 +1190,7 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineStopHour == other.currentLineStopHour &&
         currentLineStopMinute == other.currentLineStopMinute &&
         currentLineFan == other.currentLineFan &&
+        currentLineFanVenturi == other.currentLineFanVenturi &&
         currentLineNumber == other.currentLineNumber &&
         currentLineVenturiInterval == other.currentLineVenturiInterval &&
         currentLineVenturiDuration == other.currentLineVenturiDuration &&
@@ -1223,6 +1247,7 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineStopHour,
         currentLineStopMinute,
         currentLineFan,
+        currentLineFanVenturi,
         currentLineNumber,
         currentLineVenturiInterval,
         currentLineVenturiDuration,
@@ -1279,6 +1304,7 @@ DeviceInfoStruct createDeviceInfoStruct({
   int? currentLineStopHour,
   int? currentLineStopMinute,
   int? currentLineFan,
+  int? currentLineFanVenturi,
   int? currentLineNumber,
   int? currentLineVenturiInterval,
   int? currentLineVenturiDuration,
@@ -1333,6 +1359,7 @@ DeviceInfoStruct createDeviceInfoStruct({
       currentLineStopHour: currentLineStopHour,
       currentLineStopMinute: currentLineStopMinute,
       currentLineFan: currentLineFan,
+      currentLineFanVenturi: currentLineFanVenturi,
       currentLineNumber: currentLineNumber,
       currentLineVenturiInterval: currentLineVenturiInterval,
       currentLineVenturiDuration: currentLineVenturiDuration,

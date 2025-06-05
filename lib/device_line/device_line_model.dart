@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
+import 'device_line_widget.dart' show DeviceLineWidget;
 import 'package:flutter/material.dart';
 
 class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
@@ -39,6 +39,12 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
   // State field(s) for DropDownChVenturi widget.
   int? dropDownChVenturiValue;
   FormFieldController<int>? dropDownChVenturiValueController;
+  // State field(s) for DropDownVenturiInt widget.
+  int? dropDownVenturiIntValue;
+  FormFieldController<int>? dropDownVenturiIntValueController;
+  // State field(s) for DropDownVenturiDur widget.
+  int? dropDownVenturiDurValue;
+  FormFieldController<int>? dropDownVenturiDurValueController;
   // State field(s) for DropDownVentInterval widget.
   int? dropDownVentIntervalValue;
   FormFieldController<int>? dropDownVentIntervalValueController;
@@ -57,32 +63,4 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
 
   @override
   void dispose() {}
-
-  /// Action blocks.
-  Future save(BuildContext context) async {
-    await actions.sendData(
-      context,
-      checkboxMoValue!,
-      checkboxDiValue!,
-      checkboxMiValue!,
-      checkboxDoValue!,
-      checkboxFrValue!,
-      checkboxSaValue!,
-      checkboxSoValue!,
-      FFAppState().CurrentDeviceInfo.currentLineAddress,
-      dropDownStartHourValue!,
-      dropDownStartMinuteValue!,
-      dropDownStopHourValue!,
-      dropDownStopMinuteValue!,
-      FFAppState().CurrentDeviceInfo.typeLetter == 'V'
-          ? dropDownChVenturiValue!
-          : dropDownVentIntervalValue!,
-      dropDownVentIntervalValue!,
-      dropDownVentDurationValue!,
-      dropDownPowerValue!,
-      dropDownIntervalValue!,
-    );
-
-    context.goNamed(DeviceMainWidget.routeName);
-  }
 }

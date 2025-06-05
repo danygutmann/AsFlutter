@@ -11,8 +11,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 //import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 
-Future<void> editLine(
-    BuildContext context, String lineRaw, String lineAddress) async {
+Future<void> editLine(BuildContext context, String lineAddress) async {
+  String lineRaw = "";
+  if (lineAddress == "000") lineRaw = FFAppState().CurrentDeviceInfo.line01Raw;
+  if (lineAddress == "010") lineRaw = FFAppState().CurrentDeviceInfo.line02Raw;
+  if (lineAddress == "020") lineRaw = FFAppState().CurrentDeviceInfo.line03Raw;
+  if (lineAddress == "030") lineRaw = FFAppState().CurrentDeviceInfo.line04Raw;
+  if (lineAddress == "040") lineRaw = FFAppState().CurrentDeviceInfo.line05Raw;
+
+  FFAppState().update(() {
+    FFAppState().CurrentDeviceInfo.currentLineAddress = lineAddress;
+    //FFAppState().CurrentDeviceInfo.curr
+  });
+
   int start = 0;
   int stop = 3;
   bool day_mo = false;
@@ -23,132 +34,185 @@ Future<void> editLine(
   bool day_sa = false;
   bool day_so = false;
 
-  context.pushNamed('deviceLine');
-
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineAddress = lineAddress;
-  });
-
   final splitted = lineRaw.split(';');
   int value = 0;
 
   // set Day
-  value = int.parse(splitted[0]);
-  if (value == 254) {
-    day_mo = true;
-    day_di = true;
-    day_mi = true;
-    day_do = true;
-    day_fr = true;
-    day_sa = true;
-    day_so = true;
-  } else if (value == 192) {
-    day_sa = true;
-    day_so = true;
-  } else if (value == 62) {
-    day_mo = true;
-    day_di = true;
-    day_mi = true;
-    day_do = true;
-    day_fr = true;
-  } else {
-    start = 7;
-    stop = 8;
-    var dayAsByte = value & 0xff;
-    String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
+  try {
+    value = int.parse(splitted[0]);
+    if (value == 254) {
+      day_mo = true;
+      day_di = true;
+      day_mi = true;
+      day_do = true;
+      day_fr = true;
+      day_sa = true;
+      day_so = true;
+    } else if (value == 192) {
+      day_sa = true;
+      day_so = true;
+    } else if (value == 62) {
+      day_mo = true;
+      day_di = true;
+      day_mi = true;
+      day_do = true;
+      day_fr = true;
+    } else {
+      start = 7;
+      stop = 8;
+      var dayAsByte = value & 0xff;
+      String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
 
-    for (int i = 8; i > 0; i--) {
-      String curDay = dayAsBin.substring(start, stop);
-      start = start - 1;
-      stop = stop - 1;
-      if (curDay == "1") {
-        if (i == 7) {
-          day_mo = true;
-        }
-        if (i == 6) {
-          day_di = true;
-        }
-        if (i == 5) {
-          day_mi = true;
-        }
-        if (i == 4) {
-          day_do = true;
-        }
-        if (i == 3) {
-          day_fr = true;
-        }
-        if (i == 2) {
-          day_sa = true;
-        }
-        if (i == 1) {
-          day_so = true;
+      for (int i = 8; i > 0; i--) {
+        String curDay = dayAsBin.substring(start, stop);
+        start = start - 1;
+        stop = stop - 1;
+        if (curDay == "1") {
+          if (i == 7) {
+            day_mo = true;
+          }
+          if (i == 6) {
+            day_di = true;
+          }
+          if (i == 5) {
+            day_mi = true;
+          }
+          if (i == 4) {
+            day_do = true;
+          }
+          if (i == 3) {
+            day_fr = true;
+          }
+          if (i == 2) {
+            day_sa = true;
+          }
+          if (i == 1) {
+            day_so = true;
+          }
         }
       }
     }
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineDayInt = value;
+      FFAppState().CurrentDeviceInfo.currentLineDayBoolMo = day_mo;
+      FFAppState().CurrentDeviceInfo.currentLineDayBoolDi = day_di;
+      FFAppState().CurrentDeviceInfo.currentLineDayBoolMi = day_mi;
+      FFAppState().CurrentDeviceInfo.currentLineDayBoolDo = day_do;
+      FFAppState().CurrentDeviceInfo.currentLineDayBoolFr = day_fr;
+      FFAppState().CurrentDeviceInfo.currentLineDayBoolSa = day_sa;
+      FFAppState().CurrentDeviceInfo.currentLineDayBoolSo = day_so;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at day: $e')),
+    );
   }
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineDayBoolMo = day_mo;
-    FFAppState().CurrentDeviceInfo.currentLineDayBoolDi = day_di;
-    FFAppState().CurrentDeviceInfo.currentLineDayBoolMi = day_mi;
-    FFAppState().CurrentDeviceInfo.currentLineDayBoolDo = day_do;
-    FFAppState().CurrentDeviceInfo.currentLineDayBoolFr = day_fr;
-    FFAppState().CurrentDeviceInfo.currentLineDayBoolSa = day_sa;
-    FFAppState().CurrentDeviceInfo.currentLineDayBoolSo = day_so;
-  });
 
   // set start Hour
-  value = int.parse(splitted[1]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineStartHour = value;
-  });
+  try {
+    value = int.parse(splitted[1]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineStartHour = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at start h: $e')),
+    );
+  }
 
   // set start minute
-  value = int.parse(splitted[2]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineStartMinute = value;
-  });
+  try {
+    value = int.parse(splitted[2]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineStartMinute = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at start m: $e')),
+    );
+  }
 
   // set stop Hour
-  value = int.parse(splitted[3]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineStopHour = value;
-  });
+  try {
+    value = int.parse(splitted[3]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineStopHour = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at stop h: $e')),
+    );
+  }
 
   // set stop Minute
-  value = int.parse(splitted[4]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineStopMinute = value;
-  });
+  try {
+    value = int.parse(splitted[4]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineStopMinute = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Errorat at stop m: $e')),
+    );
+  }
 
   // set fan
-  value = int.parse(splitted[5]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineFan = value;
-  });
+  try {
+    value = int.parse(splitted[5]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineFan = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at fan: $e')),
+    );
+  }
 
   // set venturi int
-  value = int.parse(splitted[6]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = value;
-  });
+  try {
+    value = int.parse(splitted[6]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at  vet int: $e')),
+    );
+  }
 
   // set venturi dur
-  value = int.parse(splitted[7]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = value;
-  });
+  try {
+    value = int.parse(splitted[7]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at vet dur: $e')),
+    );
+  }
 
   // set speed
-  value = int.parse(splitted[8]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineSpeed = value;
-  });
+  try {
+    value = int.parse(splitted[8]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineSpeed = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at speed: $e')),
+    );
+  }
 
   // set int
-  value = int.parse(splitted[9]);
-  FFAppState().update(() {
-    FFAppState().CurrentDeviceInfo.currentLineInterval = value;
-  });
-
-  //context.goNamed('/deviceLine');
+  try {
+    value = int.parse(splitted[9]);
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.currentLineInterval = value;
+    });
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error at int: $e')),
+    );
+  }
 }

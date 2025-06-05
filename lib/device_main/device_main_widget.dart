@@ -232,11 +232,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await actions.editLine(
-                          context,
-                          FFAppState().CurrentDeviceInfo.line01Raw,
-                          '000',
-                        );
+                        await _model.editLine01(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line01Description,
                       options: FFButtonOptions(
@@ -277,7 +273,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(context);
+                        await _model.editLine02(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line02Description,
                       options: FFButtonOptions(
@@ -318,7 +314,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(context);
+                        await _model.editLine03(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line03Description,
                       options: FFButtonOptions(
@@ -359,7 +355,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(context);
+                        await _model.editLine04(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line04Description,
                       options: FFButtonOptions(
@@ -400,7 +396,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                         EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await _model.showLine(context);
+                        await _model.editLine05(context);
                       },
                       text: FFAppState().CurrentDeviceInfo.line05Description,
                       options: FFButtonOptions(

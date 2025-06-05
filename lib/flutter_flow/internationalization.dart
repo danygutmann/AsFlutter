@@ -289,7 +289,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Taste',
       'nl': 'Knop',
     },
-    'tqdxeykz': {
+    'ulk8gu0f': {
       'en': 'Weekdays',
       'de': 'Wochentage',
       'nl': 'Weekdagen',
@@ -674,7 +674,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '45',
       'nl': '45',
     },
-    '9pn3kgw4': {
+    'w1vwjgiz': {
       'en': 'Channel',
       'de': 'Kanal',
       'nl': 'Kanaal',
@@ -734,10 +734,95 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Lüfter 3',
       'nl': 'Ventilator 3',
     },
+    '87vfdpnj': {
+      'en': 'not Set',
+      'de': '',
+      'nl': '',
+    },
     'mh3sa88i': {
       'en': 'Venturi',
       'de': 'Venturi',
       'nl': 'Venturi',
+    },
+    'o4ljwpzr': {
+      'en': 'Intervall',
+      'de': 'Intervall',
+      'nl': 'Interval',
+    },
+    'fgo4wa5c': {
+      'en': 'Search...',
+      'de': 'Suchen...',
+      'nl': 'Zoekopdracht...',
+    },
+    'lcikb06l': {
+      'en': 'never',
+      'de': 'Venturi',
+      'nl': 'Venturi',
+    },
+    'ay7wh061': {
+      'en': 'every Minute',
+      'de': 'Lüfter 2',
+      'nl': 'Ventilator 2',
+    },
+    'mc4shy1h': {
+      'en': 'all 2  Minutes',
+      'de': 'Lüfter 3',
+      'nl': 'Ventilator 3',
+    },
+    'fncetov0': {
+      'en': 'all 3 Minutes',
+      'de': '',
+      'nl': '',
+    },
+    'zsjgpbug': {
+      'en': 'all 4 Minutes',
+      'de': '',
+      'nl': '',
+    },
+    'ly4zoux5': {
+      'en': 'all 5 Minutes',
+      'de': '',
+      'nl': '',
+    },
+    'askyfqvi': {
+      'en': 'Duration',
+      'de': 'Intervall',
+      'nl': 'Interval',
+    },
+    'a6u4u85p': {
+      'en': 'Search...',
+      'de': 'Suchen...',
+      'nl': 'Zoekopdracht...',
+    },
+    'y0c700fv': {
+      'en': 'off',
+      'de': 'Venturi',
+      'nl': 'Venturi',
+    },
+    'yb8p0vqg': {
+      'en': 'for 1 Second',
+      'de': 'Lüfter 2',
+      'nl': 'Ventilator 2',
+    },
+    'u8v46yx4': {
+      'en': 'for 2 Seconds',
+      'de': 'Lüfter 3',
+      'nl': 'Ventilator 3',
+    },
+    'h3aceg5c': {
+      'en': 'for 3 Seconds',
+      'de': '',
+      'nl': '',
+    },
+    'esvvfv2j': {
+      'en': 'for 4 Seconds',
+      'de': '',
+      'nl': '',
+    },
+    'jpv4n6be': {
+      'en': 'for 5  Seconds',
+      'de': '',
+      'nl': '',
     },
     'xetj9zqt': {
       'en': 'Intervall',

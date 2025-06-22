@@ -6,6 +6,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'device_line_model.dart';
@@ -30,6 +31,11 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DeviceLineModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await _model.delete(context);
+    });
   }
 
   @override
@@ -735,30 +741,6 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                     checkColor:
                                         FlutterFlowTheme.of(context).info,
                                   ),
-                                ),
-                                Text(
-                                  '${FFAppState().CurrentDeviceInfo.currentLineAddress}  ${FFAppState().CurrentDeviceInfo.currentLineDayInt.toString()}',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
                                 ),
                               ],
                             ),
@@ -2330,8 +2312,9 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 5.0, 10.0, 5.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('settingsButtionNl pressed ...');
+                              onPressed: () async {
+                                await _model.delete(context);
+                                safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 '4x10ufan' /* Delete Line */,

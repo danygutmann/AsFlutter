@@ -27,38 +27,31 @@ String getLineDescription(String lineRaw) {
     } else if (value == 62) {
       outp += "on workdays";
     } else {
-      int start = 7;
-      int stop = 8;
       var dayAsByte = value & 0xff;
       String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
-      for (int i = 8; i > 0; i--) {
-        String curDay = dayAsBin.substring(start, stop);
-        start = start - 1;
-        stop = stop - 1;
-        if (curDay == "1") {
-          if (i == 7) {
-            outp += "mo, ";
-          }
-          if (i == 6) {
-            outp += "di, ";
-          }
-          if (i == 5) {
-            outp += "mi, ";
-          }
-          if (i == 4) {
-            outp += "do, ";
-          }
-          if (i == 3) {
-            outp += "fr, ";
-          }
-          if (i == 2) {
-            outp += "sa, ";
-          }
-          if (i == 1) {
-            outp += "so, ";
-          }
-        }
+      //outp += dayAsBin + "-";
+      if (dayAsBin.substring(6, 7) == "1") {
+        outp += "mo, ";
       }
+      if (dayAsBin.substring(5, 6) == "1") {
+        outp += "di, ";
+      }
+      if (dayAsBin.substring(4, 5) == "1") {
+        outp += "mi, ";
+      }
+      if (dayAsBin.substring(3, 4) == "1") {
+        outp += "do, ";
+      }
+      if (dayAsBin.substring(2, 3) == "1") {
+        outp += "fr, ";
+      }
+      if (dayAsBin.substring(1, 2) == "1") {
+        outp += "sa, ";
+      }
+      if (dayAsBin.substring(0, 1) == "1") {
+        outp += "so, ";
+      }
+      // remove last comma
       outp = outp.substring(0, outp.length - 2);
     }
   } catch (e) {}

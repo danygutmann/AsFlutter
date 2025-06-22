@@ -60,36 +60,30 @@ Future<void> editLine(BuildContext context, String lineAddress) async {
     } else {
       start = 7;
       stop = 8;
+
       var dayAsByte = value & 0xff;
       String dayAsBin = dayAsByte.toRadixString(2).padLeft(8, '0');
-
-      for (int i = 8; i > 0; i--) {
-        String curDay = dayAsBin.substring(start, stop);
-        start = start - 1;
-        stop = stop - 1;
-        if (curDay == "1") {
-          if (i == 7) {
-            day_mo = true;
-          }
-          if (i == 6) {
-            day_di = true;
-          }
-          if (i == 5) {
-            day_mi = true;
-          }
-          if (i == 4) {
-            day_do = true;
-          }
-          if (i == 3) {
-            day_fr = true;
-          }
-          if (i == 2) {
-            day_sa = true;
-          }
-          if (i == 1) {
-            day_so = true;
-          }
-        }
+      //outp += dayAsBin + "-";
+      if (dayAsBin.substring(6, 7) == "1") {
+        day_mo = true;
+      }
+      if (dayAsBin.substring(5, 6) == "1") {
+        day_di = true;
+      }
+      if (dayAsBin.substring(4, 5) == "1") {
+        day_mi = true;
+      }
+      if (dayAsBin.substring(3, 4) == "1") {
+        day_do = true;
+      }
+      if (dayAsBin.substring(2, 3) == "1") {
+        day_fr = true;
+      }
+      if (dayAsBin.substring(1, 2) == "1") {
+        day_sa = true;
+      }
+      if (dayAsBin.substring(0, 1) == "1") {
+        day_so = true;
       }
     }
     FFAppState().update(() {

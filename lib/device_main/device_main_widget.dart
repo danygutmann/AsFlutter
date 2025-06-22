@@ -433,9 +433,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await actions.getInfo(
-                      context,
-                    );
+                    await _model.addNewLine(context);
                   },
                   text: FFLocalizations.of(context).getText(
                     'udo2uk8w' /* Add new Line */,

@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
-import 'device_line_widget.dart' show DeviceLineWidget;
 import 'package:flutter/material.dart';
 
 class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
@@ -63,4 +63,13 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
 
   @override
   void dispose() {}
+
+  /// Action blocks.
+  Future delete(BuildContext context) async {
+    await actions.deleteLine(
+      context,
+    );
+
+    context.pushNamed(DeviceMainWidget.routeName);
+  }
 }

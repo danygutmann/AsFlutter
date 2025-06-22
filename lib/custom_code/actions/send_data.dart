@@ -39,13 +39,13 @@ Future<void> sendData(
   // Day
   try {
     int day = 0;
-    if (montag) day = day + 1;
-    if (dienstag) day = day + 2;
-    if (mittwoch) day = day + 4;
-    if (donnerstag) day = day + 8;
-    if (freitag) day = day + 16;
-    if (samstag) day = day + 32;
-    if (sonntag) day = day + 64;
+    if (montag) day = day + 2;
+    if (dienstag) day = day + 4;
+    if (mittwoch) day = day + 8;
+    if (donnerstag) day = day + 16;
+    if (freitag) day = day + 32;
+    if (samstag) day = day + 64;
+    if (sonntag) day = day + 128;
     ArgToSend += day.toString().padLeft(3, '0');
     FFAppState().update(() {
       FFAppState().CurrentDeviceInfo.currentLineDayInt = day;

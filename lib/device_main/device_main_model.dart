@@ -55,4 +55,13 @@ class DeviceMainModel extends FlutterFlowModel<DeviceMainWidget> {
       '040',
     );
   }
+
+  Future addNewLine(BuildContext context) async {
+    await actions.sendNewLine(
+      context,
+    );
+    await actions.readOutDevice(
+      context,
+    );
+  }
 }

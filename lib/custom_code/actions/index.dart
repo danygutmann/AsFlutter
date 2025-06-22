@@ -11,5 +11,7 @@ export 'restart_device.dart' show restartDevice;
 export 'send_data_quad.dart' show sendDataQuad;
 export 'edit_line.dart' show editLine;
 export 'send_data.dart' show sendData;
+export 'send_new_line.dart' show sendNewLine;
 export 'read_out_device.dart' show readOutDevice;
 export 'init_app.dart' show initApp;
+export 'delete_line.dart' show deleteLine;

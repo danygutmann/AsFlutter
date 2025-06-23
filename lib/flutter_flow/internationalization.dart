@@ -276,6 +276,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Standardprogramm',
       'nl': 'Standaardprogramma',
     },
+    'm1e42b2p': {
+      'en': 'WiFi off',
+      'de': 'WLAN aus',
+      'nl': 'WiFi uit',
+    },
     '1z8zwu64': {
       'en': 'Home',
       'de': 'Heim',

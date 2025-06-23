@@ -2314,7 +2314,6 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                             child: FFButtonWidget(
                               onPressed: () async {
                                 await _model.delete(context);
-                                safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 '4x10ufan' /* Delete Line */,

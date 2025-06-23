@@ -1,6 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
-import 'device_options_widget.dart' show DeviceOptionsWidget;
 import 'package:flutter/material.dart';
 
 class DeviceOptionsModel extends FlutterFlowModel<DeviceOptionsWidget> {
@@ -23,4 +23,15 @@ class DeviceOptionsModel extends FlutterFlowModel<DeviceOptionsWidget> {
 
   /// Action blocks.
   Future abGetType(BuildContext context) async {}
+
+  Future wifiOffFlow(BuildContext context) async {
+    context.pushNamed(HomePageWidget.routeName);
+
+    await actions.wifiOff(
+      context,
+    );
+    await actions.discoverDevice(
+      context,
+    );
+  }
 }

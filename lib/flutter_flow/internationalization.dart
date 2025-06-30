@@ -474,6 +474,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '23',
       'nl': '23',
     },
+    'gbo7hmvo': {
+      'en': '24',
+      'de': '',
+      'nl': '',
+    },
     'w7xsubme': {
       'en': ' : ',
       'de': ':',
@@ -643,6 +648,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '23',
       'de': '23',
       'nl': '23',
+    },
+    'i1nbvnab': {
+      'en': '24',
+      'de': '',
+      'nl': '',
     },
     'mzs4rfsd': {
       'en': ' : ',

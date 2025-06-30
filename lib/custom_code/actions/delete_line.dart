@@ -18,38 +18,70 @@ Future deleteLine(
 
   // get info
   String address = FFAppState().CurrentDeviceInfo.currentLineAddress;
+  int currLineNumber = FFAppState().CurrentDeviceInfo.currentLineNumber;
   if (FFAppState().CurrentDeviceInfo.line05Vissible) lastLineAddress = "040";
   if (FFAppState().CurrentDeviceInfo.line04Vissible) lastLineAddress = "030";
   if (FFAppState().CurrentDeviceInfo.line03Vissible) lastLineAddress = "020";
   if (FFAppState().CurrentDeviceInfo.line02Vissible) lastLineAddress = "010";
   if (FFAppState().CurrentDeviceInfo.line01Vissible) lastLineAddress = "000";
 
-  if (address == lastLineAddress) {
-    // send data
-    try {
-      String url =
-          "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=" +
-              address +
-              "255255255255255255255255255255255";
-      final response = await http.get(Uri.parse(url));
+  // delete current line
 
-      if (response.statusCode == 200) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('OK')),
-        );
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('NOK ')),
-        );
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error at sending: $e')),
-      );
+  String result = "Error";
+  try {
+    String url =
+        "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=" +
+            address +
+            "255255255255255255255255255255255";
+    final response = await http.get(Uri.parse(url));
+
+    if (response.statusCode == 200) {
+      result = "deleting last line OK";
+    } else {
+      result = "deleting last line NOK";
     }
-  } else {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('deleting ist just for last line possible')),
-    );
+  } catch (e) {
+    result = "deleting last line NOK " + e.toString();
   }
+
+  // if last line, easy
+  if (FFAppState().CurrentDeviceInfo.currentLineIsLast) {
+    // all is done
+  } else {
+    // not last line, loop over lines to move forward
+    try {
+      for (int i = currLineNumber; i < 5; i++) {
+        String dst = "";
+        String src = "";
+        String data = "";
+        if (i == 2) {
+          dst = "010";
+          src = "020";
+        }
+        if (i == 3) {
+          dst = "020";
+          src = "030";
+        }
+        if (i == 4) {
+          dst = "030";
+          src = "040";
+        }
+        if (i == 5) {
+          dst = "040";
+          src = "050";
+        }
+        String url =
+            "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=" +
+                address +
+                data;
+        var erg = await http.get(Uri.parse(url));
+      }
+      result = "OK";
+    } catch (e) {
+      result = "NOK";
+    }
+  }
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(result)),
+  );
 }

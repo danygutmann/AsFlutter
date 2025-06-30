@@ -428,10 +428,7 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
                             10.0, 5.0, 10.0, 5.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            await actions.setAlias(
-                              context,
-                              _model.textFieldAliasTextController.text,
-                            );
+                            await _model.setAliasFlow(context);
                           },
                           text: FFLocalizations.of(context).getText(
                             '76u9mrxl' /* Set Alias */,
@@ -477,9 +474,7 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await actions.restartDevice(
-                      context,
-                    );
+                    await _model.restartDeviceFlow(context);
                   },
                   text: FFLocalizations.of(context).getText(
                     '8s2k2s2g' /* Restart Device */,
@@ -518,9 +513,7 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await actions.deleteAllLines(
-                      context,
-                    );
+                    await _model.delteLineFlow(context);
                   },
                   text: FFLocalizations.of(context).getText(
                     '98h53gd7' /* Delete all Lines */,
@@ -559,9 +552,7 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await actions.setDefaultLines(
-                      context,
-                    );
+                    await _model.defaultLinesFlow(context);
                   },
                   text: FFLocalizations.of(context).getText(
                     '00glkjp7' /* Default Program */,

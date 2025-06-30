@@ -6,7 +6,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'device_line_model.dart';
@@ -31,11 +30,6 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DeviceLineModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await _model.delete(context);
-    });
   }
 
   @override
@@ -860,7 +854,8 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                     20,
                                     21,
                                     22,
-                                    23
+                                    23,
+                                    24
                                   ]),
                                   optionLabels: [
                                     FFLocalizations.of(context).getText(
@@ -934,6 +929,9 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                     ),
                                     FFLocalizations.of(context).getText(
                                       'uzwl2xce' /* 23 */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'gbo7hmvo' /* 24 */,
                                     )
                                   ],
                                   onChanged: (val) => safeSetState(() =>
@@ -1148,7 +1146,8 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                     20,
                                     21,
                                     22,
-                                    23
+                                    23,
+                                    24
                                   ]),
                                   optionLabels: [
                                     FFLocalizations.of(context).getText(
@@ -1222,6 +1221,9 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                     ),
                                     FFLocalizations.of(context).getText(
                                       'efrhh6mt' /* 23 */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'i1nbvnab' /* 24 */,
                                     )
                                   ],
                                   onChanged: (val) => safeSetState(
@@ -2207,26 +2209,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                 10.0, 5.0, 10.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await actions.sendDataQuad(
-                                  context,
-                                  _model.checkboxMoValue!,
-                                  _model.checkboxDiValue!,
-                                  _model.checkboxMiValue!,
-                                  _model.checkboxDoValue!,
-                                  _model.checkboxFrValue!,
-                                  _model.checkboxSaValue!,
-                                  _model.checkboxSoValue!,
-                                  FFAppState()
-                                      .CurrentDeviceInfo
-                                      .currentLineAddress,
-                                  _model.dropDownStartHourValue!,
-                                  _model.dropDownStartMinuteValue!,
-                                  _model.dropDownStopHourValue!,
-                                  _model.dropDownStopMinuteValue!,
-                                  _model.dropDownChQuadValue!,
-                                  _model.dropDownPowerValue!,
-                                  _model.dropDownIntervalValue!,
-                                );
+                                await _model.save(context);
                               },
                               text: FFLocalizations.of(context).getText(
                                 '129iy392' /* Save Line */,

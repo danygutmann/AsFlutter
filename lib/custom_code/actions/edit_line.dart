@@ -13,14 +13,43 @@ import 'package:flutter/scheduler.dart';
 
 Future<void> editLine(BuildContext context, String lineAddress) async {
   String lineRaw = "";
-  if (lineAddress == "000") lineRaw = FFAppState().CurrentDeviceInfo.line01Raw;
-  if (lineAddress == "010") lineRaw = FFAppState().CurrentDeviceInfo.line02Raw;
-  if (lineAddress == "020") lineRaw = FFAppState().CurrentDeviceInfo.line03Raw;
-  if (lineAddress == "030") lineRaw = FFAppState().CurrentDeviceInfo.line04Raw;
-  if (lineAddress == "040") lineRaw = FFAppState().CurrentDeviceInfo.line05Raw;
+  bool IsLastLine = false;
+  int lineNumber = -1;
+
+  if (lineAddress == "000") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line01Raw;
+    lineNumber = 1;
+    if (FFAppState().CurrentDeviceInfo.line02Raw.startsWith("255"))
+      IsLastLine = true;
+  }
+  if (lineAddress == "010") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line02Raw;
+    lineNumber = 2;
+    if (FFAppState().CurrentDeviceInfo.line03Raw.startsWith("255"))
+      IsLastLine = true;
+  }
+  if (lineAddress == "020") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line03Raw;
+    lineNumber = 3;
+    if (FFAppState().CurrentDeviceInfo.line04Raw.startsWith("255"))
+      IsLastLine = true;
+  }
+  if (lineAddress == "030") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line04Raw;
+    lineNumber = 4;
+    if (FFAppState().CurrentDeviceInfo.line05Raw.startsWith("255"))
+      IsLastLine = true;
+  }
+  if (lineAddress == "040") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line05Raw;
+    lineNumber = 5;
+    IsLastLine = true;
+  }
 
   FFAppState().update(() {
     FFAppState().CurrentDeviceInfo.currentLineAddress = lineAddress;
+    FFAppState().CurrentDeviceInfo.currentLineIsLast = IsLastLine;
+    FFAppState().CurrentDeviceInfo.currentLineNumber = lineNumber;
     //FFAppState().CurrentDeviceInfo.curr
   });
 
@@ -209,4 +238,7 @@ Future<void> editLine(BuildContext context, String lineAddress) async {
       SnackBar(content: Text('Error at int: $e')),
     );
   }
+
+  // check last line
+  String Address = "050";
 }

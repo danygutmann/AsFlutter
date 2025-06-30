@@ -72,4 +72,27 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
 
     context.pushNamed(DeviceMainWidget.routeName);
   }
+
+  Future save(BuildContext context) async {
+    await actions.sendDataQuad(
+      context,
+      checkboxMoValue!,
+      checkboxDiValue!,
+      checkboxMiValue!,
+      checkboxDoValue!,
+      checkboxFrValue!,
+      checkboxSaValue!,
+      checkboxSoValue!,
+      FFAppState().CurrentDeviceInfo.currentLineAddress,
+      dropDownStartHourValue!,
+      dropDownStartMinuteValue!,
+      dropDownStopHourValue!,
+      dropDownStopMinuteValue!,
+      dropDownChQuadValue!,
+      dropDownPowerValue!,
+      dropDownIntervalValue!,
+    );
+
+    context.pushNamed(DeviceMainWidget.routeName);
+  }
 }

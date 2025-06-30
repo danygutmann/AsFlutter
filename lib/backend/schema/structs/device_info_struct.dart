@@ -74,6 +74,7 @@ class DeviceInfoStruct extends BaseStruct {
     String? currentLineDayBin,
     String? currentLineDayByte,
     String? currentLineLog,
+    bool? currentLineIsLast,
     String? buildDate,
     String? buildVersion,
   })  : _type = type,
@@ -129,6 +130,7 @@ class DeviceInfoStruct extends BaseStruct {
         _currentLineDayBin = currentLineDayBin,
         _currentLineDayByte = currentLineDayByte,
         _currentLineLog = currentLineLog,
+        _currentLineIsLast = currentLineIsLast,
         _buildDate = buildDate,
         _buildVersion = buildVersion;
 
@@ -542,6 +544,13 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasCurrentLineLog() => _currentLineLog != null;
 
+  // "CurrentLineIsLast" field.
+  bool? _currentLineIsLast;
+  bool get currentLineIsLast => _currentLineIsLast ?? false;
+  set currentLineIsLast(bool? val) => _currentLineIsLast = val;
+
+  bool hasCurrentLineIsLast() => _currentLineIsLast != null;
+
   // "BuildDate" field.
   String? _buildDate;
   String get buildDate => _buildDate ?? '';
@@ -613,6 +622,7 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineDayBin: data['CurrentLineDayBin'] as String?,
         currentLineDayByte: data['CurrentLineDayByte'] as String?,
         currentLineLog: data['CurrentLineLog'] as String?,
+        currentLineIsLast: data['CurrentLineIsLast'] as bool?,
         buildDate: data['BuildDate'] as String?,
         buildVersion: data['BuildVersion'] as String?,
       );
@@ -675,6 +685,7 @@ class DeviceInfoStruct extends BaseStruct {
         'CurrentLineDayBin': _currentLineDayBin,
         'CurrentLineDayByte': _currentLineDayByte,
         'CurrentLineLog': _currentLineLog,
+        'CurrentLineIsLast': _currentLineIsLast,
         'BuildDate': _buildDate,
         'BuildVersion': _buildVersion,
       }.withoutNulls;
@@ -892,6 +903,10 @@ class DeviceInfoStruct extends BaseStruct {
         'CurrentLineLog': serializeParam(
           _currentLineLog,
           ParamType.String,
+        ),
+        'CurrentLineIsLast': serializeParam(
+          _currentLineIsLast,
+          ParamType.bool,
         ),
         'BuildDate': serializeParam(
           _buildDate,
@@ -1170,6 +1185,11 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        currentLineIsLast: deserializeParam(
+          data['CurrentLineIsLast'],
+          ParamType.bool,
+          false,
+        ),
         buildDate: deserializeParam(
           data['BuildDate'],
           ParamType.String,
@@ -1241,6 +1261,7 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineDayBin == other.currentLineDayBin &&
         currentLineDayByte == other.currentLineDayByte &&
         currentLineLog == other.currentLineLog &&
+        currentLineIsLast == other.currentLineIsLast &&
         buildDate == other.buildDate &&
         buildVersion == other.buildVersion;
   }
@@ -1300,6 +1321,7 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineDayBin,
         currentLineDayByte,
         currentLineLog,
+        currentLineIsLast,
         buildDate,
         buildVersion
       ]);
@@ -1359,6 +1381,7 @@ DeviceInfoStruct createDeviceInfoStruct({
   String? currentLineDayBin,
   String? currentLineDayByte,
   String? currentLineLog,
+  bool? currentLineIsLast,
   String? buildDate,
   String? buildVersion,
 }) =>
@@ -1416,6 +1439,7 @@ DeviceInfoStruct createDeviceInfoStruct({
       currentLineDayBin: currentLineDayBin,
       currentLineDayByte: currentLineDayByte,
       currentLineLog: currentLineLog,
+      currentLineIsLast: currentLineIsLast,
       buildDate: buildDate,
       buildVersion: buildVersion,
     );

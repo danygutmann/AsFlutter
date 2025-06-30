@@ -34,4 +34,45 @@ class DeviceOptionsModel extends FlutterFlowModel<DeviceOptionsWidget> {
       context,
     );
   }
+
+  Future delteLineFlow(BuildContext context) async {
+    context.pushNamed(DeviceMainWidget.routeName);
+
+    await actions.deleteAllLines(
+      context,
+    );
+    await actions.readOutDevice(
+      context,
+    );
+  }
+
+  Future defaultLinesFlow(BuildContext context) async {
+    context.pushNamed(DeviceMainWidget.routeName);
+
+    await actions.setDefaultLines(
+      context,
+    );
+    await actions.readOutDevice(
+      context,
+    );
+  }
+
+  Future restartDeviceFlow(BuildContext context) async {
+    context.pushNamed(HomePageWidget.routeName);
+
+    await actions.restartDevice(
+      context,
+    );
+    await actions.discoverDevice(
+      context,
+    );
+  }
+
+  Future setAliasFlow(BuildContext context) async {
+    await actions.setAlias(
+      context,
+      textFieldAliasTextController.text,
+    );
+    await restartDeviceFlow(context);
+  }
 }

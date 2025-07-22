@@ -724,36 +724,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Lüfter 4',
       'nl': 'Ventilator 4',
     },
-    'hth34pe4': {
-      'en': 'Intervall',
-      'de': 'Intervall',
-      'nl': 'Interval',
-    },
-    'sljrm3p3': {
-      'en': 'Search...',
-      'de': 'Suchen...',
-      'nl': 'Zoekopdracht...',
-    },
-    'vremqz7q': {
-      'en': 'Venturi',
-      'de': 'Venturi',
-      'nl': 'Venturi',
-    },
-    '1e6x9imm': {
-      'en': 'Fan 2',
-      'de': 'Lüfter 2',
-      'nl': 'Ventilator 2',
-    },
-    '9zxobbpg': {
-      'en': 'Fan 3',
-      'de': 'Lüfter 3',
-      'nl': 'Ventilator 3',
-    },
-    '87vfdpnj': {
-      'en': 'not Set',
-      'de': 'nicht gesetzt',
-      'nl': 'niet ingesteld',
-    },
     'mh3sa88i': {
       'en': 'Venturi',
       'de': 'Venturi',
@@ -838,76 +808,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'for 5  Seconds',
       'de': 'für 5 Sekunden',
       'nl': 'gedurende 5 seconden',
-    },
-    'xetj9zqt': {
-      'en': 'Intervall',
-      'de': 'Intervall',
-      'nl': 'Interval',
-    },
-    'jvxy9iwe': {
-      'en': 'Search...',
-      'de': 'Suchen...',
-      'nl': 'Zoekopdracht...',
-    },
-    '64mrc676': {
-      'en': 'all 1 Minute',
-      'de': 'alle 1 Minute',
-      'nl': 'alle 1 minuut',
-    },
-    'txmeci1y': {
-      'en': 'all 2 Minutes',
-      'de': 'alle 2 Minuten',
-      'nl': 'alle 2 minuten',
-    },
-    '0q8lmw12': {
-      'en': 'all 3 Minutes',
-      'de': 'alle 3 Minuten',
-      'nl': 'alle 3 minuten',
-    },
-    '97cr760l': {
-      'en': 'all 4 Minutes',
-      'de': 'alle 4 Minuten',
-      'nl': 'alle 4 minuten',
-    },
-    '1z4686ha': {
-      'en': 'never',
-      'de': 'niemals',
-      'nl': 'nooit',
-    },
-    '1m5642yl': {
-      'en': 'Intervall',
-      'de': 'Intervall',
-      'nl': 'Interval',
-    },
-    'vpn59drq': {
-      'en': 'Search...',
-      'de': 'Suchen...',
-      'nl': 'Zoekopdracht...',
-    },
-    '756w4g3z': {
-      'en': 'for 1  Second',
-      'de': 'für 1 Sekunde',
-      'nl': 'gedurende 1 seconde',
-    },
-    'rjh93fz5': {
-      'en': 'for 2 Seconds',
-      'de': 'für 2 Sekunden',
-      'nl': 'gedurende 2 seconden',
-    },
-    'qy80bqvk': {
-      'en': 'for 3 Seconds',
-      'de': 'für 3 Sekunden',
-      'nl': 'gedurende 3 seconden',
-    },
-    '9vx4bz2o': {
-      'en': 'for 4 Seconds',
-      'de': 'für 4 Sekunden',
-      'nl': 'gedurende 4 seconden',
-    },
-    'wgc537cs': {
-      'en': 'not active',
-      'de': 'nicht aktiv',
-      'nl': 'niet actief',
     },
     'nq8jvjms': {
       'en': 'Fan Power',

@@ -96,7 +96,7 @@ String getLineDescription(String lineRaw) {
       int durati = int.parse(splitted[7]);
       outp += " all " +
           interv.toString() +
-          " min Venturi for " +
+          " min for " +
           durati.toString() +
           " sec";
     } catch (e) {}
@@ -131,4 +131,13 @@ String getLineDescription(String lineRaw) {
   }
 
   return outp;
+}
+
+String prepareToSend(String input) {
+  String out = "";
+  List<String> data = input.split(';');
+  data.forEach((aPart) {
+    out += aPart.padLeft(3, '0');
+  });
+  return out;
 }

@@ -77,6 +77,8 @@ class DeviceInfoStruct extends BaseStruct {
     bool? currentLineIsLast,
     String? buildDate,
     String? buildVersion,
+    int? linesTotal,
+    int? lastLineNumber,
   })  : _type = type,
         _typeLetter = typeLetter,
         _alias = alias,
@@ -132,7 +134,9 @@ class DeviceInfoStruct extends BaseStruct {
         _currentLineLog = currentLineLog,
         _currentLineIsLast = currentLineIsLast,
         _buildDate = buildDate,
-        _buildVersion = buildVersion;
+        _buildVersion = buildVersion,
+        _linesTotal = linesTotal,
+        _lastLineNumber = lastLineNumber;
 
   // "Type" field.
   String? _type;
@@ -565,6 +569,25 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasBuildVersion() => _buildVersion != null;
 
+  // "LinesTotal" field.
+  int? _linesTotal;
+  int get linesTotal => _linesTotal ?? 0;
+  set linesTotal(int? val) => _linesTotal = val;
+
+  void incrementLinesTotal(int amount) => linesTotal = linesTotal + amount;
+
+  bool hasLinesTotal() => _linesTotal != null;
+
+  // "LastLineNumber" field.
+  int? _lastLineNumber;
+  int get lastLineNumber => _lastLineNumber ?? 0;
+  set lastLineNumber(int? val) => _lastLineNumber = val;
+
+  void incrementLastLineNumber(int amount) =>
+      lastLineNumber = lastLineNumber + amount;
+
+  bool hasLastLineNumber() => _lastLineNumber != null;
+
   static DeviceInfoStruct fromMap(Map<String, dynamic> data) =>
       DeviceInfoStruct(
         type: data['Type'] as String?,
@@ -625,6 +648,8 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineIsLast: data['CurrentLineIsLast'] as bool?,
         buildDate: data['BuildDate'] as String?,
         buildVersion: data['BuildVersion'] as String?,
+        linesTotal: castToType<int>(data['LinesTotal']),
+        lastLineNumber: castToType<int>(data['LastLineNumber']),
       );
 
   static DeviceInfoStruct? maybeFromMap(dynamic data) => data is Map
@@ -688,6 +713,8 @@ class DeviceInfoStruct extends BaseStruct {
         'CurrentLineIsLast': _currentLineIsLast,
         'BuildDate': _buildDate,
         'BuildVersion': _buildVersion,
+        'LinesTotal': _linesTotal,
+        'LastLineNumber': _lastLineNumber,
       }.withoutNulls;
 
   @override
@@ -915,6 +942,14 @@ class DeviceInfoStruct extends BaseStruct {
         'BuildVersion': serializeParam(
           _buildVersion,
           ParamType.String,
+        ),
+        'LinesTotal': serializeParam(
+          _linesTotal,
+          ParamType.int,
+        ),
+        'LastLineNumber': serializeParam(
+          _lastLineNumber,
+          ParamType.int,
         ),
       }.withoutNulls;
 
@@ -1200,6 +1235,16 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        linesTotal: deserializeParam(
+          data['LinesTotal'],
+          ParamType.int,
+          false,
+        ),
+        lastLineNumber: deserializeParam(
+          data['LastLineNumber'],
+          ParamType.int,
+          false,
+        ),
       );
 
   @override
@@ -1263,7 +1308,9 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineLog == other.currentLineLog &&
         currentLineIsLast == other.currentLineIsLast &&
         buildDate == other.buildDate &&
-        buildVersion == other.buildVersion;
+        buildVersion == other.buildVersion &&
+        linesTotal == other.linesTotal &&
+        lastLineNumber == other.lastLineNumber;
   }
 
   @override
@@ -1323,7 +1370,9 @@ class DeviceInfoStruct extends BaseStruct {
         currentLineLog,
         currentLineIsLast,
         buildDate,
-        buildVersion
+        buildVersion,
+        linesTotal,
+        lastLineNumber
       ]);
 }
 
@@ -1384,6 +1433,8 @@ DeviceInfoStruct createDeviceInfoStruct({
   bool? currentLineIsLast,
   String? buildDate,
   String? buildVersion,
+  int? linesTotal,
+  int? lastLineNumber,
 }) =>
     DeviceInfoStruct(
       type: type,
@@ -1442,4 +1493,6 @@ DeviceInfoStruct createDeviceInfoStruct({
       currentLineIsLast: currentLineIsLast,
       buildDate: buildDate,
       buildVersion: buildVersion,
+      linesTotal: linesTotal,
+      lastLineNumber: lastLineNumber,
     );

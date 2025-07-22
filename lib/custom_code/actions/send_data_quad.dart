@@ -1,5 +1,6 @@
 // Automatic FlutterFlow imports
 import '/backend/schema/structs/index.dart';
+import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
@@ -12,23 +13,24 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 Future<void> sendDataQuad(
-  BuildContext context,
-  bool montag,
-  bool dienstag,
-  bool mittwoch,
-  bool donnerstag,
-  bool freitag,
-  bool samstag,
-  bool sonntag,
-  String address,
-  int startHour,
-  int startMinute,
-  int stopHour,
-  int stopMinute,
-  int fan,
-  int power,
-  int interval,
-) async {
+    BuildContext context,
+    bool montag,
+    bool dienstag,
+    bool mittwoch,
+    bool donnerstag,
+    bool freitag,
+    bool samstag,
+    bool sonntag,
+    String address,
+    int startHour,
+    int startMinute,
+    int stopHour,
+    int stopMinute,
+    int fan,
+    int power,
+    int interval,
+    int venturiInterval,
+    int venturiDuration) async {
   String ArgToSend = "";
 
   // Day
@@ -97,10 +99,10 @@ Future<void> sendDataQuad(
   }
 
   // venturiInterval
-  ArgToSend += "000";
+  ArgToSend += venturiInterval.toString().padLeft(3, '0');
 
   // venturiDuration
-  ArgToSend += "000";
+  ArgToSend += venturiDuration.toString().padLeft(3, '0');
 
   // power
   try {

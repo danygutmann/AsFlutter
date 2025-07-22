@@ -16,3 +16,5 @@ export 'send_new_line.dart' show sendNewLine;
 export 'read_out_device.dart' show readOutDevice;
 export 'init_app.dart' show initApp;
 export 'delete_line.dart' show deleteLine;
+export 'delete_line_copy2.dart' show deleteLineCopy2;
+export 'delete_line_copy.dart' show deleteLineCopy;

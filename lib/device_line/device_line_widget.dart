@@ -3,9 +3,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/instant_timer.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'device_line_model.dart';
@@ -30,6 +32,19 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DeviceLineModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.instantTimer = InstantTimer.periodic(
+        duration: Duration(milliseconds: 1000),
+        callback: (timer) async {
+          await actions.getInfo(
+            context,
+          );
+        },
+        startImmediately: true,
+      );
+    });
   }
 
   @override
@@ -1371,10 +1386,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                               ],
                             ),
                           ),
-                          if ((FFAppState().CurrentDeviceInfo.typeLetter ==
-                                  'Q') ||
-                              (FFAppState().CurrentDeviceInfo.typeLetter ==
-                                  'V'))
+                          if (FFAppState().CurrentDeviceInfo.typeLetter == 'Q')
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
@@ -1477,76 +1489,6 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                   ),
                               hintText: FFLocalizations.of(context).getText(
                                 'rwf3m2d9' /* Intervall */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: false,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            ),
-                          if (FFAppState().CurrentDeviceInfo.typeLetter == 'V')
-                            FlutterFlowDropDown<int>(
-                              controller:
-                                  _model.dropDownChVenturiValueController ??=
-                                      FormFieldController<int>(
-                                _model.dropDownChVenturiValue ??= FFAppState()
-                                    .CurrentDeviceInfo
-                                    .currentLineFanVenturi,
-                              ),
-                              options: List<int>.from([200, 2, 3, 0]),
-                              optionLabels: [
-                                FFLocalizations.of(context).getText(
-                                  'vremqz7q' /* Venturi */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '1e6x9imm' /* Fan 2 */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '9zxobbpg' /* Fan 3 */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '87vfdpnj' /* not Set */,
-                                )
-                              ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropDownChVenturiValue = val),
-                              width: MediaQuery.sizeOf(context).width * 0.9,
-                              height: 40.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'hth34pe4' /* Intervall */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -1772,159 +1714,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                               isSearchable: false,
                               isMultiSelect: false,
                             ),
-                          if (FFAppState().CurrentDeviceInfo.typeLetter == 'V')
-                            FlutterFlowDropDown<int>(
-                              controller:
-                                  _model.dropDownVentIntervalValueController ??=
-                                      FormFieldController<int>(
-                                _model.dropDownVentIntervalValue ??=
-                                    FFAppState()
-                                        .CurrentDeviceInfo
-                                        .currentLineFan,
-                              ),
-                              options: List<int>.from([1, 2, 3, 4, 0]),
-                              optionLabels: [
-                                FFLocalizations.of(context).getText(
-                                  '64mrc676' /* all 1 Minute */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'txmeci1y' /* all 2 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0q8lmw12' /* all 3 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '97cr760l' /* all 4 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '1z4686ha' /* never */,
-                                )
-                              ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropDownVentIntervalValue = val),
-                              width: MediaQuery.sizeOf(context).width * 0.9,
-                              height: 40.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'xetj9zqt' /* Intervall */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: false,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            ),
-                          if (FFAppState().CurrentDeviceInfo.typeLetter == 'V')
-                            FlutterFlowDropDown<int>(
-                              controller:
-                                  _model.dropDownVentDurationValueController ??=
-                                      FormFieldController<int>(
-                                _model.dropDownVentDurationValue ??=
-                                    FFAppState()
-                                        .CurrentDeviceInfo
-                                        .currentLineFan,
-                              ),
-                              options: List<int>.from([1, 2, 3, 4, 0]),
-                              optionLabels: [
-                                FFLocalizations.of(context).getText(
-                                  '756w4g3z' /* for 1  Second */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'rjh93fz5' /* for 2 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'qy80bqvk' /* for 3 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '9vx4bz2o' /* for 4 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'wgc537cs' /* not active */,
-                                )
-                              ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropDownVentDurationValue = val),
-                              width: MediaQuery.sizeOf(context).width * 0.9,
-                              height: 40.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                '1m5642yl' /* Intervall */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: false,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            ),
-                          if ((FFAppState().CurrentDeviceInfo.typeLetter ==
-                                  'Q') ||
-                              ((FFAppState().CurrentDeviceInfo.typeLetter ==
-                                      'V') &&
-                                  (_model.dropDownChVenturiValue! < 199)))
+                          if (FFAppState().CurrentDeviceInfo.typeLetter == 'Q')
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
@@ -1977,11 +1767,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                 ),
                               ),
                             ),
-                          if ((FFAppState().CurrentDeviceInfo.typeLetter ==
-                                  'Q') ||
-                              ((FFAppState().CurrentDeviceInfo.typeLetter ==
-                                      'V') &&
-                                  (_model.dropDownChVenturiValue! < 199)))
+                          if (FFAppState().CurrentDeviceInfo.typeLetter == 'Q')
                             FlutterFlowDropDown<int>(
                               controller:
                                   _model.dropDownPowerValueController ??=
@@ -2061,32 +1847,44 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                               isSearchable: false,
                               isMultiSelect: false,
                             ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 5.0),
-                              child: FFButtonWidget(
-                                onPressed: true
-                                    ? null
-                                    : () async {
-                                        setAppLanguage(context, 'en');
-                                      },
-                                text: FFLocalizations.of(context).getText(
-                                  'xyiz87nd' /* Interval */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: double.infinity,
-                                  height: 20.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        font: GoogleFonts.interTight(
+                          if (FFAppState().CurrentDeviceInfo.typeLetter != 'V')
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 5.0),
+                                child: FFButtonWidget(
+                                  onPressed: true
+                                      ? null
+                                      : () async {
+                                          setAppLanguage(context, 'en');
+                                        },
+                                  text: FFLocalizations.of(context).getText(
+                                    'xyiz87nd' /* Interval */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 20.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                          fontSize: 13.0,
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .titleMedium
@@ -2096,77 +1894,78 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                                   .titleMedium
                                                   .fontStyle,
                                         ),
-                                        fontSize: 13.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .fontStyle,
-                                      ),
-                                  elevation: 0.0,
-                                  borderRadius: BorderRadius.circular(4.0),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(4.0),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          FlutterFlowDropDown<int>(
-                            controller:
-                                _model.dropDownIntervalValueController ??=
-                                    FormFieldController<int>(
-                              _model.dropDownIntervalValue ??= FFAppState()
-                                  .CurrentDeviceInfo
-                                  .currentLineInterval,
-                            ),
-                            options: List<int>.from(
-                                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22]),
-                            optionLabels: [
-                              FFLocalizations.of(context).getText(
-                                'zvu2k8bv' /* no Intervall */,
+                          if (FFAppState().CurrentDeviceInfo.typeLetter != 'V')
+                            FlutterFlowDropDown<int>(
+                              controller:
+                                  _model.dropDownIntervalValueController ??=
+                                      FormFieldController<int>(
+                                _model.dropDownIntervalValue ??= FFAppState()
+                                    .CurrentDeviceInfo
+                                    .currentLineInterval,
                               ),
-                              FFLocalizations.of(context).getText(
-                                'i3rajryp' /* 1 minute on, 9 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'dldl1vc4' /* 2 minutes on, 8 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'uodzkboj' /* 3 minutes on, 7 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'r3y5ue8r' /* 4 minutes on, 6 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'ee4nv3so' /* 5 minutes on, 5 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'o69tabwv' /* 6 minutes on, 4 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'qk9ykjcr' /* 7 minutes on, 3 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                '8jbs5yxz' /* 8 minutes on,  2 minutes off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                '8qn959f6' /* 9 minutes on,  1 minute off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                't3n6ry8q' /* 1 minute on, 1 minute off */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'm6mlu2e0' /* 2 minutes on, 2 minutes off */,
-                              )
-                            ],
-                            onChanged: (val) => safeSetState(
-                                () => _model.dropDownIntervalValue = val),
-                            width: MediaQuery.sizeOf(context).width * 0.9,
-                            height: 40.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
+                              options: List<int>.from(
+                                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22]),
+                              optionLabels: [
+                                FFLocalizations.of(context).getText(
+                                  'zvu2k8bv' /* no Intervall */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'i3rajryp' /* 1 minute on, 9 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'dldl1vc4' /* 2 minutes on, 8 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'uodzkboj' /* 3 minutes on, 7 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'r3y5ue8r' /* 4 minutes on, 6 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'ee4nv3so' /* 5 minutes on, 5 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'o69tabwv' /* 6 minutes on, 4 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'qk9ykjcr' /* 7 minutes on, 3 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '8jbs5yxz' /* 8 minutes on,  2 minutes off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '8qn959f6' /* 9 minutes on,  1 minute off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  't3n6ry8q' /* 1 minute on, 1 minute off */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'm6mlu2e0' /* 2 minutes on, 2 minutes off */,
+                                )
+                              ],
+                              onChanged: (val) => safeSetState(
+                                  () => _model.dropDownIntervalValue = val),
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              height: 40.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -2174,36 +1973,28 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'fhbeklmx' /* Intervall */,
+                              hintText: FFLocalizations.of(context).getText(
+                                'fhbeklmx' /* Intervall */,
+                              ),
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              elevation: 2.0,
+                              borderColor: Colors.transparent,
+                              borderWidth: 0.0,
+                              borderRadius: 8.0,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              hidesUnderline: true,
+                              isOverButton: false,
+                              isSearchable: false,
+                              isMultiSelect: false,
                             ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor: Colors.transparent,
-                            borderWidth: 0.0,
-                            borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 0.0),
-                            hidesUnderline: true,
-                            isOverButton: false,
-                            isSearchable: false,
-                            isMultiSelect: false,
-                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 5.0, 10.0, 0.0),

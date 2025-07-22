@@ -1,5 +1,6 @@
 // Automatic FlutterFlow imports
 import '/backend/schema/structs/index.dart';
+import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
@@ -17,14 +18,12 @@ Future<void> setDefaultLines(BuildContext context) async {
   try {
     if (FFAppState().CurrentDeviceInfo.typeLetter == "A") {
       await http.get(Uri.parse(
-          "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=000254000000023045001001100100002"));
+          "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=000254000000023045001001100100011"));
     }
 
     if (FFAppState().CurrentDeviceInfo.typeLetter == "V") {
       await http.get(Uri.parse(
-          "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=000254000000023045200001001100002"));
-      await http.get(Uri.parse(
-          "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=010254000000023045002000000100002"));
+          "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=12&DATA=000254000000023045200001001100000"));
     }
 
     if (FFAppState().CurrentDeviceInfo.typeLetter == "Q") {

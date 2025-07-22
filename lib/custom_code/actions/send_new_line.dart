@@ -1,5 +1,6 @@
 // Automatic FlutterFlow imports
 import '/backend/schema/structs/index.dart';
+import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
@@ -59,20 +60,37 @@ Future<void> sendNewLine(BuildContext context) async {
   // stopMinute
   ArgToSend += "045";
 
-  // fan
-  ArgToSend += "001";
+  if (Letter == "V") {
+    // fan
+    ArgToSend += "200";
 
-  // venturiInterval
-  ArgToSend += "000";
+    // venturiInterval
+    ArgToSend += "001";
 
-  // venturiDuration
-  ArgToSend += "000";
+    // venturiDuration
+    ArgToSend += "001";
 
-  // power
-  ArgToSend += "100";
+    // power
+    ArgToSend += "000";
 
-  // interval
-  ArgToSend += "011";
+    // interval
+    ArgToSend += "000";
+  } else {
+    // fan
+    ArgToSend += "001";
+
+    // alt: anlauf
+    ArgToSend += "000";
+
+    // alt: anlauf Speed
+    ArgToSend += "000";
+
+    // power
+    ArgToSend += "100";
+
+    // interval
+    ArgToSend += "011";
+  }
 
   // send data
   try {

@@ -1,5 +1,6 @@
 // Automatic FlutterFlow imports
 import '/backend/schema/structs/index.dart';
+import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
@@ -207,7 +208,7 @@ Future<void> editLine(BuildContext context, String lineAddress) async {
   try {
     value = int.parse(splitted[7]);
     FFAppState().update(() {
-      FFAppState().CurrentDeviceInfo.currentLineVenturiInterval = value;
+      FFAppState().CurrentDeviceInfo.currentLineVenturiDuration = value;
     });
   } catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(

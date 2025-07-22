@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/instant_timer.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
   ///  State fields for stateful widgets in this page.
 
+  InstantTimer? instantTimer;
   // State field(s) for CheckboxMo widget.
   bool? checkboxMoValue;
   // State field(s) for CheckboxDi widget.
@@ -36,21 +38,12 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
   // State field(s) for DropDownChQuad widget.
   int? dropDownChQuadValue;
   FormFieldController<int>? dropDownChQuadValueController;
-  // State field(s) for DropDownChVenturi widget.
-  int? dropDownChVenturiValue;
-  FormFieldController<int>? dropDownChVenturiValueController;
   // State field(s) for DropDownVenturiInt widget.
   int? dropDownVenturiIntValue;
   FormFieldController<int>? dropDownVenturiIntValueController;
   // State field(s) for DropDownVenturiDur widget.
   int? dropDownVenturiDurValue;
   FormFieldController<int>? dropDownVenturiDurValueController;
-  // State field(s) for DropDownVentInterval widget.
-  int? dropDownVentIntervalValue;
-  FormFieldController<int>? dropDownVentIntervalValueController;
-  // State field(s) for DropDownVentDuration widget.
-  int? dropDownVentDurationValue;
-  FormFieldController<int>? dropDownVentDurationValueController;
   // State field(s) for DropDownPower widget.
   int? dropDownPowerValue;
   FormFieldController<int>? dropDownPowerValueController;
@@ -62,11 +55,13 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    instantTimer?.cancel();
+  }
 
   /// Action blocks.
   Future delete(BuildContext context) async {
-    await actions.deleteLine(
+    await actions.deleteLineCopy2(
       context,
     );
 
@@ -74,24 +69,80 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
   }
 
   Future save(BuildContext context) async {
-    await actions.sendDataQuad(
-      context,
-      checkboxMoValue!,
-      checkboxDiValue!,
-      checkboxMiValue!,
-      checkboxDoValue!,
-      checkboxFrValue!,
-      checkboxSaValue!,
-      checkboxSoValue!,
-      FFAppState().CurrentDeviceInfo.currentLineAddress,
-      dropDownStartHourValue!,
-      dropDownStartMinuteValue!,
-      dropDownStopHourValue!,
-      dropDownStopMinuteValue!,
-      dropDownChQuadValue!,
-      dropDownPowerValue!,
-      dropDownIntervalValue!,
-    );
+    await Future.wait([
+      Future(() async {
+        if (FFAppState().CurrentDeviceInfo.typeLetter == 'A') {
+          await actions.sendDataQuad(
+            context,
+            checkboxMoValue!,
+            checkboxDiValue!,
+            checkboxMiValue!,
+            checkboxDoValue!,
+            checkboxFrValue!,
+            checkboxSaValue!,
+            checkboxSoValue!,
+            FFAppState().CurrentDeviceInfo.currentLineAddress,
+            dropDownStartHourValue!,
+            dropDownStartMinuteValue!,
+            dropDownStopHourValue!,
+            dropDownStopMinuteValue!,
+            1,
+            100,
+            dropDownIntervalValue!,
+            0,
+            0,
+          );
+        }
+      }),
+      Future(() async {
+        if (FFAppState().CurrentDeviceInfo.typeLetter == 'Q') {
+          await actions.sendDataQuad(
+            context,
+            checkboxMoValue!,
+            checkboxDiValue!,
+            checkboxMiValue!,
+            checkboxDoValue!,
+            checkboxFrValue!,
+            checkboxSaValue!,
+            checkboxSoValue!,
+            FFAppState().CurrentDeviceInfo.currentLineAddress,
+            dropDownStartHourValue!,
+            dropDownStartMinuteValue!,
+            dropDownStopHourValue!,
+            dropDownStopMinuteValue!,
+            dropDownChQuadValue!,
+            dropDownPowerValue!,
+            dropDownIntervalValue!,
+            0,
+            0,
+          );
+        }
+      }),
+      Future(() async {
+        if (FFAppState().CurrentDeviceInfo.typeLetter == 'V') {
+          await actions.sendDataQuad(
+            context,
+            checkboxMoValue!,
+            checkboxDiValue!,
+            checkboxMiValue!,
+            checkboxDoValue!,
+            checkboxFrValue!,
+            checkboxSaValue!,
+            checkboxSoValue!,
+            FFAppState().CurrentDeviceInfo.currentLineAddress,
+            dropDownStartHourValue!,
+            dropDownStartMinuteValue!,
+            dropDownStopHourValue!,
+            dropDownStopMinuteValue!,
+            200,
+            100,
+            0,
+            dropDownVenturiIntValue!,
+            dropDownVenturiDurValue!,
+          );
+        }
+      }),
+    ]);
 
     context.pushNamed(DeviceMainWidget.routeName);
   }

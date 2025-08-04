@@ -1,6 +1,5 @@
 // Automatic FlutterFlow imports
 import '/backend/schema/structs/index.dart';
-import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
@@ -29,13 +28,13 @@ Future<void> getInfo(BuildContext context) async {
       });
       // final erg = response.body;
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('failed')),
-      );
+      FFAppState().update(() {
+        FFAppState().CurrentDeviceInfo.appStatusLine = " ";
+      });
     }
   } catch (e) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Error: $e')),
-    );
+    FFAppState().update(() {
+      FFAppState().CurrentDeviceInfo.appStatusLine = " ";
+    });
   }
 }

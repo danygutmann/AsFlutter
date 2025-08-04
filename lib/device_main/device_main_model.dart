@@ -64,4 +64,12 @@ class DeviceMainModel extends FlutterFlowModel<DeviceMainWidget> {
       context,
     );
   }
+
+  Future goHome(BuildContext context) async {
+    context.pushNamed(HomePageWidget.routeName);
+
+    await actions.discoverDevice(
+      context,
+    );
+  }
 }

@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'device_main_model.dart';
@@ -29,13 +28,6 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DeviceMainModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.readOutDevice(
-        context,
-      );
-    });
   }
 
   @override
@@ -120,7 +112,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.goNamed(HomePageWidget.routeName);
+                            await _model.goHome(context);
                           },
                           child: Container(
                             width: 200.0,

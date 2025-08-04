@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/instant_timer.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:flutter/material.dart';
 class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
   ///  State fields for stateful widgets in this page.
 
-  InstantTimer? instantTimer;
   // State field(s) for CheckboxMo widget.
   bool? checkboxMoValue;
   // State field(s) for CheckboxDi widget.
@@ -55,9 +53,7 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    instantTimer?.cancel();
-  }
+  void dispose() {}
 
   /// Action blocks.
   Future delete(BuildContext context) async {

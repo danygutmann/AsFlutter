@@ -1,6 +1,5 @@
 // Automatic FlutterFlow imports
 import '/backend/schema/structs/index.dart';
-import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
@@ -72,9 +71,7 @@ Future<void> setDateTime(BuildContext context) async {
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('OK' + response.body.trim())),
-      );
+      // do nothing
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('set time failed')),
@@ -82,7 +79,7 @@ Future<void> setDateTime(BuildContext context) async {
     }
   } catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Error: $e')),
+      SnackBar(content: Text('Set Time Error: $e')),
     );
   }
   await act.getInfo(context);

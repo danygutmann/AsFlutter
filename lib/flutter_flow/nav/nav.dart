@@ -38,13 +38,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: Colors.white,
+                color: Colors.transparent,
                 child: Center(
                   child: Image.asset(
-                    'assets/images/Logo_Kreis_grn_grau.png',
+                    'assets/images/airscent_Logo_grun_hoch_(1).png',
                     width: MediaQuery.sizeOf(context).width * 0.9,
-                    height: 90.0,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
@@ -57,13 +56,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: Colors.white,
+                    color: Colors.transparent,
                     child: Center(
                       child: Image.asset(
-                        'assets/images/Logo_Kreis_grn_grau.png',
+                        'assets/images/airscent_Logo_grun_hoch_(1).png',
                         width: MediaQuery.sizeOf(context).width * 0.9,
-                        height: 90.0,
-                        fit: BoxFit.contain,
+                        fit: BoxFit.fitWidth,
                       ),
                     ),
                   ),

@@ -1,6 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
-import 'home_page_widget.dart' show HomePageWidget;
 import 'package:flutter/material.dart';
 
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
@@ -11,5 +11,14 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   void dispose() {}
 
   /// Action blocks.
-  Future abGetType(BuildContext context) async {}
+  Future openDevice(BuildContext context) async {
+    context.pushNamed(DeviceMainWidget.routeName);
+
+    await actions.setDateTime(
+      context,
+    );
+    await actions.readOutDevice(
+      context,
+    );
+  }
 }

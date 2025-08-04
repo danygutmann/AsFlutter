@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
@@ -28,6 +29,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await actions.discoverDevice(
+        context,
+      );
+    });
   }
 
   @override
@@ -73,7 +81,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: FlutterFlowTheme.of(context).alternate,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     font: GoogleFonts.interTight(
@@ -98,15 +106,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                       Container(
-                        width: 200.0,
-                        height: 200.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: MediaQuery.sizeOf(context).width * 1.0,
                         clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
-                          'assets/images/LogoKreisgrngrauOhneText.png',
-                          fit: BoxFit.cover,
+                          'assets/images/App_Icon_512x512px_(1).png',
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ],
@@ -185,7 +193,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       EdgeInsetsDirectional.fromSTEB(10.0, 25.0, 10.0, 5.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed(DeviceMainWidget.routeName);
+                      await _model.openDevice(context);
                     },
                     text: FFAppState().CurrentDeviceInfo.deviceName,
                     options: FFButtonOptions(

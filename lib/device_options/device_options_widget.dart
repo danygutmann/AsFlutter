@@ -254,30 +254,40 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 5.0, 10.0, 5.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            await actions.setPwm(
-                              context,
-                            );
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            '8l3e8em3' /* Set Fan Frequency */,
-                          ),
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
+                      if (FFAppState().CurrentDeviceInfo.typeLetter != 'A')
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 5.0, 10.0, 5.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              await actions.setPwm(
+                                context,
+                              );
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              '8l3e8em3' /* Set Fan Frequency */,
+                            ),
+                            options: FFButtonOptions(
+                              width: double.infinity,
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .fontWeight,
@@ -285,20 +295,11 @@ class _DeviceOptionsWidgetState extends State<DeviceOptionsWidget> {
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(10.0),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
                           ),
                         ),
-                      ),
                     ].divide(SizedBox(height: 10.0)),
                   ),
                 ),

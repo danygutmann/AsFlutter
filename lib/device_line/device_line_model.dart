@@ -62,6 +62,10 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
     );
 
     context.pushNamed(DeviceMainWidget.routeName);
+
+    await actions.readOutDevice(
+      context,
+    );
   }
 
   Future save(BuildContext context) async {
@@ -141,5 +145,9 @@ class DeviceLineModel extends FlutterFlowModel<DeviceLineWidget> {
     ]);
 
     context.pushNamed(DeviceMainWidget.routeName);
+
+    await actions.readOutDevice(
+      context,
+    );
   }
 }

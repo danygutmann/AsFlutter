@@ -81,7 +81,7 @@ class _AppSettingsWidgetState extends State<AppSettingsWidget> {
                                 16.0, 0.0, 16.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: FlutterFlowTheme.of(context).alternate,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -122,7 +122,7 @@ class _AppSettingsWidgetState extends State<AppSettingsWidget> {
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
-                              'assets/images/LogoKreisgrngrauOhneText.png',
+                              'assets/images/App_Icon_512x512px_(1).png',
                               fit: BoxFit.cover,
                             ),
                           ),

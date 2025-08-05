@@ -30,7 +30,8 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
+    GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
@@ -48,7 +49,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : HomePageWidget(),
+          : entryPage ?? HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -66,7 +67,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : HomePageWidget(),
+              : entryPage ?? HomePageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,

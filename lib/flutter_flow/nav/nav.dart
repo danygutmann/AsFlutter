@@ -42,9 +42,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                 color: Colors.transparent,
                 child: Center(
                   child: Image.asset(
-                    'assets/images/airscent_Logo_grun_hoch_(1).png',
+                    'assets/images/Logo_Kreis_grn_grau.png',
                     width: MediaQuery.sizeOf(context).width * 0.9,
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -60,9 +60,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                     color: Colors.transparent,
                     child: Center(
                       child: Image.asset(
-                        'assets/images/airscent_Logo_grun_hoch_(1).png',
+                        'assets/images/Logo_Kreis_grn_grau.png',
                         width: MediaQuery.sizeOf(context).width * 0.9,
-                        fit: BoxFit.fitWidth,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),

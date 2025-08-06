@@ -15,32 +15,43 @@ import 'dart:convert';
 Future deleteLineCopy2(
   BuildContext context,
 ) async {
-  List lines = ["255255255255255255255255255255255"];
-  lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line01Raw));
-  lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line02Raw));
-  lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line03Raw));
-  lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line04Raw));
-  lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line05Raw));
-
-  int deletedLine = FFAppState().CurrentDeviceInfo.currentLineNumber;
-  int lastLine = FFAppState().CurrentDeviceInfo.linesTotal;
   String address = "";
   String data = "";
   String url = "";
+  int deletedLine = FFAppState().CurrentDeviceInfo.currentLineNumber;
+
+  List lines = ["000"];
+  if (FFAppState().CurrentDeviceInfo.line01Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line01Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line02Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line02Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line03Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line03Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line04Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line04Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line05Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line05Raw));
+
+  int cntBefore = lines.length - 1;
+  int lastLine = FFAppState().CurrentDeviceInfo.linesTotal;
 
   String result = "Delete line " +
       deletedLine.toString() +
       " of " +
+      cntBefore.toString() +
+      "(" +
       lastLine.toString() +
-      ". ";
+      ").";
 
-  if (deletedLine != lastLine) {
-    // copy lastline to deleted line
-    lines[deletedLine] = lines[lastLine];
-  }
+  // delete in array
+  lines.removeAt(deletedLine);
 
-  // remove deleted line -1
-  deletedLine = deletedLine - 1;
+  // get array indexes
+  var indexes = lines.asMap();
 
   // delte all lines
   final req =
@@ -50,7 +61,7 @@ Future deleteLineCopy2(
   }
 
   // write line 1
-  if (deletedLine >= 1) {
+  if (indexes.containsKey(1)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=000" +
         lines[1];
     final req1 = await http.get(Uri.parse(url));
@@ -59,7 +70,7 @@ Future deleteLineCopy2(
     }
   }
   // write line 2
-  if (deletedLine >= 2) {
+  if (indexes.containsKey(2)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=010" +
         lines[2];
     final req2 = await http.get(Uri.parse(url));
@@ -68,7 +79,7 @@ Future deleteLineCopy2(
     }
   }
   // write line 3
-  if (deletedLine >= 3) {
+  if (indexes.containsKey(3)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=020" +
         lines[3];
     final req3 = await http.get(Uri.parse(url));
@@ -77,7 +88,7 @@ Future deleteLineCopy2(
     }
   }
   // write line 4
-  if (deletedLine >= 4) {
+  if (indexes.containsKey(4)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=030" +
         lines[4];
     final req4 = await http.get(Uri.parse(url));

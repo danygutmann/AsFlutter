@@ -1,5 +1,6 @@
 export 'open_wifi.dart' show openWifi;
 export 'discover_device.dart' show discoverDevice;
+export 'remove_device.dart' show removeDevice;
 export 'set_date_time.dart' show setDateTime;
 export 'get_info.dart' show getInfo;
 export 'delete_all_lines.dart' show deleteAllLines;
@@ -18,3 +19,4 @@ export 'init_app.dart' show initApp;
 export 'delete_line.dart' show deleteLine;
 export 'delete_line_copy2.dart' show deleteLineCopy2;
 export 'delete_line_copy.dart' show deleteLineCopy;
+export 'stored_find_and_list.dart' show storedFindAndList;

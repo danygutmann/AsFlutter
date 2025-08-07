@@ -15,6 +15,8 @@ import 'dart:convert';
 
 Future<void> getInfo(BuildContext context) async {
   String url = "http://192.168.4.1/CMD/?CMD=SendCmd&SUBCMD=I";
+  FFAppState().CurrentDeviceInfo.appStatusLine = " ";
+  return;
 
   try {
     final response = await http.get(Uri.parse(url));

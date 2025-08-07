@@ -273,9 +273,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await actions.openWifV2(
-                      context,
-                    );
+                    await _model.goToWiFi(context);
+                    safeSetState(() {});
                   },
                   text: FFLocalizations.of(context).getText(
                     'd6l4o38b' /* WiFi Settings */,

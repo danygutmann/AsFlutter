@@ -21,4 +21,13 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
       context,
     );
   }
+
+  Future goToWiFi(BuildContext context) async {
+    await actions.removeDevice(
+      context,
+    );
+    await actions.openWifV2(
+      context,
+    );
+  }
 }

@@ -35,7 +35,7 @@ class FFAppState extends ChangeNotifier {
     updateFn(_CurrentDeviceInfo);
   }
 
-  String _currentStatus = 'startup';
+  String _currentStatus = '';
   String get currentStatus => _currentStatus;
   set currentStatus(String value) {
     _currentStatus = value;

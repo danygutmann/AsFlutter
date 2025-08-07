@@ -39,10 +39,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: Colors.transparent,
+                color: Colors.white,
                 child: Center(
                   child: Image.asset(
-                    'assets/images/Logo_Kreis_grn_grau.png',
+                    'assets/images/airscent_Logo_grun_hoch_(1).png',
                     width: MediaQuery.sizeOf(context).width * 0.9,
                     fit: BoxFit.cover,
                   ),
@@ -57,10 +57,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: Colors.transparent,
+                    color: Colors.white,
                     child: Center(
                       child: Image.asset(
-                        'assets/images/Logo_Kreis_grn_grau.png',
+                        'assets/images/airscent_Logo_grun_hoch_(1).png',
                         width: MediaQuery.sizeOf(context).width * 0.9,
                         fit: BoxFit.cover,
                       ),

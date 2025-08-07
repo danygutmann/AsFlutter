@@ -389,7 +389,9 @@ class _AppSettingsWidgetState extends State<AppSettingsWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 10.0),
                   child: Text(
-                    'App Version: 999',
+                    FFLocalizations.of(context).getText(
+                      'dpxa1mw3' /*    */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           font: GoogleFonts.inter(
                             fontWeight: FlutterFlowTheme.of(context)

@@ -227,7 +227,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 5.0, 10.0, 5.0),
+                                  10.0, 10.0, 10.0, 5.0),
                               child: FFButtonWidget(
                                 onPressed: true
                                     ? null
@@ -797,7 +797,7 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    '3agoxb1s' /* Begin */,
+                                    '3agoxb1s' /* Begin: */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1548,1086 +1548,1248 @@ class _DeviceLineWidgetState extends State<DeviceLineWidget> {
                               ),
                             ),
                           if (FFAppState().CurrentDeviceInfo.typeLetter == 'V')
-                            FlutterFlowDropDown<int>(
-                              controller:
-                                  _model.dropDownVenturiIntValueController ??=
-                                      FormFieldController<int>(
-                                _model.dropDownVenturiIntValue ??= FFAppState()
-                                    .CurrentDeviceInfo
-                                    .currentLineVenturiInterval,
-                              ),
-                              options: List<int>.from([
-                                0,
-                                1,
-                                2,
-                                3,
-                                4,
-                                5,
-                                6,
-                                7,
-                                8,
-                                9,
-                                10,
-                                11,
-                                12,
-                                13,
-                                14,
-                                15,
-                                16,
-                                17,
-                                18,
-                                19,
-                                20,
-                                21,
-                                22,
-                                23,
-                                24,
-                                25,
-                                26,
-                                27,
-                                28,
-                                29,
-                                30,
-                                31,
-                                32,
-                                33,
-                                34,
-                                35,
-                                36,
-                                37,
-                                38,
-                                39,
-                                40,
-                                41,
-                                42,
-                                43,
-                                44,
-                                45,
-                                46,
-                                47,
-                                48,
-                                49,
-                                50,
-                                51,
-                                52,
-                                53,
-                                54,
-                                55,
-                                56,
-                                57,
-                                58,
-                                59,
-                                60
-                              ]),
-                              optionLabels: [
-                                FFLocalizations.of(context).getText(
-                                  'qzxow1x5' /* never */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '31ahxrdi' /* every Minute */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '72z26jb0' /* all 2 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'v0hx1m22' /* all 3 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'o6uzr4sz' /* all 4 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '8pk20lj3' /* all 5 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4eisa2wo' /* all 6 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ezelaz7r' /* all 7 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'zb94z5fr' /* all 8 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'a6plkxy2' /* all 9 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'd5bjuznh' /* all 10 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2iu1hfyp' /* all 11 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '3g8ms350' /* all 12 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '8zs1w1fr' /* all 13 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4rrk7ouw' /* all 14 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'r6e3py8b' /* all 15 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'orgz9lw9' /* all 16 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'tbalnxyu' /* all 17 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'lvhlcnyk' /* all 18 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '9geu1tah' /* all 19 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '8lj91m3r' /* all 20 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'rdj8hjur' /* all 21 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'vzubyus1' /* all 22 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5blaumsg' /* all 23 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'xkm4xf2v' /* all 24 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'con2upfs' /* all 25 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'qr94aaxp' /* all 26 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'wen0cser' /* all 27 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'skf2lsew' /* all 28 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'd9vu6zfy' /* all 29 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'x8dm052k' /* all 30 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'qcsqsdla' /* all 31 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4fn6sqi4' /* all 32 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2mlhf8to' /* all 33 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'r9qziyef' /* all 34 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ktwfvzbi' /* all 35 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '1ubtlyy8' /* all 36 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'wn4zehpl' /* all 37 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'kqrn87fh' /* all 38 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '8g8uwt75' /* all 39 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2eyvkyd9' /* all 40 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'i7ukzjwd' /* all 41 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '7yieaamw' /* all 42 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'eihr49ch' /* all 43 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jy8vnn7g' /* all 44 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ijc9xrqw' /* all 45 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'pwvre5yd' /* all 46 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '1wkixvod' /* all 47 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '9dux6vvy' /* all 48 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'bab5nkiq' /* all 49 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'hskxfak6' /* all 50 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'w9arwhkn' /* all 51 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '8pb8ea8f' /* all 52 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'e3q910ll' /* all 53 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'toh24fra' /* all 54 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'vxri8jac' /* all 55 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'xqobopuj' /* all 56 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '7rz4xxmb' /* all 57 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4o2svq0p' /* all 58 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '08fnxjm0' /* all 59 Minutes */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'byaq347i' /* all 60 Minutes */,
-                                )
-                              ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropDownVenturiIntValue = val),
-                              width: MediaQuery.sizeOf(context).width * 0.9,
-                              height: 40.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'o4ljwpzr' /* Intervall */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: false,
-                              isSearchable: false,
-                              isMultiSelect: false,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 5.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'dh05wxst' /* All */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                  if (FFAppState()
+                                          .CurrentDeviceInfo
+                                          .typeLetter ==
+                                      'V')
+                                    FlutterFlowDropDown<int>(
+                                      controller: _model
+                                              .dropDownVenturiIntValueController ??=
+                                          FormFieldController<int>(
+                                        _model.dropDownVenturiIntValue ??=
+                                            FFAppState()
+                                                .CurrentDeviceInfo
+                                                .currentLineVenturiInterval,
+                                      ),
+                                      options: List<int>.from([
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5,
+                                        6,
+                                        7,
+                                        8,
+                                        9,
+                                        10,
+                                        11,
+                                        12,
+                                        13,
+                                        14,
+                                        15,
+                                        16,
+                                        17,
+                                        18,
+                                        19,
+                                        20,
+                                        21,
+                                        22,
+                                        23,
+                                        24,
+                                        25,
+                                        26,
+                                        27,
+                                        28,
+                                        29,
+                                        30,
+                                        31,
+                                        32,
+                                        33,
+                                        34,
+                                        35,
+                                        36,
+                                        37,
+                                        38,
+                                        39,
+                                        40,
+                                        41,
+                                        42,
+                                        43,
+                                        44,
+                                        45,
+                                        46,
+                                        47,
+                                        48,
+                                        49,
+                                        50,
+                                        51,
+                                        52,
+                                        53,
+                                        54,
+                                        55,
+                                        56,
+                                        57,
+                                        58,
+                                        59,
+                                        60
+                                      ]),
+                                      optionLabels: [
+                                        FFLocalizations.of(context).getText(
+                                          '31ahxrdi' /* 1 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '72z26jb0' /* 2 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'v0hx1m22' /* 3 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'o6uzr4sz' /* 4 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '8pk20lj3' /* 5 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4eisa2wo' /* 6 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ezelaz7r' /* 7 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'zb94z5fr' /* 8 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'a6plkxy2' /* 9 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'd5bjuznh' /* 10 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2iu1hfyp' /* 11 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '3g8ms350' /* 12 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '8zs1w1fr' /* 13 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4rrk7ouw' /* 14 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'r6e3py8b' /* 15 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'orgz9lw9' /* 16 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'tbalnxyu' /* 17 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'lvhlcnyk' /* 18 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '9geu1tah' /* 19 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '8lj91m3r' /* 20 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rdj8hjur' /* 21 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'vzubyus1' /* 22 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '5blaumsg' /* 23 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qba5arvq' /* 24 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'con2upfs' /* 25 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qr94aaxp' /* 26 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wen0cser' /* 27 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'skf2lsew' /* 28 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'd9vu6zfy' /* 29 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'x8dm052k' /* 30 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qcsqsdla' /* 31 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4fn6sqi4' /* 32 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2mlhf8to' /* 33 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'r9qziyef' /* 34 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ktwfvzbi' /* 35 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '1ubtlyy8' /* 36 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wn4zehpl' /* 37 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'kqrn87fh' /* 38 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '8g8uwt75' /* 39 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2eyvkyd9' /* 40 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'i7ukzjwd' /* 41 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7yieaamw' /* 42 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'eihr49ch' /* 43 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jy8vnn7g' /* 44 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ijc9xrqw' /* 45 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'pwvre5yd' /* 46 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '1wkixvod' /* 47 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '9dux6vvy' /* 48 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'bab5nkiq' /* 49 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'hskxfak6' /* 50 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'w9arwhkn' /* 51 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '8pb8ea8f' /* 52 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'e3q910ll' /* 53 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'toh24fra' /* 54 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'vxri8jac' /* 55 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'xqobopuj' /* 56 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7rz4xxmb' /* 57 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4o2svq0p' /* 58 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '08fnxjm0' /* 59 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'byaq347i' /* 60 */,
+                                        )
+                                      ],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropDownVenturiIntValue = val),
+                                      width: 100.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'o4ljwpzr' /* Intervall */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 5.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'v3t9nhc0' /* Minutes */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           if (FFAppState().CurrentDeviceInfo.typeLetter == 'V')
-                            FlutterFlowDropDown<int>(
-                              controller:
-                                  _model.dropDownVenturiDurValueController ??=
-                                      FormFieldController<int>(
-                                _model.dropDownVenturiDurValue ??= FFAppState()
-                                    .CurrentDeviceInfo
-                                    .currentLineVenturiDuration,
-                              ),
-                              options: List<int>.from([
-                                1,
-                                2,
-                                3,
-                                4,
-                                5,
-                                6,
-                                7,
-                                8,
-                                9,
-                                10,
-                                11,
-                                12,
-                                13,
-                                14,
-                                15,
-                                16,
-                                17,
-                                18,
-                                19,
-                                20,
-                                21,
-                                22,
-                                23,
-                                24,
-                                25,
-                                26,
-                                27,
-                                28,
-                                29,
-                                30,
-                                31,
-                                32,
-                                33,
-                                34,
-                                35,
-                                36,
-                                37,
-                                38,
-                                39,
-                                40,
-                                41,
-                                42,
-                                43,
-                                44,
-                                45,
-                                46,
-                                47,
-                                48,
-                                49,
-                                50,
-                                51,
-                                52,
-                                53,
-                                54,
-                                55,
-                                56,
-                                57,
-                                58,
-                                59,
-                                60,
-                                61,
-                                62,
-                                63,
-                                64,
-                                65,
-                                66,
-                                67,
-                                68,
-                                69,
-                                70,
-                                71,
-                                72,
-                                73,
-                                74,
-                                75,
-                                76,
-                                77,
-                                78,
-                                79,
-                                80,
-                                81,
-                                82,
-                                83,
-                                84,
-                                85,
-                                86,
-                                87,
-                                88,
-                                89,
-                                90,
-                                91,
-                                92,
-                                93,
-                                94,
-                                95,
-                                96,
-                                97,
-                                98,
-                                99,
-                                100,
-                                101,
-                                102,
-                                103,
-                                104,
-                                105,
-                                106,
-                                107,
-                                108,
-                                109,
-                                110,
-                                111,
-                                112,
-                                113,
-                                114,
-                                115,
-                                116,
-                                117,
-                                118,
-                                119,
-                                120,
-                                121,
-                                122,
-                                123,
-                                124,
-                                125,
-                                126,
-                                127,
-                                128,
-                                129,
-                                130,
-                                131,
-                                132,
-                                133,
-                                134,
-                                135,
-                                136,
-                                137,
-                                138,
-                                139,
-                                140,
-                                141,
-                                142,
-                                143,
-                                144,
-                                145,
-                                146,
-                                147,
-                                148,
-                                149,
-                                150,
-                                151,
-                                152,
-                                153,
-                                154,
-                                155,
-                                156,
-                                157,
-                                158,
-                                159,
-                                160,
-                                161,
-                                162,
-                                163,
-                                164,
-                                165,
-                                166,
-                                167,
-                                168,
-                                169,
-                                170,
-                                171,
-                                172,
-                                173,
-                                174,
-                                175,
-                                176,
-                                177,
-                                178,
-                                179,
-                                180
-                              ]),
-                              optionLabels: [
-                                FFLocalizations.of(context).getText(
-                                  'zm9ax461' /* for one Second */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '3rzzy262' /* for 2 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'rzrfw2d3' /* for 3 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'kr24olnw' /* for 4 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'zskkxs0t' /* for 5 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'kjbww7cr' /* for 6 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'niesp2eq' /* for 7 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '3qe8twpf' /* for 8 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '492llnoe' /* for 9 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'fd0r9pt6' /* for 10 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'uldllc7l' /* for 11 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'exw3aw8h' /* for 12 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'pd5teuof' /* for 13 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ydp0fstw' /* for 14 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '78mkyhdg' /* for 15 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0n3wfz3u' /* for 16 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'za60zx89' /* for 17 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'xxqmc3lv' /* for 18 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'cmiten9a' /* for 19 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'rd9sy3sf' /* for 20 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  's93n61kk' /* for 21 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'gdxcsm9v' /* for 22 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '60rn8uct' /* for 23 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '9hl1vfri' /* for 24 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '862kevf3' /* for 25 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'aly8oc80' /* for 26 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4q7bsha7' /* for 27 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jrrham78' /* for 28 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'hgfmru9x' /* for 29 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'cb3m5ua5' /* for 30 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  't01z3atk' /* for 31 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'cigrp5ol' /* for 32 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'a424516t' /* for 33 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0em4tds3' /* for 34 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'fg2u52zp' /* for 35 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'fdpqelhp' /* for 36 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'cpn64m8c' /* for 37 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5yxe4yy2' /* for 38 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '6yx4qpbt' /* for 39 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'o73ht2p5' /* for 40 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'g3aib9vv' /* for 41 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '94us2umg' /* for 42 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'gqjzow9y' /* for 43 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5byg18ms' /* for 44 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'um34c3a8' /* for 45 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'e2jx50lp' /* for 46 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'nx93tg3d' /* for 47 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '9m34led5' /* for 48 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ss38hni0' /* for 49 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ioif9zvj' /* for 50 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '1tmrgpsm' /* for 51 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '73nuvnpn' /* for 52 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'i3x8s7ce' /* for 53 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  's5mcbtpz' /* for 54 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5rilda6t' /* for 55 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'crb6zapc' /* for 56 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'exyr7yuh' /* for 57 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'igzyckgu' /* for 58 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5nvm7hg5' /* for 59 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'yy1jqctg' /* for 60 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'w2pxooau' /* for 61 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'y6l1ufa9' /* for 62 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '08y1ix7b' /* for 63 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'tc9tvred' /* for 64 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'huz519qz' /* for 65 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0zqvpahs' /* for 66 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '095ybp26' /* for 67 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2spxajsb' /* for 68 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2lpsl349' /* for 69 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'mz9ohszf' /* for 70 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'h4vunrs5' /* for 71 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'cnnzsi6q' /* for 72 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '13kqdoj4' /* for 73 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  's2fbhy3s' /* for 74 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'tpm02zxy' /* for 75 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2zu9o7uf' /* for 76 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4cvtty6o' /* for 77 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'wg5x98k3' /* for 78 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jc6r793a' /* for 79 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '9o44a56h' /* for 80 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'linm2hye' /* for 81 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ooun3pbq' /* for 82 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'nq5naqtr' /* for 83 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'hf0iw15p' /* for 84 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'uy5hbgxm' /* for 85 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'pcs3a8tn' /* for 86 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'prw3rmap' /* for 87 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5pup67tk' /* for 88 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '7csdd9x5' /* for 89 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ag16t9d8' /* for 90 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0nykbtwt' /* for 91 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jjpakge7' /* for 92 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'wei5uku1' /* for 93 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2xmlvor8' /* for 94 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'wftdrt51' /* for 95 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'x6ddenr2' /* for 96 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'b7v8wvbf' /* for 97 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ooefhq46' /* for 98 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'v1g0vm9g' /* for 99 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'sf9v6jrd' /* for 100 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'j52lwp49' /* for 101 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'vxofafg4' /* for 102 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'yxmha4mw' /* for 103 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'webidw0x' /* for 104 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '1qw1euav' /* for 105 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2vg77trx' /* for 106 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '1m34squl' /* for 107 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5f01jr2b' /* for 108 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'mbnde8k0' /* for 109 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'lase7q51' /* for 110 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'wfpnqn9x' /* for 111 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'fcmpoyxl' /* for 112 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'owoieqkx' /* for 113 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'rx05uq4j' /* for 114 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '7299hgao' /* for 115 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'agnuz6at' /* for 116 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4as2rgvk' /* for 117 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'nuw73fbv' /* for 118 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'phzn48q8' /* for 119 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'rvaytvll' /* for 120 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'oba0fbo7' /* for 121 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2ilycghq' /* for 122 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'qubrllvh' /* for 123 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'etbp3lmz' /* for 124 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'uuwu5a7t' /* for 125 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'and67cvu' /* for 126 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0nmrz1gb' /* for 127 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '228zen3z' /* for 128 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'hi6l0qyf' /* for 129 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'uh3fisbt' /* for 130 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'hbup3ia3' /* for 131 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'vmxdqcl0' /* for 132 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ewd1312y' /* for 133 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2lb6b4sq' /* for 134 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'dutx7mlv' /* for 135 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'w1ju8sio' /* for 136 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '7fvj0ty4' /* for 137 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '7z30ew98' /* for 138 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '6eqylj85' /* for 139 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'vxg5oy9v' /* for 140 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '07wswg0c' /* for 141 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'bt597rkd' /* for 142 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0w8knt58' /* for 143 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5tdta0j2' /* for 144 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'kw066yo8' /* for 145 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'h1du0lyo' /* for 146 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2r240fj2' /* for 147 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jjnjs61g' /* for 148 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'xz9ciosz' /* for 149 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'p0ob65an' /* for 150 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'd9riy5oo' /* for 151 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'r26n88ae' /* for 152 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'mpdjbp08' /* for 153 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '4n04heia' /* for 154 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5m20y0jb' /* for 155 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'o71w471k' /* for 156 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'm34tab0a' /* for 157 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'e69thxmn' /* for 158 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'rsskf5h2' /* for 159 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'qjr2j1p9' /* for 160 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '62gpb7i0' /* for 161 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'oyd1ityj' /* for 162 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'vtfumw7e' /* for 163 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '3c3xgznz' /* for 164 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '5wic1jga' /* for 165 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'qamf890e' /* for 166 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jdyrq9pk' /* for 167 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '0d3kletn' /* for 168 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'kuv6elby' /* for 169 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'oo1dj77d' /* for 170 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'uphmvgjd' /* for 171 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'hxbkb2by' /* for 172 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'cyef5o7g' /* for 173 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'pfns4oec' /* for 174 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'b4o0a73u' /* for 175 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'mitipc6b' /* for 176 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'npuiap5b' /* for 177 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '851s1vcx' /* for 178 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '2mdnggp5' /* for 179 Seconds */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jlkq85g4' /* for 180 Seconds */,
-                                )
-                              ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropDownVenturiDurValue = val),
-                              width: MediaQuery.sizeOf(context).width * 0.9,
-                              height: 40.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'askyfqvi' /* Duration */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: false,
-                              isSearchable: false,
-                              isMultiSelect: false,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 5.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '85dzdvc9' /* For */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                  if (FFAppState()
+                                          .CurrentDeviceInfo
+                                          .typeLetter ==
+                                      'V')
+                                    FlutterFlowDropDown<int>(
+                                      controller: _model
+                                              .dropDownVenturiDurValueController ??=
+                                          FormFieldController<int>(
+                                        _model.dropDownVenturiDurValue ??=
+                                            FFAppState()
+                                                .CurrentDeviceInfo
+                                                .currentLineVenturiDuration,
+                                      ),
+                                      options: List<int>.from([
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5,
+                                        6,
+                                        7,
+                                        8,
+                                        9,
+                                        10,
+                                        11,
+                                        12,
+                                        13,
+                                        14,
+                                        15,
+                                        16,
+                                        17,
+                                        18,
+                                        19,
+                                        20,
+                                        21,
+                                        22,
+                                        23,
+                                        24,
+                                        25,
+                                        26,
+                                        27,
+                                        28,
+                                        29,
+                                        30,
+                                        31,
+                                        32,
+                                        33,
+                                        34,
+                                        35,
+                                        36,
+                                        37,
+                                        38,
+                                        39,
+                                        40,
+                                        41,
+                                        42,
+                                        43,
+                                        44,
+                                        45,
+                                        46,
+                                        47,
+                                        48,
+                                        49,
+                                        50,
+                                        51,
+                                        52,
+                                        53,
+                                        54,
+                                        55,
+                                        56,
+                                        57,
+                                        58,
+                                        59,
+                                        60,
+                                        61,
+                                        62,
+                                        63,
+                                        64,
+                                        65,
+                                        66,
+                                        67,
+                                        68,
+                                        69,
+                                        70,
+                                        71,
+                                        72,
+                                        73,
+                                        74,
+                                        75,
+                                        76,
+                                        77,
+                                        78,
+                                        79,
+                                        80,
+                                        81,
+                                        82,
+                                        83,
+                                        84,
+                                        85,
+                                        86,
+                                        87,
+                                        88,
+                                        89,
+                                        90,
+                                        91,
+                                        92,
+                                        93,
+                                        94,
+                                        95,
+                                        96,
+                                        97,
+                                        98,
+                                        99,
+                                        100,
+                                        101,
+                                        102,
+                                        103,
+                                        104,
+                                        105,
+                                        106,
+                                        107,
+                                        108,
+                                        109,
+                                        110,
+                                        111,
+                                        112,
+                                        113,
+                                        114,
+                                        115,
+                                        116,
+                                        117,
+                                        118,
+                                        119,
+                                        120,
+                                        121,
+                                        122,
+                                        123,
+                                        124,
+                                        125,
+                                        126,
+                                        127,
+                                        128,
+                                        129,
+                                        130,
+                                        131,
+                                        132,
+                                        133,
+                                        134,
+                                        135,
+                                        136,
+                                        137,
+                                        138,
+                                        139,
+                                        140,
+                                        141,
+                                        142,
+                                        143,
+                                        144,
+                                        145,
+                                        146,
+                                        147,
+                                        148,
+                                        149,
+                                        150,
+                                        151,
+                                        152,
+                                        153,
+                                        154,
+                                        155,
+                                        156,
+                                        157,
+                                        158,
+                                        159,
+                                        160,
+                                        161,
+                                        162,
+                                        163,
+                                        164,
+                                        165,
+                                        166,
+                                        167,
+                                        168,
+                                        169,
+                                        170,
+                                        171,
+                                        172,
+                                        173,
+                                        174,
+                                        175,
+                                        176,
+                                        177,
+                                        178,
+                                        179,
+                                        180
+                                      ]),
+                                      optionLabels: [
+                                        FFLocalizations.of(context).getText(
+                                          'ftu0ytmq' /* 1 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '6eot3ixl' /* 2 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'b8cl4njg' /* 3 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'q7cka60b' /* 4 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'syvqvhh3' /* 5 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'f6gousl6' /* 6 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ydam740a' /* 7 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rbe5l7s7' /* 8 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jstxnjx7' /* 9 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'b0nzyk5z' /* 10 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ici6ag0d' /* 11 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'nfzagmzx' /* 12 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wtz1ypth' /* 13 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '3ppvzm5b' /* 14 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'tnkc79fn' /* 15 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'kygd25u3' /* 16 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'cutoxi8s' /* 17 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '9a0b5ngu' /* 18 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'r6x5omvy' /* 19 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4fgv4g3e' /* 20 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'choqkw1a' /* 21 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ecnsf9na' /* 22 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jdnjantq' /* 23 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'o6totfs3' /* 24 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qett1tjt' /* 25 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'sjj02o4n' /* 26 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rosq5kzm' /* 27 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'mmw4621y' /* 28 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ydjawdxq' /* 29 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rbfvzchp' /* 30 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0umn1hl3' /* 31 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'pv9qupit' /* 32 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7pmdkh9a' /* 33 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'w4pxuuo6' /* 34 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'o4cvkfyu' /* 35 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'iz5gg4mv' /* 36 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'xvytsdj3' /* 37 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ya2rnf6p' /* 38 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'x2cbac99' /* 39 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7hx60c4k' /* 40 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'lrsjxvwt' /* 41 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'z9e4ws8e' /* 42 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'uwa3mo2l' /* 43 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'dngjfdj4' /* 44 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'w6wumvrh' /* 45 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'fejseood' /* 46 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'bboh73n4' /* 47 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '1fjeq8ba' /* 48 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ax9ddsv9' /* 49 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '3kyl0poo' /* 50 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qrp2n4sg' /* 51 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'en1aw3ca' /* 52 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'h5f32rzz' /* 53 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'm1gsjnqp' /* 54 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'x4r83air' /* 55 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4xu48occ' /* 56 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '3xbe54ij' /* 57 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'pnkj8iop' /* 58 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'm8id9uw8' /* 59 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'yloj7cqa' /* 60 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'w2pxooau' /* 61 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'y6l1ufa9' /* 62 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '08y1ix7b' /* 63 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'tc9tvred' /* 64 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'huz519qz' /* 65 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0zqvpahs' /* 66 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '095ybp26' /* 67 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2spxajsb' /* 68 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2lpsl349' /* 69 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'mz9ohszf' /* 70 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'h4vunrs5' /* 71 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'cnnzsi6q' /* 72 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '13kqdoj4' /* 73 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          's2fbhy3s' /* 74 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'tpm02zxy' /* 75 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2zu9o7uf' /* 76 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4cvtty6o' /* 77 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wg5x98k3' /* 78 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jc6r793a' /* 79 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '9o44a56h' /* 80 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'linm2hye' /* 81 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ooun3pbq' /* 82 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'nq5naqtr' /* 83 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'hf0iw15p' /* 84 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'uy5hbgxm' /* 85 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'pcs3a8tn' /* 86 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'prw3rmap' /* 87 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '5pup67tk' /* 88 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7csdd9x5' /* 89 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ag16t9d8' /* 90 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0nykbtwt' /* 91 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jjpakge7' /* 92 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wei5uku1' /* 93 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2xmlvor8' /* 94 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wftdrt51' /* 95 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'x6ddenr2' /* 96 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'b7v8wvbf' /* 97 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ooefhq46' /* 98 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'v1g0vm9g' /* 99 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'sf9v6jrd' /* 100 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'j52lwp49' /* 101 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'vxofafg4' /* 102 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'yxmha4mw' /* 103 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'webidw0x' /* 104 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '1qw1euav' /* 105 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2vg77trx' /* 106 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '1m34squl' /* 107 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '5f01jr2b' /* 108 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'mbnde8k0' /* 109 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'lase7q51' /* 110 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wfpnqn9x' /* 111 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'fcmpoyxl' /* 112 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'owoieqkx' /* 113 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rx05uq4j' /* 114 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7299hgao' /* 115 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'agnuz6at' /* 116 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4as2rgvk' /* 117 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'nuw73fbv' /* 118 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'phzn48q8' /* 119 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rvaytvll' /* 120 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'oba0fbo7' /* 121 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2ilycghq' /* 122 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qubrllvh' /* 123 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'etbp3lmz' /* 124 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'uuwu5a7t' /* 125 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'and67cvu' /* 126 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0nmrz1gb' /* 127 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '228zen3z' /* 128 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'hi6l0qyf' /* 129 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'uh3fisbt' /* 130 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'hbup3ia3' /* 131 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'vmxdqcl0' /* 132 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ewd1312y' /* 133 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2lb6b4sq' /* 134 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'dutx7mlv' /* 135 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'w1ju8sio' /* 136 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7fvj0ty4' /* 137 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7z30ew98' /* 138 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '6eqylj85' /* 139 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'vxg5oy9v' /* 140 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '07wswg0c' /* 141 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'bt597rkd' /* 142 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0w8knt58' /* 143 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '5tdta0j2' /* 144 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'kw066yo8' /* 145 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'h1du0lyo' /* 146 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2r240fj2' /* 147 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jjnjs61g' /* 148 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'xz9ciosz' /* 149 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'p0ob65an' /* 150 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'd9riy5oo' /* 151 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'r26n88ae' /* 152 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'mpdjbp08' /* 153 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '4n04heia' /* 154 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '5m20y0jb' /* 155 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'o71w471k' /* 156 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'm34tab0a' /* 157 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'e69thxmn' /* 158 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rsskf5h2' /* 159 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qjr2j1p9' /* 160 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '62gpb7i0' /* 161 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'oyd1ityj' /* 162 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'vtfumw7e' /* 163 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '3c3xgznz' /* 164 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '5wic1jga' /* 165 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'qamf890e' /* 166 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jdyrq9pk' /* 167 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0d3kletn' /* 168 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'kuv6elby' /* 169 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'oo1dj77d' /* 170 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'uphmvgjd' /* 171 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'hxbkb2by' /* 172 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'cyef5o7g' /* 173 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'pfns4oec' /* 174 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'b4o0a73u' /* 175 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'mitipc6b' /* 176 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'npuiap5b' /* 177 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '851s1vcx' /* 178 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '2mdnggp5' /* 179 */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'jlkq85g4' /* 180 */,
+                                        )
+                                      ],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropDownVenturiDurValue = val),
+                                      width: 100.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'askyfqvi' /* Duration */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 10.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '7w9gon8y' /* Seconds */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           if (FFAppState().CurrentDeviceInfo.typeLetter == 'Q')
                             Align(

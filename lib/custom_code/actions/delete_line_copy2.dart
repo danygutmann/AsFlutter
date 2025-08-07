@@ -39,13 +39,8 @@ Future deleteLineCopy2(
   int cntBefore = lines.length - 1;
   int lastLine = FFAppState().CurrentDeviceInfo.linesTotal;
 
-  String result = "Delete line " +
-      deletedLine.toString() +
-      " of " +
-      cntBefore.toString() +
-      "(" +
-      lastLine.toString() +
-      ").";
+  String result =
+      "Delete line " + deletedLine.toString() + " of " + cntBefore.toString();
 
   // delete in array
   lines.removeAt(deletedLine);
@@ -56,47 +51,38 @@ Future deleteLineCopy2(
   // delte all lines
   final req =
       await http.get(Uri.parse("http://192.168.4.1/CMD/?CMD=SendCmd&SUBCMD=E"));
-  if (req.statusCode == 200) {
-    result += "del OK.";
-  }
+  if (req.statusCode == 200) {}
 
   // write line 1
   if (indexes.containsKey(1)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=000" +
         lines[1];
     final req1 = await http.get(Uri.parse(url));
-    if (req1.statusCode == 200) {
-      result += "1 OK.";
-    }
+    if (req1.statusCode == 200) {}
   }
   // write line 2
   if (indexes.containsKey(2)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=010" +
         lines[2];
     final req2 = await http.get(Uri.parse(url));
-    if (req2.statusCode == 200) {
-      result += "2 OK.";
-    }
+    if (req2.statusCode == 200) {}
   }
   // write line 3
   if (indexes.containsKey(3)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=020" +
         lines[3];
     final req3 = await http.get(Uri.parse(url));
-    if (req3.statusCode == 200) {
-      result += "3 OK.";
-    }
+    if (req3.statusCode == 200) {}
   }
   // write line 4
   if (indexes.containsKey(4)) {
     url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=030" +
         lines[4];
     final req4 = await http.get(Uri.parse(url));
-    if (req4.statusCode == 200) {
-      result += "4 OK.";
-    }
+    if (req4.statusCode == 200) {}
   }
 
+  result += " OK.";
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(content: Text(result)),
   );

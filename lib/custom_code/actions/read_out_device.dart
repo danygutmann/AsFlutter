@@ -15,16 +15,28 @@ import 'dart:convert';
 
 Future<void> readOutDevice(BuildContext context) async {
   int Address = 0;
+  String all = "";
+  List<String> rawLines = [];
+
   FFAppState().update(() {
     FFAppState().CurrentDeviceInfo.line01Vissible = false;
     FFAppState().CurrentDeviceInfo.line02Vissible = false;
     FFAppState().CurrentDeviceInfo.line03Vissible = false;
     FFAppState().CurrentDeviceInfo.line04Vissible = false;
     FFAppState().CurrentDeviceInfo.line05Vissible = false;
+    FFAppState().CurrentDeviceInfo.line06Vissible = false;
+    FFAppState().CurrentDeviceInfo.line07Vissible = false;
+    FFAppState().CurrentDeviceInfo.line08Vissible = false;
+    FFAppState().CurrentDeviceInfo.line09Vissible = false;
+    FFAppState().CurrentDeviceInfo.line10Vissible = false;
+    FFAppState().CurrentDeviceInfo.line11Vissible = false;
+    FFAppState().CurrentDeviceInfo.line12Vissible = false;
+    FFAppState().CurrentDeviceInfo.line13Vissible = false;
+    FFAppState().CurrentDeviceInfo.line14Vissible = false;
   });
 
   // loop over lines
-  for (int line = 1; line < 6; line++) {
+  for (int line = 1; line < 15; line++) {
     String adr = Address.toString().padLeft(3, '0');
     String url =
         "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=R&LINES=1&DATA=" + adr;
@@ -50,31 +62,141 @@ Future<void> readOutDevice(BuildContext context) async {
             FFAppState().CurrentDeviceInfo.line01Raw = resp;
             FFAppState().CurrentDeviceInfo.line01Description = desc;
             FFAppState().CurrentDeviceInfo.line01Vissible = LineVissible;
-            if (LineVissible) FFAppState().CurrentDeviceInfo.linesTotal = 1;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 1;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
           }
           if (line == 2) {
             FFAppState().CurrentDeviceInfo.line02Raw = resp;
             FFAppState().CurrentDeviceInfo.line02Description = desc;
             FFAppState().CurrentDeviceInfo.line02Vissible = LineVissible;
-            if (LineVissible) FFAppState().CurrentDeviceInfo.linesTotal = 2;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 2;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
           }
           if (line == 3) {
             FFAppState().CurrentDeviceInfo.line03Raw = resp;
             FFAppState().CurrentDeviceInfo.line03Description = desc;
             FFAppState().CurrentDeviceInfo.line03Vissible = LineVissible;
-            if (LineVissible) FFAppState().CurrentDeviceInfo.linesTotal = 3;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 3;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
           }
           if (line == 4) {
             FFAppState().CurrentDeviceInfo.line04Raw = resp;
             FFAppState().CurrentDeviceInfo.line04Description = desc;
             FFAppState().CurrentDeviceInfo.line04Vissible = LineVissible;
-            if (LineVissible) FFAppState().CurrentDeviceInfo.linesTotal = 4;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 4;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
           }
           if (line == 5) {
             FFAppState().CurrentDeviceInfo.line05Raw = resp;
             FFAppState().CurrentDeviceInfo.line05Description = desc;
             FFAppState().CurrentDeviceInfo.line05Vissible = LineVissible;
-            if (LineVissible) FFAppState().CurrentDeviceInfo.linesTotal = 5;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 5;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 6) {
+            FFAppState().CurrentDeviceInfo.line06Raw = resp;
+            FFAppState().CurrentDeviceInfo.line06Description = desc;
+            FFAppState().CurrentDeviceInfo.line06Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 6;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 7) {
+            FFAppState().CurrentDeviceInfo.line07Raw = resp;
+            FFAppState().CurrentDeviceInfo.line07Description = desc;
+            FFAppState().CurrentDeviceInfo.line07Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 7;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 8) {
+            FFAppState().CurrentDeviceInfo.line08Raw = resp;
+            FFAppState().CurrentDeviceInfo.line08Description = desc;
+            FFAppState().CurrentDeviceInfo.line08Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 8;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 9) {
+            FFAppState().CurrentDeviceInfo.line09Raw = resp;
+            FFAppState().CurrentDeviceInfo.line09Description = desc;
+            FFAppState().CurrentDeviceInfo.line09Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 9;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 10) {
+            FFAppState().CurrentDeviceInfo.line10Raw = resp;
+            FFAppState().CurrentDeviceInfo.line10Description = desc;
+            FFAppState().CurrentDeviceInfo.line10Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 10;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 11) {
+            FFAppState().CurrentDeviceInfo.line11Raw = resp;
+            FFAppState().CurrentDeviceInfo.line11Description = desc;
+            FFAppState().CurrentDeviceInfo.line11Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 11;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 12) {
+            FFAppState().CurrentDeviceInfo.line12Raw = resp;
+            FFAppState().CurrentDeviceInfo.line12Description = desc;
+            FFAppState().CurrentDeviceInfo.line12Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 12;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 13) {
+            FFAppState().CurrentDeviceInfo.line13Raw = resp;
+            FFAppState().CurrentDeviceInfo.line13Description = desc;
+            FFAppState().CurrentDeviceInfo.line13Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 13;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
+          }
+          if (line == 14) {
+            FFAppState().CurrentDeviceInfo.line14Raw = resp;
+            FFAppState().CurrentDeviceInfo.line14Description = desc;
+            FFAppState().CurrentDeviceInfo.line14Vissible = LineVissible;
+            if (LineVissible) {
+              FFAppState().CurrentDeviceInfo.linesTotal = 14;
+              all += desc + "\n\n";
+              rawLines.add(resp);
+            }
           }
         });
       }
@@ -84,5 +206,11 @@ Future<void> readOutDevice(BuildContext context) async {
     // for the next loop
     Address = Address + 10;
   }
+
+  FFAppState().update(() {
+    FFAppState().currentDescription = all;
+    FFAppState().currentRawLines = rawLines;
+  });
+
   await act.getInfo(context);
 }

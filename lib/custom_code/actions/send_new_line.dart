@@ -33,9 +33,36 @@ Future<void> sendNewLine(BuildContext context) async {
     } else if (FFAppState().CurrentDeviceInfo.line05Raw.startsWith("255")) {
       LineNumber = "5";
       Address = "040";
+    } else if (FFAppState().CurrentDeviceInfo.line06Raw.startsWith("255")) {
+      LineNumber = "6";
+      Address = "050";
+    } else if (FFAppState().CurrentDeviceInfo.line07Raw.startsWith("255")) {
+      LineNumber = "7";
+      Address = "060";
+    } else if (FFAppState().CurrentDeviceInfo.line08Raw.startsWith("255")) {
+      LineNumber = "8";
+      Address = "070";
+    } else if (FFAppState().CurrentDeviceInfo.line09Raw.startsWith("255")) {
+      LineNumber = "9";
+      Address = "080";
+    } else if (FFAppState().CurrentDeviceInfo.line10Raw.startsWith("255")) {
+      LineNumber = "10";
+      Address = "090";
+    } else if (FFAppState().CurrentDeviceInfo.line11Raw.startsWith("255")) {
+      LineNumber = "11";
+      Address = "100";
+    } else if (FFAppState().CurrentDeviceInfo.line12Raw.startsWith("255")) {
+      LineNumber = "12";
+      Address = "110";
+    } else if (FFAppState().CurrentDeviceInfo.line13Raw.startsWith("255")) {
+      LineNumber = "13";
+      Address = "120";
+    } else if (FFAppState().CurrentDeviceInfo.line14Raw.startsWith("255")) {
+      LineNumber = "14";
+      Address = "130";
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('just 5 lines possible')),
+        SnackBar(content: Text('just 14 lines possible')),
       );
       return;
     }

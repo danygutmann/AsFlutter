@@ -36,6 +36,33 @@ Future deleteLineCopy2(
   if (FFAppState().CurrentDeviceInfo.line05Vissible)
     lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line05Raw));
 
+  if (FFAppState().CurrentDeviceInfo.line06Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line06Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line07Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line07Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line08Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line08Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line09Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line09Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line10Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line10Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line11Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line11Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line12Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line12Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line13Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line13Raw));
+
+  if (FFAppState().CurrentDeviceInfo.line14Vissible)
+    lines.add(func.prepareToSend(FFAppState().CurrentDeviceInfo.line14Raw));
+
   int cntBefore = lines.length - 1;
   int lastLine = FFAppState().CurrentDeviceInfo.linesTotal;
 
@@ -80,6 +107,69 @@ Future deleteLineCopy2(
         lines[4];
     final req4 = await http.get(Uri.parse(url));
     if (req4.statusCode == 200) {}
+  }
+  // write line 5
+  if (indexes.containsKey(5)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=040" +
+        lines[5];
+    final req5 = await http.get(Uri.parse(url));
+    if (req5.statusCode == 200) {}
+  }
+  // write line 6
+  if (indexes.containsKey(6)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=050" +
+        lines[6];
+    final req6 = await http.get(Uri.parse(url));
+    if (req6.statusCode == 200) {}
+  }
+  // write line 7
+  if (indexes.containsKey(7)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=060" +
+        lines[7];
+    final req7 = await http.get(Uri.parse(url));
+    if (req7.statusCode == 200) {}
+  }
+  // write line 8
+  if (indexes.containsKey(8)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=070" +
+        lines[8];
+    final req8 = await http.get(Uri.parse(url));
+    if (req8.statusCode == 200) {}
+  }
+  // write line 9
+  if (indexes.containsKey(9)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=080" +
+        lines[9];
+    final req9 = await http.get(Uri.parse(url));
+    if (req9.statusCode == 200) {}
+  }
+  // write line 10
+  if (indexes.containsKey(10)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=090" +
+        lines[10];
+    final req10 = await http.get(Uri.parse(url));
+    if (req10.statusCode == 200) {}
+  }
+  // write line 11
+  if (indexes.containsKey(11)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=100" +
+        lines[11];
+    final req11 = await http.get(Uri.parse(url));
+    if (req11.statusCode == 200) {}
+  }
+  // write line 12
+  if (indexes.containsKey(12)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=110" +
+        lines[12];
+    final req12 = await http.get(Uri.parse(url));
+    if (req12.statusCode == 200) {}
+  }
+  // write line 13
+  if (indexes.containsKey(13)) {
+    url = "http://192.168.4.1/CMD/?CMD=SendData&SUBCMD=P&LINES=11&DATA=120" +
+        lines[13];
+    final req13 = await http.get(Uri.parse(url));
+    if (req13.statusCode == 200) {}
   }
 
   result += " OK.";

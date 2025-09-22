@@ -22,7 +22,7 @@ Future deleteLine(
   String data = "";
   result += deletedLine.toString() + ": move lines ";
 
-  for (int i = 1; i < 6; i++) {
+  for (int i = 1; i < 15; i++) {
     if (i >= deletedLine) {
       if (i == 1) {
         result += "2";
@@ -51,6 +51,54 @@ Future deleteLine(
       if (i == 5) {
         result += "6";
         address = "040";
+        data =
+            FFAppState().CurrentDeviceInfo.line06Raw.replaceAll(";", "").trim();
+      }
+      if (i == 6) {
+        result += "7";
+        address = "050";
+        data =
+            FFAppState().CurrentDeviceInfo.line07Raw.replaceAll(";", "").trim();
+      }
+      if (i == 7) {
+        result += "8";
+        address = "060";
+        data =
+            FFAppState().CurrentDeviceInfo.line08Raw.replaceAll(";", "").trim();
+      }
+      if (i == 8) {
+        result += "9";
+        address = "070";
+        data =
+            FFAppState().CurrentDeviceInfo.line09Raw.replaceAll(";", "").trim();
+      }
+      if (i == 9) {
+        result += "10";
+        address = "080";
+        data =
+            FFAppState().CurrentDeviceInfo.line10Raw.replaceAll(";", "").trim();
+      }
+      if (i == 10) {
+        result += "11";
+        address = "090";
+        data =
+            FFAppState().CurrentDeviceInfo.line11Raw.replaceAll(";", "").trim();
+      }
+      if (i == 11) {
+        result += "12";
+        address = "100";
+        data =
+            FFAppState().CurrentDeviceInfo.line12Raw.replaceAll(";", "").trim();
+      }
+      if (i == 12) {
+        result += "13";
+        address = "110";
+        data =
+            FFAppState().CurrentDeviceInfo.line13Raw.replaceAll(";", "").trim();
+      }
+      if (i == 13) {
+        result += "14";
+        address = "120";
         data = "255255255255255255255255255255255255";
       }
 

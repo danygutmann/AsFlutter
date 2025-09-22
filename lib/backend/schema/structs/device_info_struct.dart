@@ -50,6 +50,33 @@ class DeviceInfoStruct extends BaseStruct {
     String? line05Raw,
     String? line05Description,
     bool? line05Vissible,
+    String? line06Raw,
+    String? line06Description,
+    bool? line06Vissible,
+    String? line07Raw,
+    String? line07Description,
+    bool? line07Vissible,
+    String? line08Raw,
+    String? line08Description,
+    bool? line08Vissible,
+    String? line09Raw,
+    String? line09Description,
+    bool? line09Vissible,
+    String? line10Raw,
+    String? line10Description,
+    bool? line10Vissible,
+    String? line11Raw,
+    String? line11Description,
+    bool? line11Vissible,
+    String? line12Raw,
+    String? line12Description,
+    bool? line12Vissible,
+    String? line13Raw,
+    String? line13Description,
+    bool? line13Vissible,
+    String? line14Raw,
+    String? line14Description,
+    bool? line14Vissible,
     int? currentLineDayInt,
     bool? currentLineDayBoolMo,
     bool? currentLineDayBoolDi,
@@ -108,6 +135,33 @@ class DeviceInfoStruct extends BaseStruct {
         _line05Raw = line05Raw,
         _line05Description = line05Description,
         _line05Vissible = line05Vissible,
+        _line06Raw = line06Raw,
+        _line06Description = line06Description,
+        _line06Vissible = line06Vissible,
+        _line07Raw = line07Raw,
+        _line07Description = line07Description,
+        _line07Vissible = line07Vissible,
+        _line08Raw = line08Raw,
+        _line08Description = line08Description,
+        _line08Vissible = line08Vissible,
+        _line09Raw = line09Raw,
+        _line09Description = line09Description,
+        _line09Vissible = line09Vissible,
+        _line10Raw = line10Raw,
+        _line10Description = line10Description,
+        _line10Vissible = line10Vissible,
+        _line11Raw = line11Raw,
+        _line11Description = line11Description,
+        _line11Vissible = line11Vissible,
+        _line12Raw = line12Raw,
+        _line12Description = line12Description,
+        _line12Vissible = line12Vissible,
+        _line13Raw = line13Raw,
+        _line13Description = line13Description,
+        _line13Vissible = line13Vissible,
+        _line14Raw = line14Raw,
+        _line14Description = line14Description,
+        _line14Vissible = line14Vissible,
         _currentLineDayInt = currentLineDayInt,
         _currentLineDayBoolMo = currentLineDayBoolMo,
         _currentLineDayBoolDi = currentLineDayBoolDi,
@@ -343,6 +397,195 @@ class DeviceInfoStruct extends BaseStruct {
   set line05Vissible(bool? val) => _line05Vissible = val;
 
   bool hasLine05Vissible() => _line05Vissible != null;
+
+  // "Line06Raw" field.
+  String? _line06Raw;
+  String get line06Raw => _line06Raw ?? '-';
+  set line06Raw(String? val) => _line06Raw = val;
+
+  bool hasLine06Raw() => _line06Raw != null;
+
+  // "Line06Description" field.
+  String? _line06Description;
+  String get line06Description => _line06Description ?? '--';
+  set line06Description(String? val) => _line06Description = val;
+
+  bool hasLine06Description() => _line06Description != null;
+
+  // "Line06Vissible" field.
+  bool? _line06Vissible;
+  bool get line06Vissible => _line06Vissible ?? false;
+  set line06Vissible(bool? val) => _line06Vissible = val;
+
+  bool hasLine06Vissible() => _line06Vissible != null;
+
+  // "Line07Raw" field.
+  String? _line07Raw;
+  String get line07Raw => _line07Raw ?? '-';
+  set line07Raw(String? val) => _line07Raw = val;
+
+  bool hasLine07Raw() => _line07Raw != null;
+
+  // "Line07Description" field.
+  String? _line07Description;
+  String get line07Description => _line07Description ?? '-';
+  set line07Description(String? val) => _line07Description = val;
+
+  bool hasLine07Description() => _line07Description != null;
+
+  // "Line07Vissible" field.
+  bool? _line07Vissible;
+  bool get line07Vissible => _line07Vissible ?? false;
+  set line07Vissible(bool? val) => _line07Vissible = val;
+
+  bool hasLine07Vissible() => _line07Vissible != null;
+
+  // "Line08Raw" field.
+  String? _line08Raw;
+  String get line08Raw => _line08Raw ?? '-';
+  set line08Raw(String? val) => _line08Raw = val;
+
+  bool hasLine08Raw() => _line08Raw != null;
+
+  // "Line08Description" field.
+  String? _line08Description;
+  String get line08Description => _line08Description ?? '-';
+  set line08Description(String? val) => _line08Description = val;
+
+  bool hasLine08Description() => _line08Description != null;
+
+  // "Line08Vissible" field.
+  bool? _line08Vissible;
+  bool get line08Vissible => _line08Vissible ?? false;
+  set line08Vissible(bool? val) => _line08Vissible = val;
+
+  bool hasLine08Vissible() => _line08Vissible != null;
+
+  // "Line09Raw" field.
+  String? _line09Raw;
+  String get line09Raw => _line09Raw ?? '-';
+  set line09Raw(String? val) => _line09Raw = val;
+
+  bool hasLine09Raw() => _line09Raw != null;
+
+  // "Line09Description" field.
+  String? _line09Description;
+  String get line09Description => _line09Description ?? '-';
+  set line09Description(String? val) => _line09Description = val;
+
+  bool hasLine09Description() => _line09Description != null;
+
+  // "Line09Vissible" field.
+  bool? _line09Vissible;
+  bool get line09Vissible => _line09Vissible ?? false;
+  set line09Vissible(bool? val) => _line09Vissible = val;
+
+  bool hasLine09Vissible() => _line09Vissible != null;
+
+  // "Line10Raw" field.
+  String? _line10Raw;
+  String get line10Raw => _line10Raw ?? '-';
+  set line10Raw(String? val) => _line10Raw = val;
+
+  bool hasLine10Raw() => _line10Raw != null;
+
+  // "Line10Description" field.
+  String? _line10Description;
+  String get line10Description => _line10Description ?? '-';
+  set line10Description(String? val) => _line10Description = val;
+
+  bool hasLine10Description() => _line10Description != null;
+
+  // "Line10Vissible" field.
+  bool? _line10Vissible;
+  bool get line10Vissible => _line10Vissible ?? false;
+  set line10Vissible(bool? val) => _line10Vissible = val;
+
+  bool hasLine10Vissible() => _line10Vissible != null;
+
+  // "Line11Raw" field.
+  String? _line11Raw;
+  String get line11Raw => _line11Raw ?? '-';
+  set line11Raw(String? val) => _line11Raw = val;
+
+  bool hasLine11Raw() => _line11Raw != null;
+
+  // "Line11Description" field.
+  String? _line11Description;
+  String get line11Description => _line11Description ?? '-';
+  set line11Description(String? val) => _line11Description = val;
+
+  bool hasLine11Description() => _line11Description != null;
+
+  // "Line11Vissible" field.
+  bool? _line11Vissible;
+  bool get line11Vissible => _line11Vissible ?? false;
+  set line11Vissible(bool? val) => _line11Vissible = val;
+
+  bool hasLine11Vissible() => _line11Vissible != null;
+
+  // "Line12Raw" field.
+  String? _line12Raw;
+  String get line12Raw => _line12Raw ?? '-';
+  set line12Raw(String? val) => _line12Raw = val;
+
+  bool hasLine12Raw() => _line12Raw != null;
+
+  // "Line12Description" field.
+  String? _line12Description;
+  String get line12Description => _line12Description ?? '-';
+  set line12Description(String? val) => _line12Description = val;
+
+  bool hasLine12Description() => _line12Description != null;
+
+  // "Line12Vissible" field.
+  bool? _line12Vissible;
+  bool get line12Vissible => _line12Vissible ?? false;
+  set line12Vissible(bool? val) => _line12Vissible = val;
+
+  bool hasLine12Vissible() => _line12Vissible != null;
+
+  // "Line13Raw" field.
+  String? _line13Raw;
+  String get line13Raw => _line13Raw ?? '-';
+  set line13Raw(String? val) => _line13Raw = val;
+
+  bool hasLine13Raw() => _line13Raw != null;
+
+  // "Line13Description" field.
+  String? _line13Description;
+  String get line13Description => _line13Description ?? '-';
+  set line13Description(String? val) => _line13Description = val;
+
+  bool hasLine13Description() => _line13Description != null;
+
+  // "Line13Vissible" field.
+  bool? _line13Vissible;
+  bool get line13Vissible => _line13Vissible ?? false;
+  set line13Vissible(bool? val) => _line13Vissible = val;
+
+  bool hasLine13Vissible() => _line13Vissible != null;
+
+  // "Line14Raw" field.
+  String? _line14Raw;
+  String get line14Raw => _line14Raw ?? '-';
+  set line14Raw(String? val) => _line14Raw = val;
+
+  bool hasLine14Raw() => _line14Raw != null;
+
+  // "Line14Description" field.
+  String? _line14Description;
+  String get line14Description => _line14Description ?? '-';
+  set line14Description(String? val) => _line14Description = val;
+
+  bool hasLine14Description() => _line14Description != null;
+
+  // "Line14Vissible" field.
+  bool? _line14Vissible;
+  bool get line14Vissible => _line14Vissible ?? false;
+  set line14Vissible(bool? val) => _line14Vissible = val;
+
+  bool hasLine14Vissible() => _line14Vissible != null;
 
   // "CurrentLineDayInt" field.
   int? _currentLineDayInt;
@@ -619,6 +862,33 @@ class DeviceInfoStruct extends BaseStruct {
         line05Raw: data['Line05Raw'] as String?,
         line05Description: data['Line05Description'] as String?,
         line05Vissible: data['Line05Vissible'] as bool?,
+        line06Raw: data['Line06Raw'] as String?,
+        line06Description: data['Line06Description'] as String?,
+        line06Vissible: data['Line06Vissible'] as bool?,
+        line07Raw: data['Line07Raw'] as String?,
+        line07Description: data['Line07Description'] as String?,
+        line07Vissible: data['Line07Vissible'] as bool?,
+        line08Raw: data['Line08Raw'] as String?,
+        line08Description: data['Line08Description'] as String?,
+        line08Vissible: data['Line08Vissible'] as bool?,
+        line09Raw: data['Line09Raw'] as String?,
+        line09Description: data['Line09Description'] as String?,
+        line09Vissible: data['Line09Vissible'] as bool?,
+        line10Raw: data['Line10Raw'] as String?,
+        line10Description: data['Line10Description'] as String?,
+        line10Vissible: data['Line10Vissible'] as bool?,
+        line11Raw: data['Line11Raw'] as String?,
+        line11Description: data['Line11Description'] as String?,
+        line11Vissible: data['Line11Vissible'] as bool?,
+        line12Raw: data['Line12Raw'] as String?,
+        line12Description: data['Line12Description'] as String?,
+        line12Vissible: data['Line12Vissible'] as bool?,
+        line13Raw: data['Line13Raw'] as String?,
+        line13Description: data['Line13Description'] as String?,
+        line13Vissible: data['Line13Vissible'] as bool?,
+        line14Raw: data['Line14Raw'] as String?,
+        line14Description: data['Line14Description'] as String?,
+        line14Vissible: data['Line14Vissible'] as bool?,
         currentLineDayInt: castToType<int>(data['CurrentLineDayInt']),
         currentLineDayBoolMo: data['CurrentLineDayBoolMo'] as bool?,
         currentLineDayBoolDi: data['CurrentLineDayBoolDi'] as bool?,
@@ -686,6 +956,33 @@ class DeviceInfoStruct extends BaseStruct {
         'Line05Raw': _line05Raw,
         'Line05Description': _line05Description,
         'Line05Vissible': _line05Vissible,
+        'Line06Raw': _line06Raw,
+        'Line06Description': _line06Description,
+        'Line06Vissible': _line06Vissible,
+        'Line07Raw': _line07Raw,
+        'Line07Description': _line07Description,
+        'Line07Vissible': _line07Vissible,
+        'Line08Raw': _line08Raw,
+        'Line08Description': _line08Description,
+        'Line08Vissible': _line08Vissible,
+        'Line09Raw': _line09Raw,
+        'Line09Description': _line09Description,
+        'Line09Vissible': _line09Vissible,
+        'Line10Raw': _line10Raw,
+        'Line10Description': _line10Description,
+        'Line10Vissible': _line10Vissible,
+        'Line11Raw': _line11Raw,
+        'Line11Description': _line11Description,
+        'Line11Vissible': _line11Vissible,
+        'Line12Raw': _line12Raw,
+        'Line12Description': _line12Description,
+        'Line12Vissible': _line12Vissible,
+        'Line13Raw': _line13Raw,
+        'Line13Description': _line13Description,
+        'Line13Vissible': _line13Vissible,
+        'Line14Raw': _line14Raw,
+        'Line14Description': _line14Description,
+        'Line14Vissible': _line14Vissible,
         'CurrentLineDayInt': _currentLineDayInt,
         'CurrentLineDayBoolMo': _currentLineDayBoolMo,
         'CurrentLineDayBoolDi': _currentLineDayBoolDi,
@@ -833,6 +1130,114 @@ class DeviceInfoStruct extends BaseStruct {
         ),
         'Line05Vissible': serializeParam(
           _line05Vissible,
+          ParamType.bool,
+        ),
+        'Line06Raw': serializeParam(
+          _line06Raw,
+          ParamType.String,
+        ),
+        'Line06Description': serializeParam(
+          _line06Description,
+          ParamType.String,
+        ),
+        'Line06Vissible': serializeParam(
+          _line06Vissible,
+          ParamType.bool,
+        ),
+        'Line07Raw': serializeParam(
+          _line07Raw,
+          ParamType.String,
+        ),
+        'Line07Description': serializeParam(
+          _line07Description,
+          ParamType.String,
+        ),
+        'Line07Vissible': serializeParam(
+          _line07Vissible,
+          ParamType.bool,
+        ),
+        'Line08Raw': serializeParam(
+          _line08Raw,
+          ParamType.String,
+        ),
+        'Line08Description': serializeParam(
+          _line08Description,
+          ParamType.String,
+        ),
+        'Line08Vissible': serializeParam(
+          _line08Vissible,
+          ParamType.bool,
+        ),
+        'Line09Raw': serializeParam(
+          _line09Raw,
+          ParamType.String,
+        ),
+        'Line09Description': serializeParam(
+          _line09Description,
+          ParamType.String,
+        ),
+        'Line09Vissible': serializeParam(
+          _line09Vissible,
+          ParamType.bool,
+        ),
+        'Line10Raw': serializeParam(
+          _line10Raw,
+          ParamType.String,
+        ),
+        'Line10Description': serializeParam(
+          _line10Description,
+          ParamType.String,
+        ),
+        'Line10Vissible': serializeParam(
+          _line10Vissible,
+          ParamType.bool,
+        ),
+        'Line11Raw': serializeParam(
+          _line11Raw,
+          ParamType.String,
+        ),
+        'Line11Description': serializeParam(
+          _line11Description,
+          ParamType.String,
+        ),
+        'Line11Vissible': serializeParam(
+          _line11Vissible,
+          ParamType.bool,
+        ),
+        'Line12Raw': serializeParam(
+          _line12Raw,
+          ParamType.String,
+        ),
+        'Line12Description': serializeParam(
+          _line12Description,
+          ParamType.String,
+        ),
+        'Line12Vissible': serializeParam(
+          _line12Vissible,
+          ParamType.bool,
+        ),
+        'Line13Raw': serializeParam(
+          _line13Raw,
+          ParamType.String,
+        ),
+        'Line13Description': serializeParam(
+          _line13Description,
+          ParamType.String,
+        ),
+        'Line13Vissible': serializeParam(
+          _line13Vissible,
+          ParamType.bool,
+        ),
+        'Line14Raw': serializeParam(
+          _line14Raw,
+          ParamType.String,
+        ),
+        'Line14Description': serializeParam(
+          _line14Description,
+          ParamType.String,
+        ),
+        'Line14Vissible': serializeParam(
+          _line14Vissible,
           ParamType.bool,
         ),
         'CurrentLineDayInt': serializeParam(
@@ -1100,6 +1505,141 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.bool,
           false,
         ),
+        line06Raw: deserializeParam(
+          data['Line06Raw'],
+          ParamType.String,
+          false,
+        ),
+        line06Description: deserializeParam(
+          data['Line06Description'],
+          ParamType.String,
+          false,
+        ),
+        line06Vissible: deserializeParam(
+          data['Line06Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line07Raw: deserializeParam(
+          data['Line07Raw'],
+          ParamType.String,
+          false,
+        ),
+        line07Description: deserializeParam(
+          data['Line07Description'],
+          ParamType.String,
+          false,
+        ),
+        line07Vissible: deserializeParam(
+          data['Line07Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line08Raw: deserializeParam(
+          data['Line08Raw'],
+          ParamType.String,
+          false,
+        ),
+        line08Description: deserializeParam(
+          data['Line08Description'],
+          ParamType.String,
+          false,
+        ),
+        line08Vissible: deserializeParam(
+          data['Line08Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line09Raw: deserializeParam(
+          data['Line09Raw'],
+          ParamType.String,
+          false,
+        ),
+        line09Description: deserializeParam(
+          data['Line09Description'],
+          ParamType.String,
+          false,
+        ),
+        line09Vissible: deserializeParam(
+          data['Line09Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line10Raw: deserializeParam(
+          data['Line10Raw'],
+          ParamType.String,
+          false,
+        ),
+        line10Description: deserializeParam(
+          data['Line10Description'],
+          ParamType.String,
+          false,
+        ),
+        line10Vissible: deserializeParam(
+          data['Line10Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line11Raw: deserializeParam(
+          data['Line11Raw'],
+          ParamType.String,
+          false,
+        ),
+        line11Description: deserializeParam(
+          data['Line11Description'],
+          ParamType.String,
+          false,
+        ),
+        line11Vissible: deserializeParam(
+          data['Line11Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line12Raw: deserializeParam(
+          data['Line12Raw'],
+          ParamType.String,
+          false,
+        ),
+        line12Description: deserializeParam(
+          data['Line12Description'],
+          ParamType.String,
+          false,
+        ),
+        line12Vissible: deserializeParam(
+          data['Line12Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line13Raw: deserializeParam(
+          data['Line13Raw'],
+          ParamType.String,
+          false,
+        ),
+        line13Description: deserializeParam(
+          data['Line13Description'],
+          ParamType.String,
+          false,
+        ),
+        line13Vissible: deserializeParam(
+          data['Line13Vissible'],
+          ParamType.bool,
+          false,
+        ),
+        line14Raw: deserializeParam(
+          data['Line14Raw'],
+          ParamType.String,
+          false,
+        ),
+        line14Description: deserializeParam(
+          data['Line14Description'],
+          ParamType.String,
+          false,
+        ),
+        line14Vissible: deserializeParam(
+          data['Line14Vissible'],
+          ParamType.bool,
+          false,
+        ),
         currentLineDayInt: deserializeParam(
           data['CurrentLineDayInt'],
           ParamType.int,
@@ -1282,6 +1822,33 @@ class DeviceInfoStruct extends BaseStruct {
         line05Raw == other.line05Raw &&
         line05Description == other.line05Description &&
         line05Vissible == other.line05Vissible &&
+        line06Raw == other.line06Raw &&
+        line06Description == other.line06Description &&
+        line06Vissible == other.line06Vissible &&
+        line07Raw == other.line07Raw &&
+        line07Description == other.line07Description &&
+        line07Vissible == other.line07Vissible &&
+        line08Raw == other.line08Raw &&
+        line08Description == other.line08Description &&
+        line08Vissible == other.line08Vissible &&
+        line09Raw == other.line09Raw &&
+        line09Description == other.line09Description &&
+        line09Vissible == other.line09Vissible &&
+        line10Raw == other.line10Raw &&
+        line10Description == other.line10Description &&
+        line10Vissible == other.line10Vissible &&
+        line11Raw == other.line11Raw &&
+        line11Description == other.line11Description &&
+        line11Vissible == other.line11Vissible &&
+        line12Raw == other.line12Raw &&
+        line12Description == other.line12Description &&
+        line12Vissible == other.line12Vissible &&
+        line13Raw == other.line13Raw &&
+        line13Description == other.line13Description &&
+        line13Vissible == other.line13Vissible &&
+        line14Raw == other.line14Raw &&
+        line14Description == other.line14Description &&
+        line14Vissible == other.line14Vissible &&
         currentLineDayInt == other.currentLineDayInt &&
         currentLineDayBoolMo == other.currentLineDayBoolMo &&
         currentLineDayBoolDi == other.currentLineDayBoolDi &&
@@ -1344,6 +1911,33 @@ class DeviceInfoStruct extends BaseStruct {
         line05Raw,
         line05Description,
         line05Vissible,
+        line06Raw,
+        line06Description,
+        line06Vissible,
+        line07Raw,
+        line07Description,
+        line07Vissible,
+        line08Raw,
+        line08Description,
+        line08Vissible,
+        line09Raw,
+        line09Description,
+        line09Vissible,
+        line10Raw,
+        line10Description,
+        line10Vissible,
+        line11Raw,
+        line11Description,
+        line11Vissible,
+        line12Raw,
+        line12Description,
+        line12Vissible,
+        line13Raw,
+        line13Description,
+        line13Vissible,
+        line14Raw,
+        line14Description,
+        line14Vissible,
         currentLineDayInt,
         currentLineDayBoolMo,
         currentLineDayBoolDi,
@@ -1406,6 +2000,33 @@ DeviceInfoStruct createDeviceInfoStruct({
   String? line05Raw,
   String? line05Description,
   bool? line05Vissible,
+  String? line06Raw,
+  String? line06Description,
+  bool? line06Vissible,
+  String? line07Raw,
+  String? line07Description,
+  bool? line07Vissible,
+  String? line08Raw,
+  String? line08Description,
+  bool? line08Vissible,
+  String? line09Raw,
+  String? line09Description,
+  bool? line09Vissible,
+  String? line10Raw,
+  String? line10Description,
+  bool? line10Vissible,
+  String? line11Raw,
+  String? line11Description,
+  bool? line11Vissible,
+  String? line12Raw,
+  String? line12Description,
+  bool? line12Vissible,
+  String? line13Raw,
+  String? line13Description,
+  bool? line13Vissible,
+  String? line14Raw,
+  String? line14Description,
+  bool? line14Vissible,
   int? currentLineDayInt,
   bool? currentLineDayBoolMo,
   bool? currentLineDayBoolDi,
@@ -1466,6 +2087,33 @@ DeviceInfoStruct createDeviceInfoStruct({
       line05Raw: line05Raw,
       line05Description: line05Description,
       line05Vissible: line05Vissible,
+      line06Raw: line06Raw,
+      line06Description: line06Description,
+      line06Vissible: line06Vissible,
+      line07Raw: line07Raw,
+      line07Description: line07Description,
+      line07Vissible: line07Vissible,
+      line08Raw: line08Raw,
+      line08Description: line08Description,
+      line08Vissible: line08Vissible,
+      line09Raw: line09Raw,
+      line09Description: line09Description,
+      line09Vissible: line09Vissible,
+      line10Raw: line10Raw,
+      line10Description: line10Description,
+      line10Vissible: line10Vissible,
+      line11Raw: line11Raw,
+      line11Description: line11Description,
+      line11Vissible: line11Vissible,
+      line12Raw: line12Raw,
+      line12Description: line12Description,
+      line12Vissible: line12Vissible,
+      line13Raw: line13Raw,
+      line13Description: line13Description,
+      line13Vissible: line13Vissible,
+      line14Raw: line14Raw,
+      line14Description: line14Description,
+      line14Vissible: line14Vissible,
       currentLineDayInt: currentLineDayInt,
       currentLineDayBoolMo: currentLineDayBoolMo,
       currentLineDayBoolDi: currentLineDayBoolDi,

@@ -93,6 +93,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: DeviceLineWidget.routeName,
           path: DeviceLineWidget.routePath,
           builder: (context, params) => DeviceLineWidget(),
+        ),
+        FFRoute(
+          name: DeviceSaveToPhoneWidget.routeName,
+          path: DeviceSaveToPhoneWidget.routePath,
+          builder: (context, params) => DeviceSaveToPhoneWidget(),
+        ),
+        FFRoute(
+          name: DeviceSaveFromPhoneWidget.routeName,
+          path: DeviceSaveFromPhoneWidget.routePath,
+          builder: (context, params) => DeviceSaveFromPhoneWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

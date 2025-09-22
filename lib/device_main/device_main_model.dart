@@ -72,4 +72,85 @@ class DeviceMainModel extends FlutterFlowModel<DeviceMainWidget> {
       context,
     );
   }
+
+  Future editLine06(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '050',
+    );
+  }
+
+  Future editLine07(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '060',
+    );
+  }
+
+  Future editLine08(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '070',
+    );
+  }
+
+  Future editLine09(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '080',
+    );
+  }
+
+  Future editLine10(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '090',
+    );
+  }
+
+  Future editLine11(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '100',
+    );
+  }
+
+  Future editLine12(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '110',
+    );
+  }
+
+  Future editLine13(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '120',
+    );
+  }
+
+  Future editLine14(BuildContext context) async {
+    context.pushNamed(DeviceLineWidget.routeName);
+
+    await actions.editLine(
+      context,
+      '130',
+    );
+  }
 }

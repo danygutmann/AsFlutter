@@ -45,12 +45,56 @@ Future<void> editLine(BuildContext context, String lineAddress) async {
     lineNumber = 5;
     IsLastLine = true;
   }
+  if (lineAddress == "050") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line06Raw;
+    lineNumber = 6;
+    IsLastLine = true;
+  }
+  if (lineAddress == "060") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line07Raw;
+    lineNumber = 7;
+    IsLastLine = true;
+  }
+  if (lineAddress == "070") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line08Raw;
+    lineNumber = 8;
+    IsLastLine = true;
+  }
+  if (lineAddress == "080") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line09Raw;
+    lineNumber = 9;
+    IsLastLine = true;
+  }
+  if (lineAddress == "090") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line10Raw;
+    lineNumber = 10;
+    IsLastLine = true;
+  }
+  if (lineAddress == "100") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line11Raw;
+    lineNumber = 11;
+    IsLastLine = true;
+  }
+  if (lineAddress == "110") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line12Raw;
+    lineNumber = 12;
+    IsLastLine = true;
+  }
+  if (lineAddress == "120") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line13Raw;
+    lineNumber = 13;
+    IsLastLine = true;
+  }
+  if (lineAddress == "130") {
+    lineRaw = FFAppState().CurrentDeviceInfo.line14Raw;
+    lineNumber = 14;
+    IsLastLine = true;
+  }
 
   FFAppState().update(() {
     FFAppState().CurrentDeviceInfo.currentLineAddress = lineAddress;
     FFAppState().CurrentDeviceInfo.currentLineIsLast = IsLastLine;
     FFAppState().CurrentDeviceInfo.currentLineNumber = lineNumber;
-    //FFAppState().CurrentDeviceInfo.curr
   });
 
   int start = 0;
@@ -238,7 +282,4 @@ Future<void> editLine(BuildContext context, String lineAddress) async {
       SnackBar(content: Text('Error at int: $e')),
     );
   }
-
-  // check last line
-  String Address = "050";
 }

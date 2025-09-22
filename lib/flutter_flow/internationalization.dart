@@ -195,6 +195,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Geräteoptionen',
       'nl': 'Apparaatopties',
     },
+    'wsevejrk': {
+      'en': 'Save to Phone',
+      'de': 'Auf Telefon speichern',
+      'nl': 'Opslaan op telefoon',
+    },
+    'zj1d8saq': {
+      'en': 'Load from Phone',
+      'de': 'Vom Telefon laden',
+      'nl': 'Laden vanaf telefoon',
+    },
     '7hfwmk0f': {
       'en': 'Home',
       'de': 'Heim',
@@ -2115,6 +2125,62 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'nl': 'Regel verwijderen',
     },
     'vbrxo51q': {
+      'en': 'Home',
+      'de': 'Heim',
+      'nl': 'Thuis',
+    },
+  },
+  // DeviceSaveToPhone
+  {
+    'yl1qmbx9': {
+      'en': 'Button',
+      'de': 'Taste',
+      'nl': 'Knop',
+    },
+    'ozjgapkt': {
+      'en': 'enter an Name',
+      'de': 'Geben Sie einen Namen ein',
+      'nl': 'Voer een naam in',
+    },
+    'wif902cp': {
+      'en': 'Save now to Phone',
+      'de': 'Jetzt aufs Handy speichern',
+      'nl': 'Nu opslaan op telefoon',
+    },
+    'e7oinwor': {
+      'en': 'Home',
+      'de': 'Heim',
+      'nl': 'Thuis',
+    },
+  },
+  // DeviceSaveFromPhone
+  {
+    'lkm14kaj': {
+      'en': 'Button',
+      'de': 'Taste',
+      'nl': 'Knop',
+    },
+    '0rrqnl37': {
+      'en': 'Select...',
+      'de': 'Wählen...',
+      'nl': 'Selecteer...',
+    },
+    '5ofz0v9h': {
+      'en': 'Search...',
+      'de': '',
+      'nl': '',
+    },
+    'rh0u6q1a': {
+      'en': 'Load from Phone',
+      'de': 'Vom Telefon laden',
+      'nl': 'Laden vanaf telefoon',
+    },
+    'nq96rch9': {
+      'en': 'Delete stored Lines',
+      'de': 'Gespeicherte Zeilen löschen',
+      'nl': 'Opgeslagen regels verwijderen',
+    },
+    '8lbnhngy': {
       'en': 'Home',
       'de': 'Heim',
       'nl': 'Thuis',

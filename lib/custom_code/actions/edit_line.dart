@@ -43,47 +43,56 @@ Future<void> editLine(BuildContext context, String lineAddress) async {
   if (lineAddress == "040") {
     lineRaw = FFAppState().CurrentDeviceInfo.line05Raw;
     lineNumber = 5;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line06Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "050") {
     lineRaw = FFAppState().CurrentDeviceInfo.line06Raw;
     lineNumber = 6;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line07Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "060") {
     lineRaw = FFAppState().CurrentDeviceInfo.line07Raw;
     lineNumber = 7;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line08Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "070") {
     lineRaw = FFAppState().CurrentDeviceInfo.line08Raw;
     lineNumber = 8;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line09Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "080") {
     lineRaw = FFAppState().CurrentDeviceInfo.line09Raw;
     lineNumber = 9;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line10Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "090") {
     lineRaw = FFAppState().CurrentDeviceInfo.line10Raw;
     lineNumber = 10;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line11Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "100") {
     lineRaw = FFAppState().CurrentDeviceInfo.line11Raw;
     lineNumber = 11;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line12Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "110") {
     lineRaw = FFAppState().CurrentDeviceInfo.line12Raw;
     lineNumber = 12;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line13Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "120") {
     lineRaw = FFAppState().CurrentDeviceInfo.line13Raw;
     lineNumber = 13;
-    IsLastLine = true;
+    if (FFAppState().CurrentDeviceInfo.line14Raw.startsWith("255"))
+      IsLastLine = true;
   }
   if (lineAddress == "130") {
     lineRaw = FFAppState().CurrentDeviceInfo.line14Raw;

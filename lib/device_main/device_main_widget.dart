@@ -165,7 +165,7 @@ class _DeviceMainWidgetState extends State<DeviceMainWidget> {
                     Align(
                       alignment: AlignmentDirectional(1.0, -1.0),
                       child: Text(
-                        FFAppState().CurrentDeviceInfo.appStatusLine,
+                        FFAppState().currentStatus,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)

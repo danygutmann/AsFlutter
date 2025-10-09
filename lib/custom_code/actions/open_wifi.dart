@@ -24,8 +24,8 @@ Future<void> openWifi(BuildContext context) async {
       await intent.launch();
     } else if (Theme.of(context).platform == TargetPlatform.iOS) {
       // iOS (eingeschränkt)
-      if (await canLaunchUrl(Uri.parse('App-Prefs:WIFI'))) {
-        await launchUrl(Uri.parse('App-Prefs:WIFI'));
+      if (await canLaunchUrl(Uri.parse('app-settings:'))) {
+        await launchUrl(Uri.parse('app-settings:'));
       } else {
         throw 'Konnte iOS-Einstellungen nicht öffnen';
       }

@@ -261,6 +261,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Datum und Uhrzeit einstellen',
       'nl': 'Datum en tijd instellen',
     },
+    'ldvijvb0': {
+      'en': 'Get Date and Time',
+      'de': 'Datum und Uhrzeit abrufen',
+      'nl': 'Datum en tijd ophalen',
+    },
     '8l3e8em3': {
       'en': 'Set Fan Frequency',
       'de': 'Lüfterfrequenz einstellen',

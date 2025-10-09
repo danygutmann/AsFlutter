@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:app_settings/app_settings.dart' as appsett;
 
 Future<void> openWifV2(BuildContext context) async {
   try {
@@ -25,18 +26,18 @@ Future<void> openWifV2(BuildContext context) async {
         // Handle errors if the intent fails
         print('Error opening Wi-Fi settings: $e');
       }
-    } else if (Platform.isIOS) {
-      // iOS (eingeschränkt)
-      try {
-        if (await canLaunchUrl(Uri.parse('App-Prefs:WIFI'))) {
-          await launchUrl(Uri.parse('App-Prefs:WIFI'));
-        } else {
-          throw 'Konnte iOS-Einstellungen nicht öffnen';
-        }
-      } catch (e) {
-        // Handle errors if the intent fails
-        print('Error opening IOS Wi-Fi settings: $e');
+    } else if (Theme.of(context).platform == TargetPlatform.iOS) {
+      // IOS
+      // app-settings: wifi --> app settings
+      // prefs:root=WIFI - tut nicht
+      // App-Prefs:WIFI -tut nicht
+      // App-Prefs:root=WIFI
+      if (await canLaunchUrl(Uri.parse('app-settings:'))) {
+        await launchUrl(Uri.parse('app-settings:'));
+      } else {
+        throw 'Konnte iOS-wifi Einstellungen nicht öffnen';
       }
+      // ios end
     }
   } catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(

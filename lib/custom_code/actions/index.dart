@@ -3,6 +3,7 @@ export 'discover_device.dart' show discoverDevice;
 export 'remove_device.dart' show removeDevice;
 export 'set_date_time.dart' show setDateTime;
 export 'get_info.dart' show getInfo;
+export 'get_info_data.dart' show getInfoData;
 export 'delete_all_lines.dart' show deleteAllLines;
 export 'open_wif_v2.dart' show openWifV2;
 export 'set_default_lines.dart' show setDefaultLines;

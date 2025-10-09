@@ -212,5 +212,17 @@ Future<void> readOutDevice(BuildContext context) async {
     FFAppState().currentRawLines = rawLines;
   });
 
-  await act.getInfo(context);
+  try {
+    String Info = "";
+    final response = await http
+        .get(Uri.parse("http://192.168.4.1/CMD/?CMD=SendCmd&SUBCMD=I"));
+
+    if (response.statusCode == 200) {
+      final splitted = response.body.trim().split('|');
+      Info = splitted[0] + " " + splitted[1];
+      FFAppState().update(() {
+        FFAppState().currentStatus = Info;
+      });
+    }
+  } catch (e) {}
 }

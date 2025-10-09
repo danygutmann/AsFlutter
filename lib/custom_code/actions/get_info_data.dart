@@ -8,12 +8,10 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-//import '/flutter_flow/custom_functions.dart'; // Imports custom functions
-
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-Future<void> getInfo(BuildContext context) async {
+Future<void> getInfoData(BuildContext context) async {
   try {
     String Info = "";
     final response = await http

@@ -1,4 +1,4 @@
-package de.airscent.AppV2
+package de.danielgutmann.Airscent
 
 import io.flutter.embedding.android.FlutterActivity
 

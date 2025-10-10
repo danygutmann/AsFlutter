@@ -1,4 +1,4 @@
-package de.airscent.AppV2;
+package de.danielgutmann.Airscent;
 
 import androidx.test.rule.ActivityTestRule;
 import dev.flutter.plugins.integration_test.FlutterTestRunner;
